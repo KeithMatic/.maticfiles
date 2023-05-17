@@ -1,0 +1,107 @@
+{
+	"name": "classnametocss",
+	"displayName": "className Completion in CSS",
+	"description": "css/less/scss className IntelliSense from html/jsx/tsx",
+	"publisher": "zitup",
+	"version": "0.0.7",
+	"icon": "icon.jpg",
+	"engines": {
+		"vscode": "^1.42.0"
+	},
+	"repository": {
+		"url": "https://github.com/zytjs/classNameToCss"
+	},
+	"categories": [
+		"Programming Languages",
+		"Other"
+	],
+	"keywords": [
+		"IntelliSense",
+		"completion",
+		"autocomplete",
+		"class",
+		"css",
+		"less",
+		"sass",
+		"scss",
+		"stylus",
+		"jsx",
+		"tsx",
+		"vue",
+		"classtocss",
+		"class to css",
+		"classnametocss",
+		"classname to css"
+	],
+	"activationEvents": [
+		"onLanguage:css",
+		"onLanguage:less",
+		"onLanguage:scss",
+		"onLanguage:sass",
+		"onLanguage:stylus",
+		"onLanguage:vue",
+		"onLanguage:js",
+		"onLanguage:jsx",
+		"onLanguage:tsx",
+		"onLanguage:html"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"languages": [
+			{
+				"id": "vue",
+				"aliases": [
+					"Vue",
+					"vue"
+				],
+				"extensions": [
+					".vue"
+				]
+			},
+			{
+				"id": "stylus",
+				"aliases": [
+					"styl",
+					"stylus"
+				],
+				"extensions": [
+					".styl"
+				]
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "yarn run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"test": "yarn run compile && node ./node_modules/vscode/bin/test",
+		"lint": "eslint src"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "yarn lint"
+		}
+	},
+	"devDependencies": {
+		"@types/mocha": "^2.2.42",
+		"@types/node": "^10.12.21",
+		"@types/vscode": "^1.42.0",
+		"@typescript-eslint/eslint-plugin": "^4.17.0",
+		"@typescript-eslint/parser": "^4.17.0",
+		"eslint": "^7.21.0",
+		"husky": "4.3.8",
+		"typescript": "^4.2.3",
+		"vscode": "^1.1.37"
+	},
+	"__metadata": {
+		"id": "5be05c89-9633-4e0a-b260-21a6e9d621d1",
+		"publisherId": "3b24cc34-d0e6-4b61-b534-77b6f908d895",
+		"publisherDisplayName": "zitup",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"updated": true,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1678734469144,
+		"preRelease": false
+	}
+}

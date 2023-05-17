@@ -1,0 +1,42 @@
+{
+	"name": "gruvbox-themes-1",
+	"displayName": "gruvbox themes",
+	"description": "a theme pack of themes and icons to prettify your ide",
+	"publisher": "ext8",
+	"version": "1.0.0",
+	"engines": {
+		"vscode": "^1.64.0"
+	},
+	"categories": [
+		"Extension Packs"
+	],
+	"icon": "logo.png",
+	"keywords": [
+		"gruvbox",
+		"theme pack",
+		"gruvbox theme"
+	],
+	"extensionPack": [
+		"sainnhe.gruvbox-material",
+		"jonathanharty.gruvbox-material-icon-theme",
+		"pkief.material-product-icons"
+	],
+	"repository": {
+		"url": "https://github.com/ext8/gruvbox-themes"
+	},
+	"homepage": "https://github.com/ext8/gruvbox-themes",
+	"bugs": {
+		"url": "https://github.com/ext8/gruvbox-themes/issues"
+	},
+	"__metadata": {
+		"id": "ad6e3039-33ac-44c7-b258-aa67fdaa3b15",
+		"publisherId": "4ab871bc-bfc2-45c4-ad96-bc9827902e2a",
+		"publisherDisplayName": "ext8",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1673016387344,
+		"preRelease": false
+	}
+}

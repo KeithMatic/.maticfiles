@@ -1,0 +1,10 @@
+{
+	"extension.title": "Conclusões IntelliCode",
+	"extension.description": "Conclusões do IntelliCode: Preenchimento automático de código controlado por IA",
+	"settings.logging": "Nível de registro em Log para o console",
+	"settings.parseErrorFilter": "Filtrar conclusões que introduzem erros de análise",
+	"settings.snippetCompletions": "Usar conclusões de trecho quando o modelo sugerir um literal de espaço reservado",
+	"settings.pythonEnabled": "Habilitar conclusões em arquivos Python",
+	"settings.typescriptEnabled": "Habilitar conclusões em arquivos TypeScript",
+	"settings.javascriptEnabled": "Habilitar conclusões em arquivos JavaScript"
+}

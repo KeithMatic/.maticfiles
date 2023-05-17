@@ -1,0 +1,61 @@
+{
+	"name": "auto-npx",
+	"private": true,
+	"displayName": "Auto NPX",
+	"version": "0.0.2",
+	"description": "Auto resolving local Node.js binaries in VS Code terminal",
+	"categories": [
+		"Other"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/antfu/vscode-auto-npx"
+	},
+	"license": "MIT",
+	"publisher": "antfu",
+	"main": "./dist/extension.js",
+	"scripts": {
+		"build": "tsup src/extension.ts --external vscode",
+		"dev": "nr build --watch src",
+		"vscode:prepublish": "npm run build",
+		"release": "bumpp --commit --tag --push && vsce publish"
+	},
+	"contributes": {
+		"commands": [],
+		"configuration": {
+			"type": "object",
+			"title": "Auto NPX",
+			"properties": {}
+		}
+	},
+	"activationEvents": [
+		"*",
+		"workspaceContains:node_modules/"
+	],
+	"devDependencies": {
+		"@antfu/eslint-config": "^0.9.0",
+		"@antfu/ni": "^0.9.3",
+		"@types/node": "^16.10.1",
+		"@types/vscode": "^1.60.0",
+		"bumpp": "^7.1.1",
+		"eslint": "^7.32.0",
+		"tsup": "^5.2.0",
+		"typescript": "^4.4.3",
+		"vsce": "^1.100.0"
+	},
+	"engines": {
+		"vscode": "^1.60.0"
+	},
+	"icon": "res/logo.png",
+	"__metadata": {
+		"id": "2af29cdf-bcc5-41b0-a87f-f935aeb9d7c5",
+		"publisherId": "f20453fe-720b-4a02-8838-84ab3fdc1b74",
+		"publisherDisplayName": "Anthony Fu",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1673922558758,
+		"preRelease": false
+	}
+}

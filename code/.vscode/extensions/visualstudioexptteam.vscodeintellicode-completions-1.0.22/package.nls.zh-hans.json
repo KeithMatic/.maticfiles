@@ -1,0 +1,10 @@
+{
+	"extension.title": "IntelliCode 完成",
+	"extension.description": "IntelliCode 完成: AI 驱动的代码自动完成",
+	"settings.logging": "控制台的日志记录级别",
+	"settings.parseErrorFilter": "筛选出引入分析错误的完成",
+	"settings.snippetCompletions": "模型建议占位符文字时使用代码片段完成",
+	"settings.pythonEnabled": "在 Python 文件中启用完成",
+	"settings.typescriptEnabled": "在 TypeScript 文件中启用完成",
+	"settings.javascriptEnabled": "在 JavaScript 文件中启用完成"
+}

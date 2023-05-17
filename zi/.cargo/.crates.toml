@@ -1,0 +1,4 @@
+[v1]
+"fd-find 8.6.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["fd"]
+"ripgrep 13.0.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["rg"]
+"taplo-cli 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["taplo"]

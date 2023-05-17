@@ -1,0 +1,37 @@
+{
+	"name": "scss-helpers",
+	"displayName": "SCSS-helpers",
+	"description": "Utilize SSCS functions and mixins that have already been precoded to cut down on development time.",
+	"version": "0.0.2",
+	"publisher": "AkramAshraf",
+	"engines": {
+		"vscode": "^1.71.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://www.github.com/Ak-ram/"
+	},
+	"icon": "icon.png",
+	"categories": [
+		"Snippets"
+	],
+	"contributes": {
+		"snippets": [
+			{
+				"language": "scss",
+				"path": "./snippets/scss_snippets.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "67c6b48c-1ffa-4a77-902c-7e62c8da7fd6",
+		"publisherId": "f47f705d-4312-4076-a26b-2f3dc604fbd4",
+		"publisherDisplayName": "Akram Ashraf",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1673016704329,
+		"preRelease": false
+	}
+}

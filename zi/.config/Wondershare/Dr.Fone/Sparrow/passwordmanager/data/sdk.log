@@ -1,0 +1,26 @@
+[2023-02-10 23:05:11] [INFO] - (78) data_init to start thread
+[2023-02-10 23:05:11] [INFO] - (87) data_init end
+[2023-02-10 23:05:11] [INFO] - (35) back thread start ...
+[2023-02-10 23:05:11] [INFO] - (36) sdk version: 1.1.1.1113
+[2023-02-10 23:05:11] [INFO] - (116) update conf from svr
+[2023-02-10 23:05:11] [INFO] - (424) get svr cnf
+[2023-02-10 23:05:12] [INFO] - (132) base_info
+[2023-02-10 23:05:12] [INFO] - (147) client_sign: {43BD4348-D76B-548A-9E1E-B68F8B41AB3E}
+[2023-02-10 23:05:14] [INFO] - (150) save cnf:1
+[2023-02-10 23:05:14] [INFO] - (131) update conf from svr end
+[2023-02-10 23:05:14] [INFO] - (97) chk old msgs
+[2023-02-10 23:05:14] [INFO] - (179) process_msgs: 0
+[2023-02-10 23:05:14] [INFO] - (150) save cnf:1
+[2023-02-10 23:05:14] [INFO] - (137) back thread loop start ...
+[2023-02-10 23:05:14] [INFO] - (267) addtional send
+[2023-02-10 23:10:38] [INFO] - (78) data_init to start thread
+[2023-02-10 23:10:38] [INFO] - (87) data_init end
+[2023-02-10 23:10:38] [INFO] - (35) back thread start ...
+[2023-02-10 23:10:38] [INFO] - (36) sdk version: 1.1.1.1113
+[2023-02-10 23:10:38] [INFO] - (97) chk old msgs
+[2023-02-10 23:10:38] [INFO] - (179) process_msgs: 0
+[2023-02-10 23:10:38] [INFO] - (150) save cnf:1
+[2023-02-10 23:10:38] [INFO] - (137) back thread loop start ...
+[2023-02-10 23:10:38] [INFO] - (132) base_info
+[2023-02-10 23:10:38] [INFO] - (147) client_sign: {43BD4348-D76B-548A-9E1E-B68F8B41AB3E}
+[2023-02-10 23:10:38] [INFO] - (267) addtional send

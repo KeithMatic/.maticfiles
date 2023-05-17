@@ -1,0 +1,7 @@
+[[language]]
+name = 'toml'
+auto-format = true
+diagnostic-severity = 'Warning'
+config = { format = { 'align_entrie' = true,'align_comments' = true,'reorder_keys' = true }}
+indent = { tab-width = 2, unit = ' ' }
+language-server = { command = 'taplo', args = ['--stdio'] }

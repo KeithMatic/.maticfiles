@@ -1,0 +1,185 @@
+{
+  "@forward": {
+    "prefix": "_fw",
+    "body": "@forward ${1:filePath};",
+    "description": "@forward 'file'"
+  },
+  "calc": {
+    "prefix": "_clc",
+    "body": "calc($1);",
+    "description": "calc()"
+  },
+    "function px to em": {
+      "prefix": "_funcem",
+      "body": [
+        "@function rem($pixels, $context: ${1:16}){",
+        "@return ($pixels/$context)em;",
+        "}"
+      ],
+      "description": "function to convert px to em"
+    },
+    "px to em": {
+      "prefix": "_em",
+      "body": "em($1)",
+      "description": "use the em function"
+    },
+    "function px to rem": {
+      "prefix": "_funcrem",
+      "body": [
+        "@function rem($pixels, $context: 16){",
+        "@return ($pixels/$context) * 1rem;",
+        "}"
+      ],
+      "description": "function to convert px to rem"
+    },
+    "px to rem": {
+      "prefix": "_rem",
+      "body": "rem($1);",
+      "description": "use the rem function"
+    },
+    "@import": {
+      "prefix": "_imp",
+      "body": "@import ${1:filePath};",
+      "description": "import a file"
+    },
+    
+    "breakpoints": {
+      "prefix": "_brpt",
+      "body": [
+        "$$breakpoints: (",
+        "  \"mini\": \"480px\",",
+        "  \"small\": \"700px\",",
+        "  \"menu\": \"1000\",",
+        "  \"big\": \"1 240px\",",
+        "  \"bigger\": \"1366px\",",
+        "  \"huge\": \"1440px\",",
+        ");"
+      ],
+      "description": "creates default breakpoint map"
+    }, 
+    "@use": {
+      "prefix": "_use",
+      "body": "@use ${1:filePath} as *;",
+      "description": "@use 'file' as *"
+    },
+    "absolute banner": {
+      "prefix": "_abb",
+      "body": [
+        "position: absolute;",
+        "top: 0;",
+        "bottom: 0;",
+        "left: 0;",
+        "right: 0;"
+      ],
+      "description": "position absolute fill it's parent"
+    },
+    "background image cover": {
+      "prefix": "_bgco",
+      "body": [
+        "background-image: url($1);",
+        "background-size: cover;",
+        "background-repeat: no-repeat;"
+      ],
+      "description": "background image size cover"
+    },
+    "background image contain": {
+      "prefix": "_bgcn",
+      "body": [
+        "background-image: url($1);",
+        "background-size: contain;",
+        "background-repeat: no-repeat;"
+      ],
+      "description": "background image size contain"
+    },
+        
+    "mediaquery mixins": {
+      "prefix": "_mqm",
+      "body": [
+        "@mixin responsiveMax(${1:size}) {",
+        "  @media only screen and (max-width: ${1:size}) {",
+        "    @content;",
+        "  }",
+        "}",
+        "",
+        "@mixin responsiveMin(${2:size}) {",
+        "  @media only screen and (min-width: ${2:size}) {",
+        "    @content;",
+        "  }",
+        "}",
+        "",
+        "@mixin responsiveMinMax(${3:sizeMin}, ${4:sizeMax}) {",
+        "  @media only screen and (min-width: ${3:sizeMin}) and (max-width: ${4:sizeMax}) {",
+        "    @content;",
+        "  }",
+        "}"
+      ],
+      "description": "Inserts default media queries for breakpoints map"
+    },
+    "responsiveMax mini": {
+      "prefix": "_rmxs",
+      "body": ["@include responsiveMax(mini){", "$1", "}"],
+      "description": "responsiveMax mixin for mobile"
+    },
+    "responsiveMax small": {
+      "prefix": "_rms",
+      "body": ["@include responsiveMax(small){", "$1", "}"],
+      "description": "responsiveMax mixin for tablet Portret"
+    },
+    "responsiveMax medium": {
+      "prefix": "_rmm",
+      "body": ["@include responsiveMax(medium){", "$1", "}"],
+      "description": "responsiveMax mixin for tablet Landscape"
+    },
+    "responsiveMax big": {
+      "prefix": "_rmb",
+      "body": ["@include responsiveMax(big){", "$1", "}"],
+      "description": "responsiveMax mixin for laptop"
+    },
+    "responsiveMax huge": {
+      "prefix": "_rmh",
+      "body": ["@include responsiveMax(huge){", "$1", "}"],
+      "description": "responsiveMax mixin for desktop"
+    },
+    "responsiveMin mini": {
+      "prefix": "_rmixs",
+      "body": ["@include responsiveMin(mini){", "$1", "}"],
+      "description": "responsiveMin mixin for mobile"
+    },
+    "responsiveMin small": {
+      "prefix": "_rmis",
+      "body": ["@include responsiveMin(small){", "$1", "}"],
+      "description": "responsiveMin mixin for tablet Landscape"
+    },
+    "responsiveMin medium": {
+      "prefix": "_rmim",
+      "body": ["@include responsiveMin(medium){", "$1", "}"],
+      "description": "responsiveMin mixin for tablet Portret"
+    },
+    "responsiveMin big": {
+      "prefix": "_rmib",
+      "body": ["@include responsiveMin(big){", "$1", "}"],
+      "description": "responsiveMin mixin for laptop"
+    },
+    "responsiveMin huge": {
+      "prefix": "_rmih",
+      "body": ["@include responsiveMin(huge){", "$1", "}"],
+      "description": "responsiveMin mixin for desktop"
+    },
+    "auto-prefix-mixin": {
+      "prefix": "_apm",
+      "body": [
+        "@mixin prefix($property,$value,$prefixes) {",
+        "    @each $prefix in $prefixes {",
+        "        -#{$prefix}-#{$property}: $value;",
+        "    }",
+        "    #{$property}: $value",
+        "}"
+      ],
+      "description": "auto prefix mixin"
+    },
+    "auto-prefix": {
+      "prefix": "_ap",
+      "body": ["@include prefix(transform,rotate(15deg),webkit ms o moz)"],
+      "description": "auto prefixer"
+    }
+}

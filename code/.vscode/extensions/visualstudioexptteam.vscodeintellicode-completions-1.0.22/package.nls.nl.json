@@ -1,0 +1,10 @@
+{
+	"extension.title": "IntelliCode-voltooiingen",
+	"extension.description": "IntelliCode-voltooiingen: automatisch aanvullen van code door AI",
+	"settings.logging": "Logboekregistratieniveau voor console",
+	"settings.parseErrorFilter": "Voltooiingen filteren die parseerfouten veroorzaken",
+	"settings.snippetCompletions": "Fragmentvoltooiingen gebruiken wanneer het model een letterlijke tijdelijke aanduiding voorstelt",
+	"settings.pythonEnabled": "Voltooiingen inschakelen in Python-bestanden",
+	"settings.typescriptEnabled": "Voltooiingen inschakelen in TypeScript-bestanden",
+	"settings.javascriptEnabled": "Voltooiingen inschakelen in JavaScript-bestanden"
+}

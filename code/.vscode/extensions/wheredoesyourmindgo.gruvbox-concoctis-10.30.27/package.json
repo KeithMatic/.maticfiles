@@ -1,0 +1,138 @@
+{
+	"name": "gruvbox-concoctis",
+	"displayName": "Gruvbox Concoctis",
+	"description": "Concoction of Gruvbox themes",
+	"version": "10.30.27",
+	"publisher": "wheredoesyourmindgo",
+	"icon": "images/logo.png",
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/extension.js",
+	"engines": {
+		"vscode": "^1.43.0"
+	},
+	"galleryBanner": {
+		"color": "#2a2827",
+		"theme": "dark"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/wheredoesyourmindgo/gruvbox-concoctis"
+	},
+	"scripts": {
+		"build:ts": "tsc -p src",
+		"watch:ts": "yarn build:ts -w",
+		"build": "yarn build:ts",
+		"dev": "yarn watch:ts",
+		"pretty": "prettier --write 'src/**/*.ts'",
+		"build-themes:standalone": "node ./out/standalone/build.js",
+		"release:major": "yarn build && yarn build-themes:standalone && vsce publish major && git push",
+		"release:minor": "yarn build && yarn build-themes:standalone && vsce publish minor && git push",
+		"release:patch": "yarn build && yarn build-themes:standalone && vsce publish patch && git push"
+	},
+	"categories": [
+		"Themes",
+		"Other"
+	],
+	"keywords": [
+		"gruvbox",
+		"material",
+		"noctis",
+		"italic",
+		"bold"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "gruvboxConcoctis dark medium",
+				"uiTheme": "vs-dark",
+				"path": "./themes/darkMedium.json"
+			},
+			{
+				"label": "gruvboxConcoctis light medium",
+				"uiTheme": "vs",
+				"path": "./themes/lightMedium.json"
+			},
+			{
+				"label": "gruvboxConcoctis dark soft",
+				"uiTheme": "vs-dark",
+				"path": "./themes/darkSoft.json"
+			},
+			{
+				"label": "gruvboxConcoctis light soft",
+				"uiTheme": "vs",
+				"path": "./themes/lightSoft.json"
+			},
+			{
+				"label": "gruvboxConcoctis dark hard",
+				"uiTheme": "vs-dark",
+				"path": "./themes/darkHard.json"
+			},
+			{
+				"label": "gruvboxConcoctis light hard",
+				"uiTheme": "vs",
+				"path": "./themes/lightHard.json"
+			}
+		],
+		"configuration": {
+			"title": "Gruvbox Concoctis",
+			"properties": {
+				"gruvboxConcoctis.useBoldFont": {
+					"type": "boolean",
+					"default": false,
+					"description": "Use bold font."
+				},
+				"gruvboxConcoctis.useItalicFont": {
+					"type": "boolean",
+					"default": true,
+					"description": "Use italic font."
+				},
+				"gruvboxConcoctis.usePalette": {
+					"type": "string",
+					"default": "material",
+					"description": "The color palette used in all variants.",
+					"enum": [
+						"material",
+						"mix",
+						"original"
+					]
+				},
+				"gruvboxConcoctis.selectionColor": {
+					"type": "string",
+					"default": "neutral",
+					"description": "The selection color used in editor.",
+					"enum": [
+						"neutral",
+						"aqua",
+						"blue",
+						"green",
+						"grey",
+						"orange",
+						"purple",
+						"red",
+						"yellow"
+					]
+				}
+			}
+		}
+	},
+	"dependencies": {},
+	"__metadata": {
+		"id": "1929d7e5-efb2-4630-b72d-016659e71a7f",
+		"publisherId": "0d51b125-839d-4c87-b395-d31cd5774926",
+		"publisherDisplayName": "wheredoesyourmindgo",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1673083952155,
+		"preRelease": false
+	},
+	"devDependencies": {
+		"@types/node": "^13.11.0",
+		"@types/vscode": "^1.43.0",
+		"prettier": "^2.0.4",
+		"typescript": "^3.8.3"
+	}
+}

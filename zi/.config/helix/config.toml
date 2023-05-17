@@ -1,0 +1,33 @@
+theme = 'gruvbox'
+
+[keys.insert]
+'A-x' = 'normal_mode' # Maps Alt-X to enter normal mode
+j = { k = 'normal_mode' } # Maps jk to enter normal mode
+
+[editor]
+bufferline = 'always'
+color-modes = true
+cursorline = true
+idle-timeout = 0
+line-number = 'relative'
+mouse = true
+
+
+[editor.cursor-shape]
+insert = 'bar'
+normal = 'block'
+select = 'underline'
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+render = true
+character = '╎' # Some characters that work well: "▏", "┆", "┊", " "
+skip-levels = 1
+
+[editor.whitespace.render]
+space = 'all'
+
+[editor.whitespace.character]
+space = '.'

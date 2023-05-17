@@ -1,0 +1,1 @@
+../../.maticfiles/zsh/.config/zsh/aliases.zsh
