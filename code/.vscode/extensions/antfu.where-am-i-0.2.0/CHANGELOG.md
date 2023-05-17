@@ -1,2 +1,0 @@
-## [Released]
-- Initial release
