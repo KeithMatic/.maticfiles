@@ -9,6 +9,9 @@
 autoload -Uz compinit
 compinit
 
+# Neofetch
+neofetch
+
 # history
 HISTFILE=~/.zsh_history
 
@@ -28,7 +31,8 @@ plug "$HOME/.config/zsh/omp.zsh"
 export PATH='$HOME/.local/bin':$PATH
 
 # plugins
-plug "esc/conda-zsh-completion"
+# plug "esc/conda-zsh-completion"
+plug "zsh-users/zsh-completions"
 plug "zsh-users/zsh-autosuggestions"
 plug "hlissner/zsh-autopair"
 plug "zap-zsh/supercharge"
@@ -60,3 +64,4 @@ fi
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
