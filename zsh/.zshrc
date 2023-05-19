@@ -23,6 +23,7 @@ plug "$HOME/.config/zsh/functions.zsh"
 plug "$HOME/.config/zsh/aliases.zsh"
 plug "$HOME/.config/zsh/exports.zsh"
 plug "$HOME/.config/zsh/omp.zsh"
+plug "$HOME/.config/zsh/nvims.zsh"
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -65,3 +66,4 @@ fi
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
 
+export PATH=$PATH:/Users/matic/.spicetify
