@@ -1,0 +1,37 @@
+# Comments and blank lines are allowed.
+
+RCS
+.+,v
+
+CVS
+\.\#.+       # CVS conflict files / emacs lock files
+\.cvsignore
+
+\.DS_Store # DS_Store files conflicts macos
+
+\.svn
+_darcs
+\.hg
+
+\.git
+\.gitignore
+
+.+~          # emacs backup files
+\#.*\#       # emacs autosave files
+
+^/README.*
+^/LICENSE.*
+^/COPYING
+
+.DS_Store
+.git
+.gitignore
+.stow-local-ignore
+.*.example
+^/@.*
+KeybdPrefs_.*.png
+Safari_.*.png
+README.*
+TODO.*
+RCS
+.*.secrets.*

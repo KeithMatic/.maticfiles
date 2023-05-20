@@ -6,3 +6,7 @@ function take() {
 # function mkcd() {
 #   mkdir -p "$1" && cd "$1"
 # }
+function spicetify_theme() {
+  local theme_name="$1"
+ spicetify config current_theme $theme_name 
+}

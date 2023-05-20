@@ -6,6 +6,9 @@ alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git
 # alias autojumpdb ='$HOME/Library/autojump/autojump.txt'
 
 # Aliases
+
+# zsh
+alias sz='source ~/.zshrc'
 alias zconfig='nvim ~/.zshrc'
 alias ohmyzsh='nvim ~/.oh-my-zsh'
 alias ezsh='exec zsh'
