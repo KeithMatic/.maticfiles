@@ -1,13 +1,15 @@
 #!/bin/sh
 
 # Oh My Posh
-#if [ $TERM_PROGRAM != "Apple_Terminal" ]; then
-#  eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/json.omp.json)"
-#fi
+if [ $TERM_PROGRAM != "Apple_Terminal" ]; then
+ eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/json.omp.json)"
+#  eval "$(oh-my-posh init zsh --config ~/jandedobbeleer.omp.json)"
+fi
 # Oh-My-Posh themes folder
 alias poshThemes='$(brew --prefix oh-my-posh)/themes'
 
 # Setting a theme with Oh-My-Posh
-# function setPoshTheme
-#   eval "$(oh-my-posh init fish --config "$(brew --prefix oh-my-posh)"/themes/$argv.omp.json)"
-# end
+function posh() {
+    local theme="$1"
+    eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/$theme.omp.json)"
+}
