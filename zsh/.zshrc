@@ -67,3 +67,5 @@ fi
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
 
 export PATH=$PATH:/Users/matic/.spicetify
+
+eval $(thefuck --alias)
