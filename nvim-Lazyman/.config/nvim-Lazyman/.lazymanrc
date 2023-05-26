@@ -1,0 +1,209 @@
+# $HOME/.config/nvim-Lazyman/.lazymanrc
+# This file should be sourced from the shell initialization file
+# e.g. $HOME/.bashrc or $HOME/.zshrc
+#
+# Aliases for lsd, tldr, and bat if they exist
+command -v lsd > /dev/null && alias ls='lsd --group-dirs first' && \
+	alias tree='lsd --tree' && alias lss='lsd --group-dirs first'
+command -v tldr > /dev/null && {
+  command -v fzf > /dev/null && {
+    alias tldrf='tldr --list | fzf --preview "tldr {1} --color=always" --preview-window=right:70% | xargs tldr --color=always'
+  }
+}
+command -v bat > /dev/null && alias less='bat'
+command -v batcat > /dev/null && \
+	alias bat='batcat' && \
+	alias less='batcat'
+# To use Vim
+command -v vim > /dev/null && alias vi='vim'
+# To use Neovim
+command -v nvim > /dev/null && {
+  alias vi='nvim'
+  # Uncomment this line to use Neovim even when you type vim
+  # Leave commented to use vim as a backup editor if nvim not found
+  # alias vim='nvim'
+  alias nvims='source ~/.config/nvim-Lazyman/.lazymanrc; nvimselect'
+  alias neovides='source ~/.config/nvim-Lazyman/.lazymanrc; neovselect'
+  items=()
+  ndirs=()
+  [ -d ${HOME}/.config/nvim ] && {
+    alias nvim-default="NVIM_APPNAME=nvim nvim"
+  }
+  # Add all previously installed Neovim configurations
+  if [ -f ${HOME}/.config/nvim-Lazyman/.nvimdirs ]
+  then
+    while IFS= read -r ndir
+    do
+      [ -d ${HOME}/.config/${ndir} ] && {
+        alias ${ndir}="NVIM_APPNAME=${ndir} nvim"
+        entry=$(echo ${ndir} | sed -e "s/nvim-//")
+        items+=("${entry}")
+        ndirs+=("${ndir}")
+      }
+    done < "${HOME}/.config/nvim-Lazyman/.nvimdirs"
+  else
+    # Add any supported config we find
+    [ -d ${HOME}/.config/nvim-Lazyman ] && {
+      alias nvim-lazy="NVIM_APPNAME=nvim-Lazyman nvim"
+      items+=("Lazyman")
+      ndirs+=("nvim-Lazyman")
+    }
+    [ -d ${HOME}/.config/nvim-LazyVim ] && {
+      alias nvim-lazy="NVIM_APPNAME=nvim-LazyVim nvim"
+      items+=("LazyVim")
+      ndirs+=("nvim-LazyVim")
+    }
+    [ -d ${HOME}/.config/nvim-Kickstart ] && {
+      alias nvim-kick="NVIM_APPNAME=nvim-Kickstart nvim"
+      items+=("Kickstart")
+      ndirs+=("nvim-Kickstart")
+    }
+    [ -d ${HOME}/.config/nvim-NvChad ] && {
+      alias nvim-chad="NVIM_APPNAME=nvim-NvChad nvim"
+      items+=("NvChad")
+      ndirs+=("nvim-NvChad")
+    }
+    [ -d ${HOME}/.config/nvim-AstroNvim ] && {
+      alias nvim-astro="NVIM_APPNAME=nvim-AstroNvim nvim"
+      items+=("AstroNvim")
+      ndirs+=("nvim-AstroNvim")
+    }
+    [ -d ${HOME}/.config/nvim-Ecovim ] && {
+      alias nvim-eco="NVIM_APPNAME=nvim-Ecovim nvim"
+      items+=("Ecovim")
+      ndirs+=("nvim-Ecovim")
+    }
+    [ -d ${HOME}/.config/nvim-LunarVim ] && {
+      alias nvim-lunar="NVIM_APPNAME=nvim-LunarVim nvim"
+      items+=("LunarVim")
+      ndirs+=("nvim-LunarVim")
+    }
+    [ -d ${HOME}/.config/nvim-MultiVim ] && {
+      alias nvim-multi="NVIM_APPNAME=nvim-MultiVim nvim"
+      items+=("MultiVim")
+      ndirs+=("nvim-MultiVim")
+    }
+    [ -d ${HOME}/.config/nvim-SpaceVim ] && {
+      alias nvim-space="NVIM_APPNAME=nvim-SpaceVim nvim"
+      items+=("SpaceVim")
+      ndirs+=("nvim-SpaceVim")
+    }
+  fi
+
+  function nvimselect() {
+    action="Open"
+    remove=
+    if [[ "$1" == "-r" ]]
+    then
+      action="Remove"
+      remove=1
+      for i in "${!items[@]}"; do
+        if [[ ${items[i]} = "Lazyman" ]]; then
+          unset 'items[i]'
+        fi
+      done
+      for i in "${!items[@]}"; do
+        new_items+=( "${items[i]}" )
+      done
+      items=("${new_items[@]}")
+      unset new_items
+      shift
+    fi
+    filter="$1"
+    numitems=${#items[@]}
+    if [ ${numitems} -eq 1 ]
+    then
+      config="${items[@]:0:1}"
+    else
+      height=$((numitems * 6))
+      [ ${height} -gt 100 ] && height=100
+      [ ${height} -lt 20 ] && height=20
+      if [ "${filter}" ]
+      then
+        config=$(printf "%s\n" "${items[@]}" | grep -i ${filter} | fzf --prompt=" ${action} Neovim Config  " --height=${height}% --layout=reverse --border --exit-0)
+      else
+        config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" ${action} Neovim Config  " --height=${height}% --layout=reverse --border --exit-0)
+      fi
+    fi
+    if [[ -z $config ]]; then
+      echo "Nothing selected"
+      return 0
+    else
+      if [ -d ${HOME}/.config/nvim-${config} ]
+      then
+        config="nvim-${config}"
+      else
+        [ -d ${HOME}/.config/${config} ] || {
+          echo "Cannot locate ${config} Neovim configuration directory"
+          return 0
+        }
+      fi
+    fi
+    if [ "${remove}" ]
+    then
+      lazyman -R -N ${config}
+    else
+      NVIM_APPNAME=$config nvim $@
+    fi
+  }
+
+  function neovselect() {
+    action="Open"
+    remove=
+    if [[ "$1" == "-r" ]]
+    then
+      action="Remove"
+      remove=1
+      shift
+    fi
+    filter="$1"
+    numitems=${#items[@]}
+    if [ ${numitems} -eq 1 ]
+    then
+      config="${items[@]:0:1}"
+    else
+      height=$((numitems * 6))
+      [ ${height} -gt 100 ] && height=100
+      [ ${height} -lt 20 ] && height=20
+      if [ "${filter}" ]
+      then
+        config=$(printf "%s\n" "${items[@]}" | grep -i ${filter} | fzf --prompt=" ${action} Neovim Config  " --height=${height}% --layout=reverse --border --exit-0)
+      else
+        config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" ${action} Neovim Config  " --height=${height}% --layout=reverse --border --exit-0)
+      fi
+    fi
+    if [[ -z $config ]]; then
+      echo "Nothing selected"
+      return 0
+    else
+      if [ -d ${HOME}/.config/nvim-${config} ]
+      then
+        config="nvim-${config}"
+      else
+        [ -d ${HOME}/.config/${config} ] || {
+          echo "Cannot locate ${config} Neovim configuration directory"
+          return 0
+        }
+      fi
+    fi
+    if [ "${remove}" ]
+    then
+      lazyman -R -N ${config}
+    else
+      NVIM_APPNAME=$config neovide $@
+    fi
+  }
+}
+
+# Add ~/.local/bin to PATH if it exists
+[ -d $HOME/.local/bin ] && {
+  [[ ":$PATH:" == *":$HOME/.local/bin:"* ]] || {
+    export PATH="$PATH:$HOME/.local/bin"
+  }
+}
+# Add ~/.cargo/bin to PATH if it exists
+[ -d $HOME/.cargo/bin ] && {
+  [[ ":$PATH:" == *":$HOME/.cargo/bin:"* ]] || {
+    export PATH="$PATH:$HOME/.cargo/bin"
+  }
+}
