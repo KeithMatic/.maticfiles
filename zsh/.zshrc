@@ -32,17 +32,24 @@ plug "$HOME/.config/zsh/exports.zsh"
 export PATH='$HOME/.local/bin':$PATH
 
 # plugins
+
+# === prompts ===
+# plug "zap-zsh/zap-prompt"
+# plug "wintermi/zsh-starship"
+plug "MAHcodes/distro-prompt"
+
 # plug "esc/conda-zsh-completion"
 plug "zsh-users/zsh-completions"
 plug "zsh-users/zsh-autosuggestions"
 plug "hlissner/zsh-autopair"
 plug "zap-zsh/supercharge"
+plug "wintermi/zsh-rust"
+plug "Aloxaf/fzf-tab"
 plug "zap-zsh/vim"
-plug "zap-zsh/zap-prompt"
 plug "zap-zsh/fzf"
 plug "zap-zsh/exa"
 plug "zsh-users/zsh-syntax-highlighting"
-
+plug "wintermi/zsh-fnm"
 plug "olets/zsh-abbr" # abbr like fish
 plug "djui/alias-tips" # alias tips
 
@@ -65,8 +72,6 @@ fi
 
 # Fig post block. Keep at the bottom of this file.
 # [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
-
-
 
 
 # Source the Lazyman shell initialization for aliases and nvims selector
