@@ -26,10 +26,8 @@ return {
         ["[b"] = "prev_source",
         ["]b"] = "next_source",
         ["o"] = "open",
-        -- ["O"] = "system_open",
         ["h"] = "close_node",
         ["l"] = "open",
-        -- ["Y"] = "copy_selector",
       },
     },
     default_component_configs = {
