@@ -20,7 +20,8 @@ export PATH="/usr/local/opt/ssh-copy-id/bin:$PATH"
 export PATH=$PATH:/Users/matic/.spicetify
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 
-export NVIM_APPNAME="nvim-LazyVim"
+# export NVIM_APPNAME="nvim-AstroNvim"
+export NVIM_APPNAME="nvim-AstroNvim"
 
 #export PATH="$PATH:./node_modules/.bin"
 eval "$(fnm env)"
