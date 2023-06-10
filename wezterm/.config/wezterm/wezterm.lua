@@ -10,7 +10,8 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 -- colors.metadata = wezterm.color.load_scheme("wezterm/assets/colors/tokyonight_moon.toml")
-config.color_scheme = "Catppuccin Macchiato"
+-- config.color_scheme = "Catppuccin Macchiato"
+config.color_scheme = "tokyonight_moon"
 
 config.window_decorations = "RESIZE"
 config.window_close_confirmation = "NeverPrompt"
@@ -28,10 +29,14 @@ config.text_background_opacity = 1
 
 -- wezterm.font('OperatorMonoSSmLig Nerd Font', { weight =370, italic = true })
 config.font = wezterm.font_with_fallback({
-	{ family = "OperatorMonoSSmLig Nerd Font", weight = 380 },
+	{ family = "Operator Mono SSm Lig", weight = 380, scale = 1 },
+	-- { family = "Cascadia Code", weight = 550, scale = 1 },
+	{ family = "Symbols Nerd Font Mono", scale = 0.90, italic = false },
+	-- { family = "Symbols" },
+	-- { family = "Operator Mono", weight = 380, scale = 1, italic = true },
 })
 config.use_cap_height_to_scale_fallback_fonts = true
-config.line_height = 1.0
+config.line_height = 1.2
 
 config.enable_tab_bar = false
 config.tab_bar_at_bottom = true

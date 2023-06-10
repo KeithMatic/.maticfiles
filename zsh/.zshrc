@@ -10,7 +10,10 @@ autoload -Uz compinit
 compinit
 
 # Neofetch
-neofetch
+# neofetch
+
+# Macchina
+macchina
 
 # history
 HISTFILE=~/.zsh_history
@@ -34,9 +37,9 @@ export PATH='$HOME/.local/bin':$PATH
 # plugins
 
 # === prompts ===
-# plug "zap-zsh/zap-prompt"
+plug "zap-zsh/zap-prompt"
 # plug "wintermi/zsh-starship"
-plug "MAHcodes/distro-prompt"
+# plug "MAHcodes/distro-prompt"
 
 # plug "esc/conda-zsh-completion"
 plug "zsh-users/zsh-completions"
@@ -47,6 +50,7 @@ plug "wintermi/zsh-rust"
 plug "Aloxaf/fzf-tab"
 plug "zap-zsh/vim"
 plug "zap-zsh/fzf"
+plug "wintermi/zsh-brew"
 plug "zap-zsh/exa"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "wintermi/zsh-fnm"
