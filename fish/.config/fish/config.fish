@@ -237,3 +237,11 @@ set -gx PNPM_HOME "/Users/matic/Library/pnpm"
 set -gx PATH "$PNPM_HOME" $PATH
 # pnpm end
 
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+if test -f /Users/matic/miniconda3/bin/conda
+    eval /Users/matic/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+end
+# <<< conda initialize <<<
+

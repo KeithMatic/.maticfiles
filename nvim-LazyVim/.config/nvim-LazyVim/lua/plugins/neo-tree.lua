@@ -16,6 +16,11 @@ return {
       bind_to_cwd = false,
       follow_current_file = true,
       use_libuv_file_watcher = true,
+      filtered_items = {
+        visible = true,
+        hide_dotfiles = false,
+        ignore_patterns = {},
+      },
     },
     window = {
       width = 30,
