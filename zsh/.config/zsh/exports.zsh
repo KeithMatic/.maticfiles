@@ -1,6 +1,9 @@
 #!/bin/sh
 
 # HISTFILE="$XDG_DATA_HOME"/zsh/history
+PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
+export PATH
+
 HISTSIZE=1000000
 SAVEHIST=1000000
 export EDITOR="nvim"
@@ -21,7 +24,7 @@ export PATH=$PATH:/Users/matic/.spicetify
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 
 # export NVIM_APPNAME="nvim-AstroNvim"
-export NVIM_APPNAME="nvim-AstroNvim"
+export NVIM_APPNAME="AstroNvim"
 
 #export PATH="$PATH:./node_modules/.bin"
 eval "$(fnm env)"

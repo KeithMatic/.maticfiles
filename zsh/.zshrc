@@ -55,7 +55,7 @@ plug "zap-zsh/exa"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "wintermi/zsh-fnm"
 plug "olets/zsh-abbr" # abbr like fish
-plug "chivalryq/git-alias"
+# plug "chivalryq/git-alias"
 plug "djui/alias-tips" # alias tips
 
 # autojump path

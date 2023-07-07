@@ -59,31 +59,7 @@ brew install sfnt2woff
 brew install sfnt2woff-zopfli
 brew install woff2
 
-# Install some CTF tools; see https://github.com/ctfs/write-ups.
-# brew install aircrack-ng
-# brew install bfg
-# brew install binutils
-# brew install binwalk
-# brew install cifer
-# brew install dex2jar
-# brew install dns2tcp
-# brew install fcrackzip
-# brew install foremost
-# brew install hashpump
-# brew install hydra
-# brew install john
-# brew install knock
-# brew install netpbm
-# brew install nmap
-# brew install pngcheck
-# brew install socat
-# brew install sqlmap
-# brew install tcpflow
-# brew install tcpreplay
-# brew install tcptrace
-# brew install ucspi-tcp # `tcpserver` etc.
-# brew install xpdf
-# brew install xz
+
 
 # Install other useful binaries.
 brew install ack
@@ -170,11 +146,10 @@ brew install libuv
 brew install luv             
 brew install pygments        
 brew install xz
-brew install docutils        
-brew install helix           
+brew install docutils               
 brew install libvterm        
 brew install lz4             
-brew install python@3.11     
+# brew install python@3.11     
 brew install zoxide
 brew install exa             
 brew install icu4c           
@@ -195,9 +170,9 @@ brew install rustup-init
 brew install autojump    
 
 # Install casks
-brew install --cask alt-tab                                 
-brew install --cask font-victor-mono-nerd-font
-brew install --cask androidtool                             
+brew install --cask alt-tab
+brew install --cask miniconda                                 
+brew install --cask font-victor-mono-nerd-font                             
 brew install --cask maccy
 brew install --cask fig                                     
 brew install --cask mos
