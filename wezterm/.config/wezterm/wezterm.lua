@@ -9,6 +9,20 @@ local config = {}
 if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
+
+-- CTRL + SHIFT + ARROW = switch panes
+-- local keys = {}
+--
+-- for i = 1, 8 do
+-- 	-- CTRL+ALT + number to activate that tab
+-- 	table.insert(keys, {
+-- 		key = tostring(i),
+-- 		mods = "ALT",
+-- 		action = act({ ActivateTab = i - 1 }),
+-- 	})
+-- end
+--
+-- table.insert(keys, { key = "n", mods = "ALT", action = act({ SpawnTab = "CurrentPaneDown" }) })
 -- colors.metadata = wezterm.color.load_scheme("wezterm/assets/colors/tokyonight_moon.toml")
 -- config.color_scheme = "Catppuccin Macchiato"
 config.color_scheme = "tokyonight_moon"
