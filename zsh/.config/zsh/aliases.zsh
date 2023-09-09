@@ -23,6 +23,26 @@ alias sconf='source /Users/matic/.config/fish/conf.d/fnm.fish'
 alias m='tldr'
 alias mud='tldr -u'
 
+alias b='bun'
+alias br='bun run'
+alias bh='bun --hot'
+alias bb='bun build'
+alias bx='bunx'
+alias ba='bun add'
+alias bad='bun add -d'
+alias bag='bun add -g'
+alias bc='bun create'
+alias bi='bun install'
+alias bii='bun init'
+alias bu='bun update'
+alias bl='bun link'
+alias brm='bun remove'
+alias bul='bun unlink'
+alias bd='bun dev'
+alias bug='bun upgrade'
+alias bt='bun test'
+
+
 # switch between shells
 # I do not recommend switching default SHELL from bash.
 alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
