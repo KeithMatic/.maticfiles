@@ -19,6 +19,20 @@ alias sf='. ~/.config/fish/config.fish'
 alias xf='exec fish'
 alias sconf='source /Users/matic/.config/fish/conf.d/fnm.fish'
 
+# rust
+alias rs='rustc'
+alias cr='cargo'
+alias ru='rustup'
+
+# Python
+
+alias python='python3'
+# alias pip='pip3 -m'
+
+alias py='python3'
+alias pi='python3 -m pip3 install'
+alias pu='python3 -m pip3 uninstall'
+
 # abbr TLDR
 alias m='tldr'
 alias mud='tldr -u'
@@ -42,6 +56,15 @@ alias bd='bun dev'
 alias bug='bun upgrade'
 alias bt='bun test'
 
+# tmux
+alias t='tmux'
+alias ta='tmux a'
+alias tls='tmux ls'
+alias tlss='tmux list-sessions'
+alias tnew='tmux new -s'
+alias tk='tmux kill-session -t'
+alias tka='tmux kill-session -a'
+alias tlk='tmux list-keys'
 
 # switch between shells
 # I do not recommend switching default SHELL from bash.
@@ -58,7 +81,7 @@ alias md='mkdir -pv'
 alias h='history'
 
 # Set vim as default
-alias vi=nvim
+alias vi=vi
 alias svi='sudo vi'
 alias vis='vim "+set si"'
 alias edit='nvim'
@@ -102,12 +125,12 @@ alias .3='z ../../..'
 alias .4='z ../../../..'
 alias .5='z ../../../../..'
 
-# Changing "ls" to "exa"
-alias l='exa -al --color=always --group-directories-first' # my preferred listing
-alias la='exa -a --color=always --group-directories-first'  # all files and dirs
-alias ll='exa -l --color=always --group-directories-first'  # long format
-alias lt='exa -aT --color=always --group-directories-first' # tree listing
-alias l.='exa -a | egrep "^\."'
+# Changing "ls" to "eza"
+alias l='eza -al --color=always --group-directories-first' # my preferred listing
+alias la='eza -a --color=always --group-directories-first'  # all files and dirs
+alias ll='eza -l --color=always --group-directories-first'  # long format
+alias lt='eza -aT --color=always --group-directories-first' # tree listing
+alias l.='eza -a | egrep "^\."'
 
 ## Colorize the grep command output for ease of use (good for log files)##
 alias grep='grep --color=auto'

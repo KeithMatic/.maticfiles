@@ -27,7 +27,7 @@ brew install bash
 brew install zsh
 brew install fish
 brew install bash-completion2
-
+brew install tmux
 # Switch to using brew-installed bash as default shell
 
 # if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
@@ -93,6 +93,7 @@ brew install sqlite
 brew install bat             
 brew install fnm             
 brew install libice          
+
 brew install libxmu          
 brew install neovim          
 brew install stow
@@ -137,6 +138,7 @@ brew install pkg-config
 brew install xclip
 brew install coreutils       
 brew install go              
+brew install fd
 brew install libunistring    
 brew install luarocks        
 brew install pnpm            
@@ -151,7 +153,7 @@ brew install libvterm
 brew install lz4             
 # brew install python@3.11     
 brew install zoxide
-brew install exa             
+brew install eza     
 brew install icu4c           
 brew install libx11          
 brew install m4              

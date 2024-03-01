@@ -1,7 +1,8 @@
 return {
-  "b0o/SchemaStore.nvim",
+  { "b0o/SchemaStore.nvim", lazy = true },
   {
     "folke/neodev.nvim",
+    lazy = true,
     opts = {
       override = function(root_dir, library)
         for _, astronvim_config in ipairs(astronvim.supported_configs) do
@@ -71,6 +72,8 @@ return {
     opts = {
       attach_mode = "global",
       backends = { "lsp", "treesitter", "markdown", "man" },
+      disable_max_lines = vim.g.max_file.lines,
+      disable_max_size = vim.g.max_file.size,
       layout = { min_width = 28 },
       show_guides = true,
       filter_kind = false,

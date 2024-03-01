@@ -10,3 +10,8 @@ function spicetify_theme() {
   local theme_name="$1"
  spicetify config current_theme $theme_name 
 }
+
+function tswindow() {
+  local session="$1"
+  tmux new -s $1 -n $1
+}

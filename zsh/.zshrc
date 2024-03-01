@@ -41,7 +41,7 @@ plug "zap-zsh/zap-prompt"
 # plug "wintermi/zsh-starship"
 # plug "MAHcodes/distro-prompt"
 
-# plug "esc/conda-zsh-completion"
+plug "esc/conda-zsh-completion"
 plug "zsh-users/zsh-completions"
 plug "zsh-users/zsh-autosuggestions"
 plug "hlissner/zsh-autopair"
@@ -51,12 +51,23 @@ plug "Aloxaf/fzf-tab"
 plug "zap-zsh/vim"
 plug "zap-zsh/fzf"
 plug "wintermi/zsh-brew"
-plug "zap-zsh/exa"
+plug "zap-zsh/eza"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "wintermi/zsh-fnm"
 plug "olets/zsh-abbr" # abbr like fish
 # plug "chivalryq/git-alias"
 plug "djui/alias-tips" # alias tips
+plug "hlissner/zsh-autopair" # auto-closes, deletes and skips over matching delimiters in zsh intelligently
+plug "arrasch/zsh-command-not-found"
+plug "molovo/revolver" # A progress spinner for ZSH scripts
+plug "trapd00r/zsh-syntax-highlighting-filetypes"
+plug "dashixiong91/zsh-vscode"
+plug "zap-zsh/forgit"
+plug "zap-zsh/sudo"
+plug "zsh-users/zsh-history-substring-search"
+plug "zap-zsh/zap-completion"
+plug "zap-zsh/supercopy"
+plug "zap-zsh/fd"
 
 # autojump path
 # alias autojumpdb ='$HOME/Library/autojump/autojump.txt'
@@ -100,4 +111,8 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 

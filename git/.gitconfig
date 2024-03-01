@@ -6,3 +6,5 @@
 [user]
 	name = Keith Mngadi
 	email = 38478562+KeithMatic@users.noreply.github.com
+[init]
+	defaultBranch = main
