@@ -15,3 +15,25 @@ function tswindow() {
   local session="$1"
   tmux new -s $1 -n $1
 }
+
+function gi() { curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/$@ ;}
+
+function yz() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
+multisrc() {
+  local file
+  for file do
+    if [ -r "$file" ]; then
+      source "$file"
+    else
+      echo "Error: $file not found or not readable" >&2
+    fi
+  done
+}

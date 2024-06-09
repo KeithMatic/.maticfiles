@@ -58,6 +58,7 @@ alias bt='bun test'
 
 # tmux
 alias t='tmux'
+alias ts='tmux source ~/.config/tmux/tmux.conf' 
 alias ta='tmux a'
 alias tls='tmux ls'
 alias tlss='tmux list-sessions'
@@ -65,6 +66,7 @@ alias tnew='tmux new -s'
 alias tk='tmux kill-session -t'
 alias tka='tmux kill-session -a'
 alias tlk='tmux list-keys'
+alias tks='tmux kill-server & tmux'
 
 # switch between shells
 # I do not recommend switching default SHELL from bash.
@@ -81,7 +83,8 @@ alias md='mkdir -pv'
 alias h='history'
 
 # Set vim as default
-alias vi=vi
+# alias vi=vi
+alias vi='nvim'
 alias svi='sudo vi'
 alias vis='vim "+set si"'
 alias edit='nvim'

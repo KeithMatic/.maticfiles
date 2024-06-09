@@ -30,12 +30,18 @@ config.color_scheme = "tokyonight_moon"
 config.window_decorations = "RESIZE"
 config.window_close_confirmation = "NeverPrompt"
 config.window_background_opacity = 0.9
-config.macos_window_background_blur = 10
+config.macos_window_background_blur = 13
+config.window_background_image = "none"
+config.window_background_image_hsb = {
+	brightness = 0.0,
+	hue = 1.0,
+	saturation = 1.0,
+}
 
 config.window_padding = {
 	left = 1,
-	right = 0,
-	top = 3,
+	right = -5,
+	top = 2,
 	bottom = 0,
 }
 
@@ -43,14 +49,19 @@ config.text_background_opacity = 1
 
 -- wezterm.font('OperatorMonoSSmLig Nerd Font', { weight =370, italic = true })
 config.font = wezterm.font_with_fallback({
-	{ family = "Operator Mono SSm Lig", weight = 380, scale = 1 },
+	{
+		family = "Operator Mono SSm Lig",
+		-- family = "Cascadia Code PL",
+		weight = 380,
+		scale = 1,
+	},
 	-- { family = "Cascadia Code", weight = 550, scale = 1 },
 	{ family = "Symbols Nerd Font Mono", scale = 0.90, italic = false },
 	-- { family = "Symbols" },
 	-- { family = "Operator Mono", weight = 380, scale = 1, italic = true },
 })
 config.use_cap_height_to_scale_fallback_fonts = true
-config.line_height = 1.2
+config.line_height = 1.4
 
 config.enable_tab_bar = false
 config.tab_bar_at_bottom = true

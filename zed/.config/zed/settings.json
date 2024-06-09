@@ -1,0 +1,37 @@
+{
+  "base_keymap": "SublimeText",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "theme": "Catppuccin Macchiato",
+  "buffer_font_family": "Cascadia Mono PL",
+  "vim_mode": true,
+  "vim": {
+    // "leader_key": "space"
+    // "always": use system clipboard
+    // "never": don't use system clipboard
+    // "on_yank": use system clipboard for yank operations
+    "use_system_clipboard": "always",
+    // Lets `f` and `t` motions extend across multiple lines
+    "use_multiline_find": true
+  },
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 2000
+    }
+  },
+  "format_on_save": "on",
+  // disable cursor blinking
+  "cursor_blink": true,
+  // use relative line numbers
+  "relative_line_numbers": true,
+  // hide the scroll bar
+  "scrollbar": { "show": "never" },
+  // allow cursor to reach edges of screen
+  "vertical_scroll_margin": 0,
+  "gutter": {
+    // disable line numbers completely:
+    "line_numbers": true
+  }
+}
