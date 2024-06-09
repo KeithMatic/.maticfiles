@@ -36,13 +36,10 @@ return {
   { import = "astrocommunity.editing-support.yanky-nvim" },
 
   -- file-explorer
-    { import = "astrocommunity.file-explorer.telescope-file-browser-nvim" },
+  { import = "astrocommunity.file-explorer.telescope-file-browser-nvim" },
 
   -- fuzzy-explorer
-    { import = "astrocommunity.fuzzy-finder.telescope-zoxide" }, 
-
-    -- fuzzy-explorer
-    { import = "astrocommunity.utility.telescope-lazy-nvim" }, 
+  { import = "astrocommunity.fuzzy-finder.telescope-zoxide" },
 
   -- motion
   { import = "astrocommunity.motion.flash-nvim" },
@@ -51,17 +48,13 @@ return {
   -- indent
   -- { import = "astrocommunity.indent.indent-blankline-nvim" },
   -- { import = "astrocommunity.indent.mini-indentscope" },
-  -- telescope
   -- lsp
   { import = "astrocommunity.lsp.inc-rename-nvim" },
-    { import = "astrocommunity.lsp.lsp-signature-nvim" },
-  { import = "astrocommunity.lsp.lsp-inlayhints-nvim" },
   { import = "astrocommunity.lsp.lsp-signature-nvim" },
-  { import = "astrocommunity.lsp.lsp-links-nvim" },
+  { import = "astrocommunity.lsp.lsp-signature-nvim" },
   { import = "astrocommunity.lsp.nvim-lsp-file-operations" },
   -- recipes
   { import = "astrocommunity.recipes.vscode-icons" },
-  -- Color
   -- Workflow
   { import = "astrocommunity.workflow.hardtime-nvim" },
   -- terminal
