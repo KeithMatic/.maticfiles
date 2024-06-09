@@ -9,8 +9,8 @@ alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git
 
 # zsh
 alias sz='source ~/.zshrc'
-alias zconfig='nvim ~/.zshrc'
-alias ohmyzsh='nvim ~/.oh-my-zsh'
+alias zconfig='mv ~/.zshrc'
+alias ohmyzsh='mv ~/.oh-my-zsh'
 alias ezsh='exec zsh'
 
 # fish
@@ -84,10 +84,10 @@ alias h='history'
 
 # Set vim as default
 # alias vi=vi
-alias vi='nvim'
+alias vi='mv'
 alias svi='sudo vi'
 alias vis='vim "+set si"'
-alias edit='nvim'
+alias edit='mv'
 
 ## PNPM
 alias t3='pnpm create t3-app@latest'

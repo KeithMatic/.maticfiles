@@ -43,7 +43,7 @@ export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 export VI_MODE_ESC_INSERT="jk" && zinit light "zap-zsh/vim"
 
 # export NVIM_APPNAME="nvim-AstroNvim"
-export NVIM_APPNAME="AstroNvim"
+# export NVIM_APPNAME="AstroNvim"
 
 #export PATH="$PATH:./node_modules/.bin"
 eval "$(fnm env)"
@@ -55,7 +55,7 @@ eval "$(zoxide init --cmd cd zsh)"
 
 
 # default nvim
-export NVIM_APPNAME="nvim"
+export NVIM_APPNAME="mvim"
 
 export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.12/bin
 

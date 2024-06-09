@@ -4,6 +4,7 @@ alias nvim-lazy="NVIM_APPNAME=Lazy nvim"
 alias nvim-kickstart="NVIM_APPNAME=kickstart nvim"
 alias nvim-chad="NVIM_APPNAME=NvChad nvim"
 alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
+alias nvim-nvim="NVIM_APPNAME=mvim nvim"
 
 function as() {
   env NVIM_APPNAME=AstroNvim nvim
