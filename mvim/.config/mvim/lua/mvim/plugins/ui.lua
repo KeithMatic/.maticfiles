@@ -1,89 +1,101 @@
 local M = {
+	-- {
+	-- 	"akinsho/bufferline.nvim",
+	-- 	event = { "BufReadPre", "BufNewFile" },
+	-- 	keys = {
+	-- 		{ "[b", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev buffer" },
+	-- 		{ "]b", "<Cmd>BufferLineCycleNext<CR>", desc = "Next buffer" },
+	-- 		{ "<leader>bp", "<Cmd>BufferLinePick<CR>", desc = "Buffer pick" },
+	-- 		{ "<leader>bc", "<Cmd>BufferLinePickClose<CR>", desc = "Pick close" },
+	-- 		{ "<leader>b[", "<Cmd>BufferLineMovePrev<CR>", desc = "Move prev" },
+	-- 		{ "<leader>b]", "<Cmd>BufferLineMoveNext<CR>", desc = "Move next" },
+	-- 		{ "<leader>bD", "<Cmd>BufferLineCloseOthers<CR>", desc = "Close others" },
+	-- 		{ "<leader>bH", "<Cmd>BufferLineCloseLeft<CR>", desc = "Close to the left" },
+	-- 		{ "<leader>bL", "<Cmd>BufferLineCloseRight<CR>", desc = "Close to the right" },
+	-- 	},
+	-- 	opts = function()
+	-- 		local ctp = require("catppuccin.groups.integrations.bufferline")
+	-- 		local colors = require("catppuccin.palettes").get_palette()
+	-- 		local transparent = require("mvim.config").transparent
+
+	-- 		return {
+	-- 			options = {
+	-- 				indicator = { icon = "▍", style = "icon" },
+	-- 				buffer_close_icon = "󰖭",
+	-- 				modified_icon = "●",
+	-- 				left_trunc_marker = " ",
+	-- 				right_trunc_marker = " ",
+	-- 				right_mouse_command = false,
+	-- 				diagnostics = "nvim_lsp",
+	-- 				diagnostics_indicator = function(_, level)
+	-- 					local icons = require("mvim.config").icons.diagnostics
+	-- 					level = level:match("warn") and "warn" or level
+	-- 					return icons[level] or ""
+	-- 				end,
+	-- 				offsets = {
+	-- 					{
+	-- 						filetype = "neo-tree",
+	-- 						text = "Explorer",
+	-- 						separator = transparent,
+	-- 						text_align = "center",
+	-- 						highlight = "PanelHeading",
+	-- 					},
+	-- 					{
+	-- 						filetype = "undotree",
+	-- 						text = "Undotree",
+	-- 						separator = transparent,
+	-- 						text_align = "center",
+	-- 						highlight = "PanelHeading",
+	-- 					},
+	-- 					{
+	-- 						filetype = "dapui_scopes",
+	-- 						text = "Debugger",
+	-- 						separator = transparent,
+	-- 						text_align = "center",
+	-- 						highlight = "PanelHeading",
+	-- 					},
+	-- 				},
+	-- 				move_wraps_at_ends = true,
+	-- 				show_close_icon = false,
+	-- 				separator_style = transparent and "thin" or "slope",
+	-- 				show_buffer_close_icons = false,
+	-- 				sort_by = "insert_after_current",
+	-- 			},
+	-- 			highlights = ctp.get({
+	-- 				custom = {
+	-- 					all = {
+	-- 						buffer_selected = { fg = colors.lavender },
+
+	-- 						error = { fg = colors.surface1 },
+	-- 						error_diagnostic = { fg = colors.surface1 },
+
+	-- 						warning = { fg = colors.surface1 },
+	-- 						warning_diagnostic = { fg = colors.surface1 },
+
+	-- 						info = { fg = colors.surface1 },
+	-- 						info_diagnostic = { fg = colors.surface1 },
+
+	-- 						hint = { fg = colors.surface1 },
+	-- 						hint_diagnostic = { fg = colors.surface1 },
+	-- 					},
+	-- 				},
+	-- 			}),
+	-- 		}
+	-- 	end,
+	-- },
+	-- lspsaga.nvim
 	{
-		"akinsho/bufferline.nvim",
-		event = { "BufReadPre", "BufNewFile" },
-		keys = {
-			{ "[b", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev buffer" },
-			{ "]b", "<Cmd>BufferLineCycleNext<CR>", desc = "Next buffer" },
-			{ "<leader>bp", "<Cmd>BufferLinePick<CR>", desc = "Buffer pick" },
-			{ "<leader>bc", "<Cmd>BufferLinePickClose<CR>", desc = "Pick close" },
-			{ "<leader>b[", "<Cmd>BufferLineMovePrev<CR>", desc = "Move prev" },
-			{ "<leader>b]", "<Cmd>BufferLineMoveNext<CR>", desc = "Move next" },
-			{ "<leader>bD", "<Cmd>BufferLineCloseOthers<CR>", desc = "Close others" },
-			{ "<leader>bH", "<Cmd>BufferLineCloseLeft<CR>", desc = "Close to the left" },
-			{ "<leader>bL", "<Cmd>BufferLineCloseRight<CR>", desc = "Close to the right" },
-		},
-		opts = function()
-			local ctp = require("catppuccin.groups.integrations.bufferline")
-			local colors = require("catppuccin.palettes").get_palette()
-			local transparent = require("mvim.config").transparent
-
-			return {
-				options = {
-					indicator = { icon = "▍", style = "icon" },
-					buffer_close_icon = "󰖭",
-					modified_icon = "●",
-					left_trunc_marker = " ",
-					right_trunc_marker = " ",
-					right_mouse_command = false,
-					diagnostics = "nvim_lsp",
-					diagnostics_indicator = function(_, level)
-						local icons = require("mvim.config").icons.diagnostics
-						level = level:match("warn") and "warn" or level
-						return icons[level] or ""
-					end,
-					offsets = {
-						{
-							filetype = "neo-tree",
-							text = "Explorer",
-							separator = transparent,
-							text_align = "center",
-							highlight = "PanelHeading",
-						},
-						{
-							filetype = "undotree",
-							text = "Undotree",
-							separator = transparent,
-							text_align = "center",
-							highlight = "PanelHeading",
-						},
-						{
-							filetype = "dapui_scopes",
-							text = "Debugger",
-							separator = transparent,
-							text_align = "center",
-							highlight = "PanelHeading",
-						},
-					},
-					move_wraps_at_ends = true,
-					show_close_icon = false,
-					separator_style = transparent and "thin" or "slope",
-					show_buffer_close_icons = false,
-					sort_by = "insert_after_current",
-				},
-				highlights = ctp.get({
-					custom = {
-						all = {
-							buffer_selected = { fg = colors.lavender },
-
-							error = { fg = colors.surface1 },
-							error_diagnostic = { fg = colors.surface1 },
-
-							warning = { fg = colors.surface1 },
-							warning_diagnostic = { fg = colors.surface1 },
-
-							info = { fg = colors.surface1 },
-							info_diagnostic = { fg = colors.surface1 },
-
-							hint = { fg = colors.surface1 },
-							hint_diagnostic = { fg = colors.surface1 },
-						},
-					},
-				}),
-			}
+		"nvimdev/lspsaga.nvim",
+		event = "BufRead",
+		config = function()
+			require("lspsaga").setup({})
 		end,
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter", -- optional
+			"nvim-tree/nvim-web-devicons", -- optional
+		},
 	},
-
+	-- lualine.nvim
 	{
 		"nvim-lualine/lualine.nvim",
 		event = { "BufNewFile", "BufReadPost" },
@@ -122,7 +134,7 @@ local M = {
 			}
 		end,
 	},
-
+	-- statuscol.nvim
 	{
 		"luukvbaal/statuscol.nvim",
 		event = { "BufReadPre", "BufNewFile" },
@@ -151,7 +163,9 @@ local M = {
 	},
 	------ movement ------
 	----------------------
+	-- mini.bracketed
 	{
+		-- mini.bracketed
 		{
 			"echasnovski/mini.bracketed",
 			event = "BufEnter",
@@ -164,7 +178,7 @@ local M = {
 			opts = { integrations = { mini = true } },
 		},
 	},
-
+	-- eyeliner.nvim
 	{
 		"jinh0/eyeliner.nvim",
 		-- enabled = false,
@@ -174,6 +188,7 @@ local M = {
 			dim = true,
 		},
 	},
+	-- smoothcursor.nvim
 	{
 		"gen740/smoothcursor.nvim",
 		cond = vim.g.neovide == nil,
@@ -183,7 +198,7 @@ local M = {
 			fancy = { enable = true },
 		},
 	},
-
+	-- noice.nvim
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
@@ -234,6 +249,7 @@ local M = {
 					end,
 				},
 			},
+			"MunifTanjim/nui.nvim",
 		},
 		opts = {
 			cmdline = {
@@ -255,6 +271,16 @@ local M = {
 				},
 			},
 			routes = {
+				-- added
+				{
+					filter = {
+						event = "msg_show",
+						kind = "",
+						find = "written",
+					},
+					opts = { skip = true },
+				},
+				-- end added
 				{
 					filter = {
 						event = "msg_show",
@@ -291,7 +317,7 @@ local M = {
 				},
 			},
 			presets = {
-				bottom_search = true,
+				bottom_search = false,
 				long_message_to_split = true,
 				lsp_doc_border = require("mvim.config").transparent,
 			},
