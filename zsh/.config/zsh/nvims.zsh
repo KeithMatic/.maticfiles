@@ -7,6 +7,10 @@ alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
 alias nvim-nvim="NVIM_APPNAME=mvim nvim"
 
 function as() {
+  env NVIM_APPNAME=astrovim nvim
+}
+
+function asn() {
   env NVIM_APPNAME=AstroNvim nvim
 }
 
@@ -26,9 +30,8 @@ function mv() {
   env NVIM_APPNAME=mvim nvim
 }
 
-
 function nvims() {
-  items=("default" "AstroNvim" "Lazy" "kickstart" "mvim" "NvChad")
+  items=("default" "astrovim" "AstroNvim" "Lazy" "kickstart" "mvim" "NvChad")
   config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config " --height=~50% --layout=reverse --border --exit-0)
   if [[ -z $config ]]; then
     echo "Nothing selected"

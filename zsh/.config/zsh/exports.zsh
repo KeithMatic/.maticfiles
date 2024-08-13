@@ -19,7 +19,7 @@ setopt hist_find_no_dups
 setopt hist_verify
 
 export EDITOR="nvim"
-export TERMINAL="kitty"
+export TERMINAL="wezterm"
 export BROWSER="brave"
 export PATH="$HOME/.local/bin":$PATH
 export MANPAGER='nvim +Man!'
@@ -55,7 +55,7 @@ eval "$(zoxide init --cmd cd zsh)"
 
 
 # default nvim
-export NVIM_APPNAME="mvim"
+# export NVIM_APPNAME="mvim"
 
 export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.12/bin
 

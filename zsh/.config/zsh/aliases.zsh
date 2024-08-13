@@ -84,10 +84,10 @@ alias h='history'
 
 # Set vim as default
 # alias vi=vi
-alias vi='mv'
+alias vi='as' # use as (astrovim) instead of vi
 alias svi='sudo vi'
-alias vis='vim "+set si"'
-alias edit='mv'
+alias vis='vi "+set si"'
+alias edit='as' # use as (astrovim) instead of vi
 
 ## PNPM
 alias t3='pnpm create t3-app@latest'

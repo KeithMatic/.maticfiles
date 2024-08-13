@@ -29,8 +29,8 @@ config.color_scheme = "tokyonight_moon"
 
 config.window_decorations = "RESIZE"
 config.window_close_confirmation = "NeverPrompt"
-config.window_background_opacity = 0.9
-config.macos_window_background_blur = 13
+config.window_background_opacity = 0.5
+config.macos_window_background_blur = 10
 config.window_background_image = "none"
 config.window_background_image_hsb = {
 	brightness = 0.0,

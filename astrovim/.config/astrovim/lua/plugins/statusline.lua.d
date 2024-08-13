@@ -1,8 +1,38 @@
----@class mvim.util.lualine
 local M = {}
 
 local fn, api = vim.fn, vim.api
-local palette = require("mvim.config").palette
+
+local icons = require("util.icons")
+
+-- New color table and conditions
+local palette = {
+	bg = "None", -- Ensure this is a valid color or nil
+	fg = "#7FC7D9",
+	-- fg = "#45657b",
+	yellow = "#ecc58d",
+	cyan = "#21c7a8",
+	darkblue = "#081633",
+	green = "#aedb67",
+	orange = "#FF8800",
+	magenta = "#c792eb",
+	blue = "#82aaff",
+	red = "#ef5350",
+	violet = "#FFCDEA",
+  pink = "#FFCDEA",
+  lavender = "#C8ACD6",
+	-- violet = "#a9a1e1",
+	-- #FFCDEA
+}
+
+M.plugins = {
+	"nvim-lualine/lualine.nvim",
+	dependencies = {
+		"meuter/lualine-so-fancy.nvim",
+	},
+	enabled = true,
+	lazy = false,
+	event = { "BufReadPost", "BufNewFile", "VeryLazy" },
+}
 
 M.conditions = {
 	buffer_not_empty = function()
@@ -15,22 +45,24 @@ M.conditions = {
 		local clients = vim.lsp.get_clients({ bufnr = 0 })
 		return #clients > 0
 	end,
+	check_git_workspace = function()
+		local filepath = vim.fn.expand("%:p:h")
+		local gitdir = vim.fn.finddir(".git", filepath .. ";")
+		return gitdir and #gitdir > 0 and #gitdir < #filepath
+	end,
 }
 
 M.components = {
 	mode = {
-		"mode",
-
+		-- "mode",
+		"",
 		fmt = function(str)
-			-- return string.sub(str, 1, 1)
-			return ""
+			return string.sub(str, 1, 1)
 		end,
-    		icon = { "", color = { gui = "bold" } },
-		color = { gui = "bold" },
-		-- separator = {
-		--   right = "",
-		--   left = "",
-		-- },
+		separator = {
+			-- right = "",
+			-- left = "",
+		},
 	},
 
 	branch = {
@@ -65,7 +97,7 @@ M.components = {
 		"diagnostics",
 		sources = { "nvim_diagnostic" },
 		sections = { "error", "warn", "info", "hint" },
-		symbols = require("mvim.config").icons.diagnostics,
+		symbols = icons.diagnostics,
 		cond = M.conditions.hide_in_width,
 	},
 
@@ -179,7 +211,7 @@ M.components = {
 			local index = math.ceil(line_ratio * #chars)
 			return chars[index]
 		end,
-		color = { fg = palette.surface0 },
+		color = { fg = palette.yellow },
 	},
 
 	spaces = {
@@ -195,7 +227,7 @@ M.components = {
 		end,
 		padding = { left = 1, right = 1 },
 		cond = M.conditions.hide_in_width,
-		color = { fg = palette.sapphire },
+		color = { fg = palette.red },
 	},
 
 	clock = {

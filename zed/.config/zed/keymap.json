@@ -1,95 +1,65 @@
 [
+  // Insert mode key-bindings
   {
-    "context": "Dock",
+    "context": "Editor && vim_mode == insert && !menu",
     "bindings": {
-      "ctrl-w h": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-w l": ["workspace::ActivatePaneInDirection", "Right"],
-      "ctrl-w k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-w j": ["workspace::ActivatePaneInDirection", "Down"]
-      // ... or other keybindings
+      // put key-bindings here if you want them to work in insert mode
+      // e.g.
+      // "j j": "vim::NormalBefore", // remap jj in insert mode to escape.
+      "j k": ["vim::SwitchMode", "Normal"],
+      "j j": ["vim::SwitchMode", "Normal"],
+      "escape": "vim::NormalBefore",
+      "ctrl-c": "vim::NormalBefore",
+      "ctrl-[": "vim::NormalBefore",
+      "ctrl-x ctrl-o": "editor::ShowCompletions",
+      "ctrl-x ctrl-a": "assistant::InlineAssist", // zed specific
+      "ctrl-x ctrl-c": "editor::ShowInlineCompletion", // zed specific
+      "ctrl-x ctrl-l": "editor::ToggleCodeActions", // zed specific
+      "ctrl-x ctrl-z": "editor::Cancel",
+      "ctrl-w": "editor::DeleteToPreviousWordStart",
+      "ctrl-u": "editor::DeleteToBeginningOfLine",
+      "ctrl-t": "vim::Indent",
+      "ctrl-d": "vim::Outdent",
+      "ctrl-r \"": "editor::Paste",
+      "ctrl-r +": "editor::Paste",
+      "ctrl-h": "editor::MoveLeft",
+      "ctrl-l": "editor::MoveRight",
+      "ctrl-j": "editor::MoveDown",
+      "ctrl-k": "editor::MoveUp",
+      "ctrl-a": "editor::MoveToBeginningOfLine",
+      "ctrl-e": "editor::MoveToEndOfLine"
     }
   },
-  {
-    "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
-    "bindings": {
-      // put key-bindings here if you want them to work in normal & visual mode
-      "space k": "editor::Hover",
-      "space e": "workspace::ToggleLeftDock",
-      "space w": "workspace::Save",
-      "space f": "file_finder::Toggle",
-      "space o": "tab_switcher::Toggle",
-      "space p": "outline::Toggle",
-      "space v": "editor::GoToDefinitionSplit",
-      "space /": "editor::ToggleComments",
-      "space lr": "editor::Rename",
-      "space la": "editor::ToggleCodeActions",
-      "space lD": "diagnostics::ToggleWarnings",
-      "space fk": "zed::OpenKeymap"
-      // "shift j": "editor::MoveLineDown"
-      // "shift k": "editor::MoveLineUp"
-    }
-  },
-  {
-    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
-    "bindings": {
-      // put key-bindings here if you want them to work only in normal mode
-      "down": ["workspace::SendKeystrokes", "4 j"],
-      "up": ["workspace::SendKeystrokes", "4 k"],
-      "ctrl-j": "editor::MoveDown"
-    }
-  },
+  // Visual mode key-bindings
   {
     "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
     "bindings": {
       // visual, visual line & visual block modes
     }
   },
+  // Normal || Visual mode key-bindings
   {
-    "context": "Editor && vim_mode == insert && !menu",
+    // "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
+    "context": "Editor && vim_mode == normal && vim_operator == none && !VimWaiting",
     "bindings": {
-      // put key-bindings here if you want them to work in insert mode
-      // e.g.
-      "ctrl-a": "editor::MoveToBeginningOfLine",
-      "ctrl-e": "editor::MoveToEndOfLine",
-      "ctrl-h": "editor::MoveLeft",
-      "ctrl-l": "editor::MoveRight",
-      "ctrl-j": "editor::MoveDown",
-      "ctrl-k": "editor::MoveUp",
-      "j k": "vim::NormalBefore" // remap jk in insert mode to escape.
-    }
-  }
-  {
-    "context": "Editor && (showing_code_actions || showing_completions)",
-    "bindings": {
-      "ctrl-k": "editor::ContextMenuPrev",
-      "ctrl-j": "editor::ContextMenuNext"
+      // put key-bindings here if you want them to work in normal & visual mode
+      "space w": "workspace::Save",
+      "space W": "workspace::SaveAll",
+      "space q": "pane::CloseActiveItem",
+      "space Q": "zed::Quit",
+      "shift k": "editor::Hover"
+      // "space |": "pane::SplitRight"
     }
   },
+  // Normal mode key-bindings
   {
-    // netrw compatibility
-    "context": "ProjectPanel && not_editing",
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
     "bindings": {
-      ":": "command_palette::Toggle",
-      "a": "project_panel::NewFile",
-      "/": "project_panel::NewSearchInDirectory",
-      "A": "project_panel::NewDirectory",
-      "space O": "project_panel::ToggleFocus",
-      "h": "project_panel::CollapseSelectedEntry",
-      "j": "menu::SelectNext",
-      "k": "menu::SelectPrev",
-      "l": "project_panel::ExpandSelectedEntry",
-      "d": "project_panel::Delete",
-      "r": "project_panel::Rename",
-      "o": "workspace::Open",
-      "x": "project_panel::Cut",
-      "y": "project_panel::Copy",
-      "p": "project_panel::Paste"
+      // put key-bindings here if you want them to work only in normal mode
+      "J": ["workspace::SendKeystrokes", "4 j"],
+      "K": ["workspace::SendKeystrokes", "4 k"],
+      "space /": "editor::ToggleComments",
+      "space c": "editor::ToggleComments"
     }
-  },
-{
-  "context": "tab_switcher",
-  "bindings": {
-    "ctrl-j": "menu::SelectNext"
   }
-}
 ]

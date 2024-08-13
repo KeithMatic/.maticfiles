@@ -22,6 +22,7 @@ return {
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.pack.json" },
+  { import = "astrocommunity.pack.php" },
   { import = "astrocommunity.pack.cmake" },
   { import = "astrocommunity.pack.astro" },
   { import = "astrocommunity.pack.bash" },
@@ -50,7 +51,6 @@ return {
   -- { import = "astrocommunity.indent.mini-indentscope" },
   -- lsp
   { import = "astrocommunity.lsp.inc-rename-nvim" },
-  { import = "astrocommunity.lsp.lsp-signature-nvim" },
   { import = "astrocommunity.lsp.lsp-signature-nvim" },
   { import = "astrocommunity.lsp.nvim-lsp-file-operations" },
   -- recipes
