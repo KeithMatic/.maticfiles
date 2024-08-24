@@ -143,7 +143,7 @@
   "terminal.integrated.suggest.suggestOnTriggerCharacters": true,
   "terminal.integrated.suggest.quickSuggestions": true,
   "terminal.integrated.shellIntegration.decorationsEnabled": "both",
-  "terminal.integrated.suggest.runOnEnter": true,
+  "terminal.integrated.suggest.runOnEnter": "always",
   "terminal.integrated.fontWeight": "normal",
   "terminal.integrated.env.osx": {
     "CW_NEW_SESSION": "1",
@@ -169,7 +169,6 @@
   "editor.minimap.enabled": false,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
-  "editor.parameterHints.enabled": true,
   "editor.suggest.showStatusBar": true,
   "editor.suggest.preview": true,
   "editor.formatOnType": true,
@@ -184,7 +183,7 @@
   "editor.parameterHints.cycle": true,
   "editor.occurrencesHighlight": "off",
   "editor.renderLineHighlightOnlyWhenFocus": true,
-  "editor.semanticHighlighting.enabled": "configuredByTheme",
+  "editor.semanticHighlighting.enabled": true,
   "editor.hideCursorInOverviewRuler": false,
   "editor.overviewRulerBorder": false,
   "editor.scrollbar.horizontal": "hidden",
@@ -231,13 +230,28 @@
     [
       "(",
       ")"
-    ]
+    ],
+    [
+      "<",
+      ">"
+    ],
   ],
   "editor.experimental.asyncTokenization": true,
   "diffEditor.experimental.useVersion2": true,
   "editor.stickyScroll.maxLineCount": 5,
   "editor.stickyScroll.scrollWithEditor": false,
   "editor.stickyScroll.defaultModel": "foldingProviderModel",
+  "editor.autoClosingComments": "always",
+  "editor.autoClosingDelete": "always",
+  "editor.codeActions.triggerOnFocusChange": true,
+  "editor.experimentalInlineEdit.enabled": true,
+  "editor.inlayHints.padding": true,
+  "editor.lightbulb.enabled": "off",
+  "editor.smoothScrolling": true,
+  "editor.stablePeek": true,
+  "editor.unicodeHighlight.nonBasicASCII": true,
+  "editor.inlineSuggest.fontFamily": "Dank Mono",
+  "editor.formatOnSaveMode": "modifications",
   // ================================================================================== Advanced New File
   "newFile.expandBraces": true,
   "newFile.defaultBaseFileName": "keithmatic",
@@ -491,7 +505,13 @@
   "python.analysis.inlayHints.functionReturnTypes": true,
   "python.languageServer": "Pylance",
   "python.defaultInterpreterPath": "/opt/homebrew/bin/python3.12",
-  // ================================================================================== vim
+  /* -------------------------------------------------------------------------- */
+  /*                                VSCODE-VIM                               */
+  /* -------------------------------------------------------------------------- */
+  // To improve performance
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
   "vim.leader": "<space>",
   "vim.cursorStylePerMode.insert": "line",
   "vim.cursorStylePerMode.normal": "block",
@@ -506,12 +526,25 @@
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
   "vim.hlsearch": true,
+  "vim.handleKeys": {
+    "<C-d>": true,
+    "<C-a>": false,
+    "<C-f>": false
+  },
+  "vim.cursorStylePerMode.replace": "underline",
+  "vim.foldfix": true,
+  "vim.smartRelativeLine": true,
+  "vim.sneak": true,
+  "vim.targets.enable": true,
   // ============================================= Insert Mode 
   "vim.insertModeKeyBindings": [
     {
       "before": [
         "j",
         "k"
+      ],
+      "commands": [
+        "workbench.action.files.save",
       ],
       "after": [
         "<Esc>"
@@ -550,7 +583,175 @@
       ]
     },
   ],
-  // ============================================= Normal Mode
+  // // ============================================= Normal Mode
+  // "vim.normalModeKeyBindingsNonRecursive": [
+  //   {
+  //     "before": [
+  //       "<leader>",
+  //       "d"
+  //     ],
+  //     "after": [
+  //       "d",
+  //       "d"
+  //     ]
+  //   },
+  //   {
+  //     "before": [
+  //       "<C-n>"
+  //     ],
+  //     "commands": [
+  //       ":nohl"
+  //     ],
+  //   },
+  //   {
+  //     "before": [
+  //       "K"
+  //     ],
+  //     "commands": [
+  //       "lineBreakInsert"
+  //     ],
+  //     "silent": true
+  //   },
+  //   {
+  //     "before": [
+  //       ":"
+  //     ],
+  //     "commands": [
+  //       "workbench.action.showCommands"
+  //     ]
+  //   },
+  //   // panes
+  //   {
+  //     "before": [
+  //       "leader",
+  //       "h"
+  //     ],
+  //     "commands": [
+  //       "workbench.action.focusLeftGroup"
+  //     ]
+  //   },
+  //   {
+  //     "before": [
+  //       "leader",
+  //       "j"
+  //     ],
+  //     "commands": [
+  //       "workbench.action.focusBelowGroup"
+  //     ]
+  //   },
+  //   {
+  //     "before": [
+  //       "leader",
+  //       "k"
+  //     ],
+  //     "commands": [
+  //       "workbench.action.focusAboveGroup"
+  //     ]
+  //   },
+  //   {
+  //     "before": [
+  //       "leader",
+  //       "l"
+  //     ],
+  //     "commands": [
+  //       "workbench.action.focusRightGroup"
+  //     ]
+  //   },
+  //   {
+  //     "before": [
+  //       "<leader>",
+  //       ","
+  //     ],
+  //     "commands": [
+  //       "workbench.action.showAllEditors"
+  //     ]
+  //   },
+  // ],
+  "vim.normalModeKeyBindings": [
+    // splits
+    {
+      "before": [
+        "leader",
+        "|"
+      ],
+      "commands": [
+        ":vsplit"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "-"
+      ],
+      "commands": [
+        ":split"
+      ]
+    },
+    // panes
+    // {
+    //   "before": [
+    //     "leader",
+    //     "h"
+    //   ],
+    //   "commands": [
+    //     "workbench.action.focusLeftGroup"
+    //   ]
+    // },
+    // {
+    //   "before": [
+    //     "leader",
+    //     "j"
+    //   ],
+    //   "commands": [
+    //     "workbench.action.focusBelowGroup"
+    //   ]
+    // },
+    // {
+    //   "before": [
+    //     "leader",
+    //     "k"
+    //   ],
+    //   "commands": [
+    //     "workbench.action.focusAboveGroup"
+    //   ]
+    // },
+    // {
+    //   "before": [
+    //     "leader",
+    //     "l"
+    //   ],
+    //   "commands": [
+    //     "workbench.action.focusRightGroup"
+    //   ]
+    // },
+    {
+      "before": [
+        "<leader>",
+        ","
+      ],
+      "commands": [
+        "workbench.action.showAllEditors"
+      ]
+    },
+  ],
+  "vim.operatorPendingModeKeyBindings": [
+    {
+      "before": [
+        "L"
+      ],
+      "after": [
+        "$"
+      ]
+    },
+    {
+      "before": [
+        "H"
+      ],
+      "after": [
+        "^"
+      ]
+    }
+  ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": [
@@ -565,7 +766,7 @@
     {
       "before": [
         "<leader>",
-        ","
+        "<leader>"
       ],
       "commands": [
         "workbench.action.showAllEditors"
@@ -581,7 +782,7 @@
     },
     {
       "before": [
-        "<C-n>"
+        "<C-x>"
       ],
       "commands": [
         ":nohl"
@@ -605,18 +806,20 @@
         ":bprevious"
       ]
     },
+    // Close active editor
     {
       "before": [
-        "<S-l>"
+        "<leader>",
+        "c"
       ],
       "commands": [
-        ":bnext"
+        "workbench.action.closeActiveEditor"
       ]
     },
     // splits
     {
       "before": [
-        "leader",
+        // "leader",
         "|"
       ],
       "commands": [
@@ -625,8 +828,9 @@
     },
     {
       "before": [
-        "leader",
-        "-"
+        // "leader",
+        // "-"
+        "\\"
       ],
       "commands": [
         ":split"
@@ -635,8 +839,7 @@
     // panes
     {
       "before": [
-        "leader",
-        "h"
+        "<ctrl+h>"
       ],
       "commands": [
         "workbench.action.focusLeftGroup"
@@ -644,8 +847,7 @@
     },
     {
       "before": [
-        "leader",
-        "j"
+        "<ctrl+j>"
       ],
       "commands": [
         "workbench.action.focusBelowGroup"
@@ -653,8 +855,7 @@
     },
     {
       "before": [
-        "leader",
-        "k"
+        "<ctrl+k>"
       ],
       "commands": [
         "workbench.action.focusAboveGroup"
@@ -662,8 +863,7 @@
     },
     {
       "before": [
-        "leader",
-        "l"
+        "<ctrl+l>"
       ],
       "commands": [
         "workbench.action.focusRightGroup"
@@ -693,6 +893,16 @@
     {
       "before": [
         "leader",
+        "t",
+        "h"
+      ],
+      "commands": [
+        "workbench.action.selectTheme"
+      ]
+    },
+    {
+      "before": [
+        "leader",
         "w"
       ],
       "commands": [
@@ -715,6 +925,24 @@
       ],
       "commands": [
         "workbench.action.quickOpen"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "f",
+        "f"
+      ],
+      "commands": [
+        "workbench.action.findInFiles"
+      ]
+    },
+    {
+      "before": [
+        "/",
+      ],
+      "commands": [
+        "actions.find"
       ]
     },
     {
@@ -820,6 +1048,37 @@
         "editor.action.quickFix"
       ]
     },
+    // editor folds
+    {
+      "before": [
+        "<leader>",
+        "z",
+        "c"
+      ],
+      "commands": [
+        "editor.fold"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "z",
+        "o"
+      ],
+      "commands": [
+        "editor.unfold"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "z",
+        "a"
+      ],
+      "commands": [
+        "editor.unfoldAll"
+      ]
+    },
     // Move to beginning/end of line
     {
       "after": [
@@ -865,23 +1124,61 @@
         "k"
       ]
     },
-    // Cleaning highlighted text
-    {
-      "before": [
-        "<Leader>",
-        "ch"
-      ],
-      "commands": [
-        ":noh"
-      ]
-    },
-    //
     // TERMINAL SHORTCUTS
     //
+    {
+      "before": [
+        "leader",
+        "t"
+      ],
+      "commands": [
+        "workbench.action.terminal.toggleTerminal"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "t",
+        "c"
+      ],
+      "commands": [
+        "workbench.action.terminal.killActiveTab"
+      ]
+    },
     {
       // Focus the terminal when the terminal is not focused
       "key": "ctrl+;",
       "command": "workbench.action.terminal.focus"
+    },
+    /* ------------------------------- Code runner ------------------------------ */
+    {
+      "before": [
+        "<leader>",
+        "r"
+      ],
+      "commands": [
+        "code-runner.run"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "r",
+        "r"
+      ],
+      "commands": [
+        "code-runner.run"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "r",
+        "s"
+      ],
+      "commands": [
+        "code-runner.stop"
+      ]
     },
   ],
   // ============================================= Visual Mode
@@ -929,26 +1226,33 @@
       "commands": [
         "editor.action.commentLine",
       ]
+    },
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "p",
+      ],
+      "after": [
+        "p",
+        "g",
+        "v",
+        "y"
+      ]
     }
   ],
-  "vim.handleKeys": {
-    "<C-a>": false,
-    "<C-f>": false
-  },
-  "vim.cursorStylePerMode.replace": "underline",
-  "vim.foldfix": true,
-  "vim.normalModeKeyBindings": [],
-  "vim.smartRelativeLine": true,
-  "vim.sneak": true,
-  "vim.targets.enable": true,
   // ================================================================================== JsonColorToken
   "jsonColorToken.colorTokenCasing": "Lowercase",
   "jsonColorToken.maxNumberOfColorTokens": 20000,
+  /* -------------------------------------------------------------------------- */
+  /*                              APC CUSTOMIZATION                             */
+  /* -------------------------------------------------------------------------- */
   "apc.electron": {
+    "window.titleBarStyle": "hidden",
     "titleBarStyle": "customButtonsOnHover",
     "trafficLightPosition": {
       "x": 7,
-      "y": 5
+      "y": 3
     },
     "frame": false,
     "opacity": 0.95,
@@ -977,21 +1281,32 @@
   },
   "apc.font.family": "'Dank Mono','OperatorMonoSSmLig Nerd Font','Comic Code Ligatures'",
   "apc.stylesheet": {
-    // "*": "font-family: 'Dank Mono'",
-    ".sidebar > .composite": "height: 12px !important",
-    ".title-label": "display: none !important",
-    ".title-actions": "display: none !important",
-    ".tabs-and-actions-container > .editor-actions": "display: none !important",
-    ".titlebar-center": "display: none !important",
-    ".titlebar-right": "display: none !important",
-    ".titlebar": "display: none !important",
-    ".inline-tabs-placeholder": "display: none !important",
-    // ".split-view-view .visible": "background-color: #110f17 !important",
-    // ".title-label .title": "display: none !important",
-    // Remove sidebar border line
-    ".decorationsOverviewRuler": "display: none !important",
-    // ".invisible.scrollbar.horizontal": "display: none !important",
-    // ".monaco-list": "font-family: 'Dank Mono', 'OperatorMonoSSmLig Nerd Font', 'Comic Code Ligatures' !important",
+    //   // "*": "font-family: 'Dank Mono'",
+    //   // ".sidebar > .composite": "height: 12px !important",
+    //   // ".title-label": "display: none !important",
+    //   // ".title-actions": "display: none !important",
+    //   // ".tabs-and-actions-container > .editor-actions": "display: none !important",
+    //   // ".titlebar-center": "display: none !important",
+    //   // ".titlebar-right": "display: none !important",
+    //   // ".titlebar": "display: none !important",
+    //   ".filematch .monaco-count-badge": "padding: 5px 6px 0 6px !important",
+    //   ".quick-input-list-row div": "display: flex !important; align-items: center !important",
+    //   // ".composite.title": "dislay: none !important",
+    //   // ".panel .composite.title": "visibility: hidden !important",
+    //   // ".title.show-file-icons .label-container .monaco-icon-label.file-icon": "padding-bottom: 6px !important",
+    //   // ".sidebar .title-label h2": "line-height: 2.8 !important",
+    //   ".monaco-editor .scroll-decoration": "display: none !important",
+    //   ".monaco-scrollable-element > .shadow.top": "display: none !important",
+    //   // ".inline-tabs-placeholder": "display: none !important",
+    //   // ".split-view-view .visible": "background-color: #110f17 !important",
+    //   // ".title-label .title": "display: none !important",
+    //   // Remove sidebar border line
+    //   ".decorationsOverviewRuler": "display: none !important",
+    //   // ".invisible.scrollbar.horizontal": "display: none !important",
+    //   // ".monaco-list": "font-family: 'Dank Mono', 'OperatorMonoSSmLig Nerd Font', 'Comic Code Ligatures' !important",
+    /* -------------------------------------------------------------------------- */
+    /*                                    Body                                    */
+    /* -------------------------------------------------------------------------- */
     "body": {
       // other panels should be transparent see "workbench.colorCustomizations"
       "background-image": "url(/Users/matic/img/11.jpg), linear-gradient(to top,rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4))",
@@ -1000,56 +1315,73 @@
       "background-repeat": "no-repeat",
       "font-family": "'Dank Mono', 'OperatorMonoSSmLig Nerd Font', 'Comic Code Ligatures' !important",
     },
-    ".sidebar": "border: none !important; font-family: 'Dank Mono', 'OperatorMonoSSmLig Nerd Font', 'Comic Code Ligatures' !important",
-    ".monaco-sash .mac .vertical": "diplay: none",
+    /* -------------------------------------------------------------------------- */
+    /*                                   Cursor                                   */
+    /* -------------------------------------------------------------------------- */
     ".monaco-editor .cursor": "background: #ffffffaa !important; box-shadow: 0 0 70px 5px #ffffff, #ffffff 0px 0px 34px 1px; color: #161616 !important",
-    // Command Palette Position
-    ".quick-input-widget": {
-      "transform": "translateY(-50%) !important",
-      "top": "50% !important",
-      "box-shadow": "0px 8px 20px rgba(0, 0, 0, 0.45) !important",
-      "padding": "10px 10px 18px 10px !important",
-      // "background-image": "linear-gradient(#3c3c50 0%, #2a2b38 100%) !important",
-      "backdrop-filter": "blur(0.1px) !important",
-      "border-radius": "20px !important",
-    },
-    // Scroll Bar */
-    ".slider": {
-      "position": "absolute !important",
-      "right": "1px !important",
-      "width": "1px !important",
-      "background": "#bc9abc !important",
-      "left": "auto !important",
-    },
-    // Tooltip box style */
-    ".monaco-editor-hover,.monaco-hover": {
-      "box-shadow": "0px 8px 32px rgba(0,0,0,.45) !important",
-      "padding": "10px !important",
-      "background-image": "linear-gradient(rgba(194, 33, 33, 0.2) 0%, rgba(12, 64, 142, 0.1) 100%) !important",
-      "backdrop-filter": "blur(1px) !important",
-      "border-radius": "20px !important",
-      "border": "none !important",
-      "color": "#ffffffaa  !important",
-      "text": "bold !important",
-      "line-height": "1.5 !important",
-    },
-    // Remove background for lists */
-    ".monaco-list-rows": {
-      "background": "transparent !important",
-    },
-    // List hover */
-    ".monaco-list-row:hover": {
-      "background": "rgba(0, 0, 0, .2) !important",
-    },
-    ".notifications-toasts .monaco-list-row:hover": {
-      "background": "none !important"
-    },
+    //   ".sidebar": "border: none !important; font-family: 'Dank Mono', 'OperatorMonoSSmLig Nerd Font', 'Comic Code Ligatures' !important",
+    //   ".monaco-sash .mac .vertical": "diplay: none",
+    //   // Command Palette Position
+    //   ".quick-input-widget": {
+    //     "transform": "translateY(-50%) !important",
+    //     "top": "50% !important",
+    //     "box-shadow": "0px 8px 20px rgba(0, 0, 0, 0.45) !important",
+    //     "padding": "10px 10px 18px 10px !important",
+    //     // "background-image": "linear-gradient(#3c3c50 0%, #2a2b38 100%) !important",
+    //     "backdrop-filter": "blur(0.1px) !important",
+    //     "border-radius": "20px !important",
+    //   },
+    //   // Scroll Bar */
+    //   ".slider": {
+    //     "position": "absolute !important",
+    //     "right": "1px !important",
+    //     "width": "1px !important",
+    //     "background": "#bc9abc !important",
+    //     "left": "auto !important",
+    //   },
+    //   // Tooltip box style */
+    //   ".monaco-editor-hover,.monaco-hover": {
+    //     "box-shadow": "0px 8px 32px rgba(0,0,0,.45) !important",
+    //     "padding": "10px !important",
+    //     "background-image": "linear-gradient(rgba(194, 33, 33, 0.2) 0%, rgba(0, 0, 0, 0.1) 100%) !important",
+    //     "backdrop-filter": "blur(0.1px) !important",
+    //     "border-radius": "20px !important",
+    //     "border": "none !important",
+    //     "color": "#ffffffaa  !important",
+    //     "text": "bold !important",
+    //     "line-height": "1.5 !important",
+    //   },
+    //   // Remove background for lists */
+    //   ".monaco-list-rows": {
+    //     "background": "transparent !important",
+    //   },
+    //   // List hover */
+    //   ".monaco-list-row:hover": {
+    //     "background": "rgba(0, 0, 0, .2) !important",
+    //   },
+    //   ".notifications-toasts .monaco-list-row:hover": {
+    //     "background": "none !important"
+    //   },
+    //   // /* Project title's style at the top. */
+    //   ".monaco-workbench .part.titlebar>.titlebar-container>.titlebar-center>window-title>.command-center .action-item.command-center-center": {
+    //     "border": "none !important",
+    //     "background": "transparent !important",
+    //   },
+    //   /* Project Title */
+    //   ".titlebar-left": {
+    //     "justify-content": "flex-start !important",
+    //     "flex-grow": "0 !important",
+    //     "width": "auto !important",
+    //   },
+    //   ".monaco-workbench .part.editor>.content .editor-group-container>.title .breadcrumbs-below-tabs .breadcrumbs-control .monaco-icon-label": "font-size: 15px; color:  #ff7e79; ",;
+    //   ".monaco-workbench .part.editor>.content .editor-group-container>.title .breadcrumbs-below-tabs .breadcrumbs-control .monaco-icon-label .monaco-highlighted-label": "font-size: 10px"
   },
   // ================================================================================== VSCode Animations
   "animations.Enabled": true,
   "animations.Install-Method": "Apc Customize UI++",
   "apc.imports": [
-    "file:///Users/matic/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.1/dist/updateHandler.js"
+    "file:///Users/matic/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.1/dist/updateHandler.js",
+    "file:///Users/matic/.maticfiles/customvscode.css"
   ],
   "animations.Auto-Install": true,
   "animations.Smooth-Mode": true,
@@ -1120,7 +1452,7 @@
   "javascript.suggest.autoImports": true,
   "typescript.suggest.autoImports": true,
   // ================================================================================== SmarterSemicolon
-  "smartersemicolon.enable": false,
+  "smartersemicolon.enable": true,
   "smartersemicolon.acceptSuggestions": true,
   "smartersemicolon.autoLineChange": true,
   "smartersemicolon.deleteEmptyLine": true,
@@ -1192,9 +1524,7 @@
   },
   "window.titleBarStyle": "native",
   "window.systemColorTheme": "dark",
-  "window.customTitleBarVisibility": "never",
-  "update.mode": "manual",
-  "window.density.editorTabHeight": "compact",
+  "update.mode": "default",
   "Lua.codeLens.enable": true,
   "Lua.completion.callSnippet": "Both",
   "Lua.hint.enable": true,
@@ -1219,7 +1549,7 @@
   "php.format.rules.indentBraces": false,
   "intelephense.phpdoc.useFullyQualifiedNames": true,
   "explorer.fileNesting.patterns": {
-    "//": "Last update at 13/08/2024, 04:40:48",
+    "//": "Last update at 16/08/2024, 06:03:25",
     ".clang-tidy": ".clang-format, .clangd, compile_commands.json",
     ".env": "*.env, .env.*, .envrc, env.d.ts",
     ".gitignore": ".gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*",
@@ -1339,23 +1669,20 @@
   "php.validate.executablePath": "",
   "go.inlayHints.compositeLiteralTypes": true,
   "go.inlayHints.constantValues": true,
-  "python.analysis.inlayHints.callArgumentNames": "partial",
-  "python.analysis.inlayHints.pytestParameters": true,
-  "python.analysis.inlayHints.variableTypes": true,
   "rust-analyzer.inlayHints.closureCaptureHints.enable": true,
   "rust-analyzer.inlayHints.closureReturnTypeHints.enable": "always",
   "rust-analyzer.inlayHints.expressionAdjustmentHints.hideOutsideUnsafe": true,
   "rust-analyzer.inlayHints.rangeExclusiveHints.enable": true,
   "rust-analyzer.inlayHints.typeHints.hideClosureInitialization": true,
   "rust-analyzer.inlayHints.typeHints.hideNamedConstructor": true,
-  "javascript.inlayHints.enumMemberValues.enabled": true,
-  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
-  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
-  "javascript.inlayHints.variableTypes.enabled": true,
-  "typescript.inlayHints.enumMemberValues.enabled": true,
-  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
   "rust-analyzer.inlayHints.implicitDrops.enable": true,
   "rust-analyzer.inlayHints.lifetimeElisionHints.useParameterNames": true,
   "zenMode.showTabs": "none",
   "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "window.customTitleBarVisibility": "never",
+  "scm.diffDecorations": "none",
+  "git.decorations.enabled": false,
+  "breadcrumbs.filePath": "last",
+  "workbench.statusBar.visible": false,
 }
