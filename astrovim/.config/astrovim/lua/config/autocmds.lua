@@ -1,4 +1,4 @@
-local augroup = require("util").augroup
+local augroup = require("nvim.mainm.config.nvim.lua.user.util.init").augroup
 
 -- Works better on non-transparent backgrounds
 local cursorline_exclude = { "dashboard", "neo-tree-popup" }

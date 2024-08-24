@@ -16,7 +16,7 @@ return {
 		dependencies = { "MunifTanjim/nui.nvim" },
 		opts = {},
 		config = function()
-			require("dressing").setup()
+			require("nvim.mainm.config.nvim.lua.user.dressing").setup()
 		end,
 	},
 	{
@@ -34,7 +34,7 @@ return {
 	{
 		"karb94/neoscroll.nvim",
 		config = function()
-			require("neoscroll").setup({
+			require("nvim.mainm.config.nvim.lua.user.neoscroll").setup({
 				stop_eof = true,
 				easing_function = "sine",
 				hide_cursor = true,
@@ -99,7 +99,7 @@ return {
 	{
 		"LunarVim/breadcrumbs.nvim",
 		config = function()
-			require("breadcrumbs").setup()
+			require("nvim.mainm.config.nvim.lua.user.breadcrumbs").setup()
 		end,
 	},
 	{

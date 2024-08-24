@@ -8,7 +8,7 @@ local M = {
     "hrsh7th/cmp-nvim-lsp",
   },
   config = function()
-    local cmp = require("cmp")
+    local cmp = require("nvim.mainm.config.nvim.lua.user.cmp")
     local select = cmp.SelectBehavior.Select
     local border = require("mvim.config").get_border()
 

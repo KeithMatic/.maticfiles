@@ -5,7 +5,7 @@ local tmap = require("matic.keymap_utils").tnoremap
 local xmap = require("matic.keymap_utils").xnoremap
 local harpoon_ui = require("harpoon.ui")
 local harpoon_mark = require("harpoon.mark")
-local illuminate = require("illuminate")
+local illuminate = require("nvim.mainm.config.nvim.lua.user.illuminate")
 local utils = require("matic.utils")
 
 local M = {}
@@ -362,8 +362,8 @@ nmap("<leader>oc", function()
 end, { desc = "[O]pen [C]opilot panel" })
 
 -- nvim-ufo keybinds
-nmap("zR", require("ufo").openAllFolds)
-nmap("zM", require("ufo").closeAllFolds)
+nmap("zR", require("nvim.mainm.config.nvim.lua.user.ufo").openAllFolds)
+nmap("zM", require("nvim.mainm.config.nvim.lua.user.ufo").closeAllFolds)
 
 -- Insert --
 -- Map jj to <esc>

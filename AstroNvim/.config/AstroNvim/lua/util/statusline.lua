@@ -1,5 +1,5 @@
 local astrolsp = require "astrolsp"
-local icons = require "util.icons"
+local icons = require "nvim.mainm.config.nvim.lua.user.util.icons"
 
 local M = {}
 
@@ -21,7 +21,7 @@ end
 
 function M.mode()
   local cur_mode = vim.fn.mode()
-  local mode_text = require("util.modes")[cur_mode][1]
+  local mode_text = require("nvim.mainm.config.nvim.lua.user.util.modes")[cur_mode][1]
   local mode = cur_mode:lower()
 
   local icon = icons.error
@@ -84,7 +84,7 @@ function M.lsp_status()
         message = lsp.title
       end
 
-      local load = require "util.spinner"
+      local load = require "nvim.mainm.config.nvim.lua.user.util.spinner"
       local spinner = load:new(load.style.smiley)
       local laps = load:new(load.style.hexagon)
 

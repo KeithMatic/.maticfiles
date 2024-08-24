@@ -29,7 +29,7 @@ local M = {
           },
         },
         config = function(_, opts)
-          require("mason").setup(opts)
+          require("nvim.mainm.config.nvim.lua.user.mason").setup(opts)
           local mr = require("mason-registry")
           mr:on("package:install:success", function()
             vim.defer_fn(function()
@@ -153,7 +153,7 @@ local M = {
             return
           end
         end
-        require("lspconfig")[server].setup(config)
+        require("nvim.mainm.config.nvim.lua.user.lspconfig")[server].setup(config)
       end
 
       local mlsp = require("mason-lspconfig")

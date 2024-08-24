@@ -17,7 +17,7 @@ return {
 		},
 		config = function()
 			local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-			local cmp = require("cmp")
+			local cmp = require("nvim.mainm.config.nvim.lua.user.cmp")
 			local luasnip = require("luasnip")
 			local lspkind = require("lspkind")
 

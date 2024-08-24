@@ -12,7 +12,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local lazy = require("lazy")
+local lazy = require("nvim.mainm.config.nvim.lua.user.lazy")
 
 lazy.setup({
 	{ import = "plugins" },

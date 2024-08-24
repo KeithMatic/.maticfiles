@@ -45,7 +45,7 @@ return {
               if not results[pos_id] then
                 return
               end
-              require("neotest").output.open({ position_id = pos_id, adapter = adapter_id })
+              require("nvim.mainm.config.nvim.lua.user.neotest").output.open({ position_id = pos_id, adapter = adapter_id })
             end
             return client
           end,

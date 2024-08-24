@@ -12,10 +12,10 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("config.keymaps")
-require("config.options")
+require("nvim.mainm.config.nvim.lua.user.config.keymaps")
+require("nvim.mainm.config.nvim.lua.user.config.options")
 
-require("lazy").setup("plugins", {
+require("nvim.mainm.config.nvim.lua.user.lazy").setup("plugins", {
 	install = {
 		missing = true,
 		colorscheme = { "catppuccin" },

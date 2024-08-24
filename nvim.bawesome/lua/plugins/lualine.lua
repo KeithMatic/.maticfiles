@@ -195,6 +195,6 @@ return {
 		--   padding = { left = 1 },
 		-- }
 		-- Initialize lualine with the configuration
-		require("lualine").setup(config)
+		require("nvim.mainm.config.nvim.lua.user.lualine").setup(config)
 	end,
 }

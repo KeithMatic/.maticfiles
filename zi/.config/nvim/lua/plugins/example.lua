@@ -44,7 +44,7 @@ return {
     dependencies = { "hrsh7th/cmp-emoji" },
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
-      local cmp = require("cmp")
+      local cmp = require("nvim.mainm.config.nvim.lua.user.cmp")
       opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "emoji" } }))
     end,
   },
@@ -79,7 +79,7 @@ return {
       "nvim-telescope/telescope-fzf-native.nvim",
       build = "make",
       config = function()
-        require("telescope").load_extension("fzf")
+        require("nvim.mainm.config.nvim.lua.user.telescope").load_extension("fzf")
       end,
     },
   },
@@ -236,7 +236,7 @@ return {
       end
 
       local luasnip = require("luasnip")
-      local cmp = require("cmp")
+      local cmp = require("nvim.mainm.config.nvim.lua.user.cmp")
 
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
         ["<Tab>"] = cmp.mapping(function(fallback)

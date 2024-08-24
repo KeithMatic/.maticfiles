@@ -4,7 +4,7 @@ return {
     "hrsh7th/nvim-cmp",
     dependencies = { "zbirenbaum/copilot.lua" },
     opts = function(_, opts)
-      local cmp, copilot = require "cmp", require "copilot.suggestion"
+      local cmp, copilot = require "nvim.mainm.config.nvim.lua.user.cmp", require "copilot.suggestion"
       local snip_status_ok, luasnip = pcall(require, "luasnip")
       if not snip_status_ok then return end
       local function has_words_before()

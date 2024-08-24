@@ -12,7 +12,7 @@ return {
     -- Optional dependencies
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-      require("oil").setup({
+      require("nvim.mainm.config.nvim.lua.user.oil").setup({
         keymaps = {
           ["g?"] = "actions.show_help",
           ["l"] = "actions.select",

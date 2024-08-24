@@ -27,7 +27,7 @@ local M = {
 			build = "make",
 			config = function()
 				require("mvim.util").on_load("telescope.nvim", function()
-					require("telescope").load_extension("fzf")
+					require("nvim.mainm.config.nvim.lua.user.telescope").load_extension("fzf")
 				end)
 			end,
 		},
@@ -36,7 +36,7 @@ local M = {
 			"tsakirist/telescope-lazy.nvim",
 			config = function()
 				require("mvim.util").on_load("telescope.nvim", function()
-					require("telescope").load_extension("lazy")
+					require("nvim.mainm.config.nvim.lua.user.telescope").load_extension("lazy")
 				end)
 			end,
 		},
@@ -44,7 +44,7 @@ local M = {
 			"polirritmico/telescope-lazy-plugins.nvim",
 			config = function()
 				require("mvim.util").on_load("telescope.nvim", function()
-					require("telescope").load_extension("lazy_plugins")
+					require("nvim.mainm.config.nvim.lua.user.telescope").load_extension("lazy_plugins")
 				end)
 			end,
 		},
@@ -55,7 +55,7 @@ local M = {
 			"ThePrimeagen/harpoon",
 			config = function()
 				require("mvim.util").on_load("telescope.nvim", function()
-					require("telescope").load_extension("harpoon")
+					require("nvim.mainm.config.nvim.lua.user.telescope").load_extension("harpoon")
 				end)
 			end,
 		},
@@ -185,8 +185,8 @@ local M = {
 				lazy,
 				lazy_plugins,
 			},
-			require("telescope").load_extension("noice"),
-      require("telescope").load_extension("ui-select")
+			require("nvim.mainm.config.nvim.lua.user.telescope").load_extension("noice"),
+      require("nvim.mainm.config.nvim.lua.user.telescope").load_extension("ui-select")
 
 		}
 	end,

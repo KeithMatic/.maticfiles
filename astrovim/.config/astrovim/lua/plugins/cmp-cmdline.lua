@@ -3,7 +3,7 @@ return {
 	keys = { ":", "/", "?" }, -- lazy load cmp on more keys along with insert mode
 	dependencies = { "hrsh7th/nvim-cmp" },
 	opts = function()
-		local cmp = require("cmp")
+		local cmp = require("nvim.mainm.config.nvim.lua.user.cmp")
 		return {
 			{
 				type = "/",
@@ -29,7 +29,7 @@ return {
 		}
 	end,
 	config = function(_, opts)
-		local cmp = require("cmp")
+		local cmp = require("nvim.mainm.config.nvim.lua.user.cmp")
 		vim.tbl_map(function(val)
 			cmp.setup.cmdline(val.type, val)
 		end, opts)

@@ -18,7 +18,7 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 setopt hist_verify
 
-export EDITOR="nvim"
+export EDITOR="as"
 export TERMINAL="wezterm"
 export BROWSER="brave"
 export PATH="$HOME/.local/bin":$PATH
@@ -43,7 +43,7 @@ export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 export VI_MODE_ESC_INSERT="jk" && zinit light "zap-zsh/vim"
 
 # export NVIM_APPNAME="nvim-AstroNvim"
-# export NVIM_APPNAME="AstroNvim"
+# export NVIM_APPNAME="astronvim"
 
 #export PATH="$PATH:./node_modules/.bin"
 eval "$(fnm env)"

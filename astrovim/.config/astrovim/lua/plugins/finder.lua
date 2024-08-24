@@ -1,4 +1,4 @@
-local finder = require("util").finder
+local finder = require("nvim.mainm.config.nvim.lua.user.util.init").finder
 -- local noice = require("telescope.extensions.noice")
 -- local harpoon = require("telescope").load_extension("harpoon")
 
@@ -26,8 +26,8 @@ local M = {
 			"nvim-telescope/telescope-fzf-native.nvim",
 			build = "make",
 			config = function()
-				require("util").on_load("telescope.nvim", function()
-					require("telescope").load_extension("fzf")
+				require("nvim.mainm.config.nvim.lua.user.util.init").on_load("telescope.nvim", function()
+					require("nvim.mainm.config.nvim.lua.user.telescope").load_extension("fzf")
 				end)
 			end,
 		},
@@ -35,16 +35,16 @@ local M = {
 		{
 			"tsakirist/telescope-lazy.nvim",
 			config = function()
-				require("util").on_load("telescope.nvim", function()
-					require("telescope").load_extension("lazy")
+				require("nvim.mainm.config.nvim.lua.user.util.init").on_load("telescope.nvim", function()
+					require("nvim.mainm.config.nvim.lua.user.telescope").load_extension("lazy")
 				end)
 			end,
 		},
 		{
 			"polirritmico/telescope-lazy-plugins.nvim",
 			config = function()
-				require("util").on_load("telescope.nvim", function()
-					require("telescope").load_extension("lazy_plugins")
+				require("nvim.mainm.config.nvim.lua.user.util.init").on_load("telescope.nvim", function()
+					require("nvim.mainm.config.nvim.lua.user.telescope").load_extension("lazy_plugins")
 				end)
 			end,
 		},
@@ -54,8 +54,8 @@ local M = {
 		{
 			"ThePrimeagen/harpoon",
 			config = function()
-				require("util").on_load("telescope.nvim", function()
-					require("telescope").load_extension("harpoon")
+				require("nvim.mainm.config.nvim.lua.user.util.init").on_load("telescope.nvim", function()
+					require("nvim.mainm.config.nvim.lua.user.telescope").load_extension("harpoon")
 				end)
 			end,
 		},
@@ -185,8 +185,8 @@ local M = {
 				lazy,
 				lazy_plugins,
 			},
-			require("telescope").load_extension("noice"),
-      require("telescope").load_extension("ui-select")
+			require("nvim.mainm.config.nvim.lua.user.telescope").load_extension("noice"),
+      require("nvim.mainm.config.nvim.lua.user.telescope").load_extension("ui-select")
 
 		}
 	end,

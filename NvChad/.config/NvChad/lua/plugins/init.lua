@@ -41,11 +41,11 @@ local default_plugins = {
       require("core.utils").lazy_load "nvim-colorizer.lua"
     end,
     config = function(_, opts)
-      require("colorizer").setup(opts)
+      require("nvim.mainm.config.nvim.lua.user.colorizer").setup(opts)
 
       -- execute colorizer as soon as possible
       vim.defer_fn(function()
-        require("colorizer").attach_to_buffer(0)
+        require("nvim.mainm.config.nvim.lua.user.colorizer").attach_to_buffer(0)
       end, 0)
     end,
   },
@@ -106,7 +106,7 @@ local default_plugins = {
           if vim.v.shell_error == 0 then
             vim.api.nvim_del_augroup_by_name "GitSignsLazyLoad"
             vim.schedule(function()
-              require("lazy").load { plugins = { "gitsigns.nvim" } }
+              require("nvim.mainm.config.nvim.lua.user.lazy").load { plugins = { "gitsigns.nvim" } }
             end)
           end
         end,
@@ -117,7 +117,7 @@ local default_plugins = {
     end,
     config = function(_, opts)
       dofile(vim.g.base46_cache .. "git")
-      require("gitsigns").setup(opts)
+      require("nvim.mainm.config.nvim.lua.user.gitsigns").setup(opts)
     end,
   },
 
@@ -130,7 +130,7 @@ local default_plugins = {
     end,
     config = function(_, opts)
       dofile(vim.g.base46_cache .. "mason")
-      require("mason").setup(opts)
+      require("nvim.mainm.config.nvim.lua.user.mason").setup(opts)
 
       -- custom nvchad cmd to install all mason binaries listed
       vim.api.nvim_create_user_command("MasonInstallAll", function()
@@ -178,7 +178,7 @@ local default_plugins = {
 
           -- setup cmp for autopairs
           local cmp_autopairs = require "nvim-autopairs.completion.cmp"
-          require("cmp").event:on("confirm_done", cmp_autopairs.on_confirm_done())
+          require("nvim.mainm.config.nvim.lua.user.cmp").event:on("confirm_done", cmp_autopairs.on_confirm_done())
         end,
       },
 
@@ -195,7 +195,7 @@ local default_plugins = {
       return require "plugins.configs.cmp"
     end,
     config = function(_, opts)
-      require("cmp").setup(opts)
+      require("nvim.mainm.config.nvim.lua.user.cmp").setup(opts)
     end,
   },
 
@@ -246,7 +246,7 @@ local default_plugins = {
     end,
     config = function(_, opts)
       dofile(vim.g.base46_cache .. "telescope")
-      local telescope = require "telescope"
+      local telescope = require "nvim.mainm.config.nvim.lua.user.telescope"
       telescope.setup(opts)
 
       -- load extensions
@@ -276,4 +276,4 @@ if #config.plugins > 0 then
   table.insert(default_plugins, { import = config.plugins })
 end
 
-require("lazy").setup(default_plugins, config.lazy_nvim)
+require("nvim.mainm.config.nvim.lua.user.lazy").setup(default_plugins, config.lazy_nvim)

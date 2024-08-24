@@ -68,7 +68,7 @@ function M.config()
 		add_exec(opts)
 	end
 
-	require("toggleterm").setup({
+	require("nvim.mainm.config.nvim.lua.user.toggleterm").setup({
 		size = 20,
 		open_mapping = [[<c-\>]],
 		hide_numbers = true, -- hide the number column in toggleterm buffers

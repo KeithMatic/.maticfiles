@@ -12,7 +12,7 @@ return {
 			"kkharji/sqlite.lua",
 		},
 		config = function()
-			local telescope = require("telescope")
+			local telescope = require("nvim.mainm.config.nvim.lua.user.telescope")
 			local actions = require("telescope.actions")
 			local trouble = require("trouble.providers.telescope")
 			local icons = require("config.icons")

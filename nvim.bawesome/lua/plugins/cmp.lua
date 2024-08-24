@@ -18,7 +18,7 @@ return {
 		"onsails/lspkind.nvim",
 	},
 	config = function()
-		local cmp = require("cmp")
+		local cmp = require("nvim.mainm.config.nvim.lua.user.cmp")
 		local luasnip = require("luasnip")
 		-- local lspkind = require("lspkind")
 

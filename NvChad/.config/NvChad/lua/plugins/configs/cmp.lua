@@ -1,4 +1,4 @@
-local cmp = require "cmp"
+local cmp = require "nvim.mainm.config.nvim.lua.user.cmp"
 
 dofile(vim.g.base46_cache .. "cmp")
 

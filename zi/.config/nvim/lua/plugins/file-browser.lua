@@ -8,6 +8,6 @@ return {
     },
   },
   config = function()
-    require("telescope").load_extension("file_browser")
+    require("nvim.mainm.config.nvim.lua.user.telescope").load_extension("file_browser")
   end,
 }

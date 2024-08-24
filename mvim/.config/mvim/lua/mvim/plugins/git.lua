@@ -14,7 +14,7 @@ local M = {
     current_line_blame_formatter = " <author>, <author_time> · <summary> ",
     preview_config = { border = require("mvim.config").get_border() },
     on_attach = function(bufnr)
-      local gs = require("gitsigns")
+      local gs = require("nvim.mainm.config.nvim.lua.user.gitsigns")
 
       local function keymap(mode, lhs, rhs, desc)
         vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = desc })

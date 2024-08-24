@@ -38,7 +38,7 @@ return {
 				return string.format("󱡅 %s/%d", current_mark, total_marks)
 			end
 
-			require("lualine").setup({
+			require("nvim.mainm.config.nvim.lua.user.lualine").setup({
 				options = {
 					theme = "catppuccin",
 					globalstatus = true,

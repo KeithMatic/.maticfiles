@@ -1,4 +1,4 @@
-local Util = require("util")
+local Util = require("nvim.mainm.config.nvim.lua.user.util.init")
 
 ---@class util.exporter
 local M = {}

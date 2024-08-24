@@ -16,7 +16,7 @@ local M = {
 }
 
 function M.config()
-  local icons = require "util.icons"
+  local icons = require "nvim.mainm.config.nvim.lua.user.util.icons"
   require("nvim-navic").setup {
     icons = icons.ui,
     highlight = true,

@@ -9,15 +9,43 @@ alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git
 
 # zsh
 alias sz='source ~/.zshrc'
-alias zconfig='mv ~/.zshrc'
-alias ohmyzsh='mv ~/.oh-my-zsh'
+alias zconfig='as ~/.zshrc'
+alias ohmyzsh='as ~/.oh-my-zsh'
 alias ezsh='exec zsh'
 
 # fish
-alias fconfig='nvim ~/.config/fish/config.fish'
+alias fconfig='as ~/.config/fish/config.fish' # use as (astrovim) instead of vi
 alias sf='. ~/.config/fish/config.fish'
 alias xf='exec fish'
 alias sconf='source /Users/matic/.config/fish/conf.d/fnm.fish'
+
+# Set vim as default
+# alias vi=vi
+alias vi='as' # use as (astrovim) instead of vi
+alias svi='sudo vi'
+alias vis='vi "+set si"'
+alias edit='as' # use as (astrovim) instead of vi
+
+# switch between shells
+# I do not recommend switching default SHELL from bash.
+alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
+alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
+alias tofish="sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
+
+# # Clear
+alias c='clear'
+
+alias md='mkdir -pv'
+
+# handy shortcuts 
+alias h='history'
+
+# Confirmation
+alias mv='mv -i'
+alias cp='cp -i'
+alias ln='ln -i'
+alias rm='rm -I --preserve-root'
+
 
 # rust
 alias rs='rustc'
@@ -36,6 +64,44 @@ alias pu='python3 -m pip3 uninstall'
 # abbr TLDR
 alias m='tldr'
 alias mud='tldr -u'
+
+# become root #
+alias root='sudo -i'
+alias su='sudo -i'
+
+## get rid of command not found ##
+alias cd..='cd ..'
+
+# navigation
+alias ..='z ..'
+alias ...='z ../..'
+alias .3='z ../../..'
+alias .4='z ../../../..'
+alias .5='z ../../../../..'
+
+# Changing "ls" to "eza"
+alias l='eza -al --color=always --group-directories-first' # my preferred listing
+alias la='eza -a --color=always --group-directories-first'  # all files and dirs
+alias ll='eza -l --color=always --group-directories-first'  # long format
+alias lt='eza -aT --color=always --group-directories-first' # tree listing
+alias l.='eza -a | egrep "^\."'
+
+## Colorize the grep command output for ease of use (good for log files)##
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# Exit Command
+alias :q='exit'
+alias ext='exit'
+alias xt='exit'
+alias by='exit'
+alias bye='exit'
+alias die='exit'
+alias quit='exit'
+
+# Launch Simple HTTP Server
+alias serve='python -m SimpleHTTPServer'
 
 alias b='bun'
 alias br='bun run'
@@ -68,27 +134,6 @@ alias tka='tmux kill-session -a'
 alias tlk='tmux list-keys'
 alias tks='tmux kill-server & tmux'
 
-# switch between shells
-# I do not recommend switching default SHELL from bash.
-alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
-alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
-alias tofish="sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
-
-# # Clear
-alias c='clear'
-
-alias md='mkdir -pv'
-
-# handy shortcuts 
-alias h='history'
-
-# Set vim as default
-# alias vi=vi
-alias vi='as' # use as (astrovim) instead of vi
-alias svi='sudo vi'
-alias vis='vi "+set si"'
-alias edit='as' # use as (astrovim) instead of vi
-
 ## PNPM
 alias t3='pnpm create t3-app@latest'
 alias vit='pnpm create vite@latest'
@@ -114,32 +159,6 @@ alias tl='trash-list'    # list trashed files.
 alias tre='trash-restore' # restore a trashed file.
 alias trm='trash-rm'     # remove individual files from the trashcan.
 
-# become root #
-alias root='sudo -i'
-alias su='sudo -i'
-
-## get rid of command not found ##
-alias cd..='cd ..'
-
-# navigation
-alias ..='z ..'
-alias ...='z ../..'
-alias .3='z ../../..'
-alias .4='z ../../../..'
-alias .5='z ../../../../..'
-
-# Changing "ls" to "eza"
-alias l='eza -al --color=always --group-directories-first' # my preferred listing
-alias la='eza -a --color=always --group-directories-first'  # all files and dirs
-alias ll='eza -l --color=always --group-directories-first'  # long format
-alias lt='eza -aT --color=always --group-directories-first' # tree listing
-alias l.='eza -a | egrep "^\."'
-
-## Colorize the grep command output for ease of use (good for log files)##
-alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
-
 # Git commands
 alias gs='git status'
 alias gst='git status -sb'
@@ -160,20 +179,5 @@ alias gw='git whatchanged'
 alias gitlg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias nah='git clean -df && git checkout -- .'
 
-# Exit Command
-alias :q='exit'
-alias ext='exit'
-alias xt='exit'
-alias by='exit'
-alias bye='exit'
-alias die='exit'
-alias quit='exit'
 
-# Launch Simple HTTP Server
-alias serve='python -m SimpleHTTPServer'
 
-# Confirmation
-alias mv='mv -i'
-alias cp='cp -i'
-alias ln='ln -i'
-alias rm='rm -I --preserve-root'

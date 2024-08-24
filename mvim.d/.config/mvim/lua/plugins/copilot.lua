@@ -3,7 +3,7 @@ return {
 		"zbirenbaum/copilot.lua",
 		event = { "BufEnter" },
 		config = function()
-			require("copilot").setup({
+			require("nvim.mainm.config.nvim.lua.user.copilot").setup({
 				suggestion = {
 					enabled = false,
 				},

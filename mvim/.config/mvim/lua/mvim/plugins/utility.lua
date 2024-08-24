@@ -59,9 +59,9 @@ local M = {
 		dependencies = { "kevinhwang91/promise-async" },
     -- stylua: ignore
     keys = {
-      { "zR", function() require("ufo").openAllFolds() end, desc = "Open all folds" },
-      { "zM", function() require("ufo").closeAllFolds() end, desc = "Close all folds" },
-      { "zP", function() require("ufo").peekFoldedLinesUnderCursor() end, desc = "Preview fold" },
+      { "zR", function() require("nvim.mainm.config.nvim.lua.user.ufo").openAllFolds() end, desc = "Open all folds" },
+      { "zM", function() require("nvim.mainm.config.nvim.lua.user.ufo").closeAllFolds() end, desc = "Close all folds" },
+      { "zP", function() require("nvim.mainm.config.nvim.lua.user.ufo").peekFoldedLinesUnderCursor() end, desc = "Preview fold" },
     },
 		opts = {
 			open_fold_hl_timeout = 0,
@@ -117,12 +117,12 @@ local M = {
 		init = function()
 			---@diagnostic disable-next-line: duplicate-set-field
 			vim.ui.select = function(...)
-				require("lazy").load({ plugins = { "dressing.nvim" } })
+				require("nvim.mainm.config.nvim.lua.user.lazy").load({ plugins = { "dressing.nvim" } })
 				return vim.ui.select(...)
 			end
 			---@diagnostic disable-next-line: duplicate-set-field
 			vim.ui.input = function(...)
-				require("lazy").load({ plugins = { "dressing.nvim" } })
+				require("nvim.mainm.config.nvim.lua.user.lazy").load({ plugins = { "dressing.nvim" } })
 				return vim.ui.input(...)
 			end
 		end,

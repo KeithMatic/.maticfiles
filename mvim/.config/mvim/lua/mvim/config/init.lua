@@ -83,7 +83,7 @@ function M.bootstrap()
   end
   vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
-  require("lazy").setup({
+  require("nvim.mainm.config.nvim.lua.user.lazy").setup({
     spec = "mvim.plugins",
     defaults = { lazy = true },
     install = { colorscheme = { "catppuccin" } },

@@ -1,6 +1,6 @@
-local macro = require "util.macro"
+local macro = require "nvim.mainm.config.nvim.lua.user.util.macro"
 
-require("util.map").set_keymaps {
+require("nvim.mainm.config.nvim.lua.user.util.map").set_keymaps {
   -- first key is the mode
   n = {
     -- second key is the lefthand side of the map

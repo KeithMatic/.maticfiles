@@ -26,7 +26,7 @@ function ks() {
   env NVIM_APPNAME=kickstart nvim
 }
 
-function mv() {
+function mvi() {
   env NVIM_APPNAME=mvim nvim
 }
 

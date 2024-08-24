@@ -1,4 +1,4 @@
-require("lazy").setup({
+require("nvim.mainm.config.nvim.lua.user.lazy").setup({
 	{
 		"AstroNvim/AstroNvim",
 		version = "^4", -- Remove version tracking to elect for nighly AstroNvim

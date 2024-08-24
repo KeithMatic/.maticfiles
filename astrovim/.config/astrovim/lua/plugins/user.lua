@@ -62,11 +62,11 @@ return {
 		dependencies = { "kevinhwang91/promise-async" },
     -- stylua: ignore
     keys = {
-      { "zR", function() 	require("ufo").openAllFolds()
+      { "zR", function() 	require("nvim.mainm.config.nvim.lua.user.ufo").openAllFolds()
 end, desc = "Open all folds" },
-      { "zM", function() 	require("ufo").closeAllFolds()
+      { "zM", function() 	require("nvim.mainm.config.nvim.lua.user.ufo").closeAllFolds()
 end, desc = "Close all folds" },
-      { "zP", function() 	require("ufo").peekFoldedLinesUnderCursor()
+      { "zP", function() 	require("nvim.mainm.config.nvim.lua.user.ufo").peekFoldedLinesUnderCursor()
 end, desc = "Preview fold" },
     },
 		opts = {

@@ -41,7 +41,7 @@ M.capabilities.textDocument.completion.completionItem = {
   },
 }
 
-require("lspconfig").lua_ls.setup {
+require("nvim.mainm.config.nvim.lua.user.lspconfig").lua_ls.setup {
   on_attach = M.on_attach,
   capabilities = M.capabilities,
 

@@ -66,7 +66,7 @@ vim.opt.rtp:prepend(lazypath)
 --
 --  You can also configure plugins after the setup call,
 --    as they will be available in your neovim runtime.
-require('lazy').setup({
+require('nvim.mainm.config.nvim.lua.user.lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
 
   -- Git related plugins
@@ -126,7 +126,7 @@ require('lazy').setup({
         changedelete = { text = '~' },
       },
       on_attach = function(bufnr)
-        vim.keymap.set('n', '<leader>hp', require('gitsigns').preview_hunk, { buffer = bufnr, desc = 'Preview git hunk' })
+        vim.keymap.set('n', '<leader>hp', require('nvim.mainm.config.nvim.lua.user.gitsigns').preview_hunk, { buffer = bufnr, desc = 'Preview git hunk' })
 
         -- don't override the built-in and fugitive keymaps
         local gs = package.loaded.gitsigns
@@ -302,7 +302,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
-require('telescope').setup {
+require('nvim.mainm.config.nvim.lua.user.telescope').setup {
   defaults = {
     mappings = {
       i = {
@@ -314,7 +314,7 @@ require('telescope').setup {
 }
 
 -- Enable telescope fzf native, if installed
-pcall(require('telescope').load_extension, 'fzf')
+pcall(require('nvim.mainm.config.nvim.lua.user.telescope').load_extension, 'fzf')
 
 -- Telescope live_grep in git root
 -- Function to find the git root directory based on the current buffer's path
@@ -499,7 +499,7 @@ require('which-key').register {
 
 -- mason-lspconfig requires that these setup functions are called in this order
 -- before setting up the servers.
-require('mason').setup()
+require('nvim.mainm.config.nvim.lua.user.mason').setup()
 require('mason-lspconfig').setup()
 
 -- Enable the following language servers
@@ -542,7 +542,7 @@ mason_lspconfig.setup {
 
 mason_lspconfig.setup_handlers {
   function(server_name)
-    require('lspconfig')[server_name].setup {
+    require('nvim.mainm.config.nvim.lua.user.lspconfig')[server_name].setup {
       capabilities = capabilities,
       on_attach = on_attach,
       settings = servers[server_name],
@@ -553,7 +553,7 @@ mason_lspconfig.setup_handlers {
 
 -- [[ Configure nvim-cmp ]]
 -- See `:help cmp`
-local cmp = require 'cmp'
+local cmp = require 'nvim.mainm.config.nvim.lua.user.cmp'
 local luasnip = require 'luasnip'
 require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}

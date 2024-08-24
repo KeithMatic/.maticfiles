@@ -78,7 +78,7 @@ return {
       "nvim-telescope/telescope-fzf-native.nvim",
       build = "make",
       config = function()
-        require("telescope").load_extension("fzf")
+        require("nvim.mainm.config.nvim.lua.user.telescope").load_extension("fzf")
       end,
     },
   },
@@ -234,7 +234,7 @@ return {
       end
 
       local luasnip = require("luasnip")
-      local cmp = require("cmp")
+      local cmp = require("nvim.mainm.config.nvim.lua.user.cmp")
 
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
         ["<Tab>"] = cmp.mapping(function(fallback)

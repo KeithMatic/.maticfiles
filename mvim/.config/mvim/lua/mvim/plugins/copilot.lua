@@ -9,7 +9,7 @@ local M = {
 }
 
 function M.config()
-  require("copilot").setup {
+  require("nvim.mainm.config.nvim.lua.user.copilot").setup {
     panel = {
       keymap = {
         jump_next = "<c-j>",

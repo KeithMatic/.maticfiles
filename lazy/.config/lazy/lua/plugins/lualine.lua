@@ -9,7 +9,7 @@ return {
 		event = { "BufReadPost", "BufNewFile", "VeryLazy" },
 
 		config = function()
-			local icons = require("util.icons")
+			local icons = require("nvim.mainm.config.nvim.lua.user.util.icons")
 			-- New color table and conditions
 			local colors = {
 				bg = "None", -- Ensure this is a valid color or nil
@@ -61,8 +61,8 @@ return {
 					lualine_c = {},
 					lualine_x = {
 						{
-							require("noice").api.statusline.mode.get,
-							cond = require("noice").api.statusline.mode.has,
+							require("nvim.mainm.config.nvim.lua.user.noice").api.statusline.mode.get,
+							cond = require("nvim.mainm.config.nvim.lua.user.noice").api.statusline.mode.has,
 							color = { fg = "#ff9e64" },
 						},
 					},
@@ -207,7 +207,7 @@ return {
 			--   padding = { left = 1 },
 			-- }
 			-- Initialize lualine with the configuration
-			require("lualine").setup(config)
+			require("nvim.mainm.config.nvim.lua.user.lualine").setup(config)
 		end,
 	},
 	{

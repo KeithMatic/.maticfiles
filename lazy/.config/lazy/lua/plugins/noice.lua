@@ -157,7 +157,7 @@ return {
 	},
 
 	config = function()
-		require("noice").setup({
+		require("nvim.mainm.config.nvim.lua.user.noice").setup({
 			views = {
 				cmdline_popup = {
 					position = {

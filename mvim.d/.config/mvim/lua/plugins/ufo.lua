@@ -7,7 +7,7 @@ return {
 		},
 		config = function()
 			--- @diagnostic disable: unused-local
-			require("ufo").setup({
+			require("nvim.mainm.config.nvim.lua.user.ufo").setup({
 				provider_selector = function(_bufnr, _filetype, _buftype)
 					return { "treesitter", "indent" }
 				end,

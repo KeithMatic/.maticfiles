@@ -2,7 +2,7 @@ return {
 	jsonls = {
 		settings = {
 			json = {
-				schema = require("schemastore").json.schemas(),
+				schema = require("nvim.mainm.config.nvim.lua.user.schemastore").json.schemas(),
 				validate = { enable = true },
 			},
 		},

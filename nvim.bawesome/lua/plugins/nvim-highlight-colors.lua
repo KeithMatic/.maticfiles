@@ -4,7 +4,7 @@ local M = {
     cmd = "HighlightColors",
 },
     function M.config()
-      require("nvim-highlight-colors").setup {
+      require("nvim.mainm.config.nvim.lua.user.nvim-highlight-colors").setup {
       ---Render style
       ---@usage 'background'|'foreground'|'virtual'
       render = "foreground",

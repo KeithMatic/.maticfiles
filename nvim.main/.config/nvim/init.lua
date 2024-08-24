@@ -1,6 +1,6 @@
-require("user.config.launch")
-require("user.config.options")
-require("user.config.keymaps")
+require("nvim.mainm.config.nvim.lua.user.config.launch")
+require("nvim.mainm.config.nvim.lua.user.config.options")
+require("nvim.mainm.config.nvim.lua.user.config.keymaps")
 -- require "user.autocmds"
 spec("user.colorscheme")
 spec("user.devicons")
@@ -54,4 +54,4 @@ spec("user.tabnine")
 spec("user.ufo")
 spec "user.noice"
 
-require("user.lazy")
+require("nvim.mainm.config.nvim.lua.user.lazy")

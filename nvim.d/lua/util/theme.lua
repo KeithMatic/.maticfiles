@@ -1,4 +1,4 @@
-local color = require "util.color"
+local color = require "nvim.mainm.config.nvim.lua.user.util.color"
 local status = require "astroui.status"
 
 M = {}

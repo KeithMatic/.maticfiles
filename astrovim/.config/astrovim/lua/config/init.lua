@@ -83,7 +83,7 @@ function M.bootstrap()
   end
   vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
-  require("lazy").setup({
+  require("nvim.mainm.config.nvim.lua.user.lazy").setup({
     spec = "plugins",
     defaults = { lazy = true },
     install = { colorscheme = { "catppuccin" } },
@@ -174,7 +174,7 @@ function M.setup()
     M.load("autocmds")
   end
 
-  require("util").augroup("", {
+  require("nvim.mainm.config.nvim.lua.user.util.init").augroup("", {
     pattern = "VeryLazy",
     event = "User",
     command = function()
@@ -183,7 +183,7 @@ function M.setup()
       end
       M.load("keymaps")
 
-      require("util").format.setup()
+      require("nvim.mainm.config.nvim.lua.user.util.init").format.setup()
     end,
   })
 end

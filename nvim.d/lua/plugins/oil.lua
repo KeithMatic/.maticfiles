@@ -8,7 +8,7 @@ return {
         opts = {
           mappings = {
             n = {
-              ["<Leader>O"] = { function() require("oil").open() end, desc = "Open folder in Oil" },
+              ["<Leader>O"] = { function() require("nvim.mainm.config.nvim.lua.user.oil").open() end, desc = "Open folder in Oil" },
             },
           },
           autocmds = {
@@ -60,7 +60,7 @@ return {
             padding = { left = 2 },
             max_depth = false,
             suffix = false,
-            path_func = function() return require("oil").get_current_dir() end,
+            path_func = function() return require("nvim.mainm.config.nvim.lua.user.oil").get_current_dir() end,
           },
         })
       end

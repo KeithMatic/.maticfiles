@@ -26,7 +26,7 @@ return {
 			require("neodev").setup()
 
 			-- Setup mason so it can manage 3rd party LSP servers
-			require("mason").setup({
+			require("nvim.mainm.config.nvim.lua.user.mason").setup({
 				ui = {
 					border = "rounded",
 				},
@@ -146,7 +146,7 @@ return {
 
 			-- Iterate over our servers and set them up
 			for name, config in pairs(servers) do
-				require("lspconfig")[name].setup({
+				require("nvim.mainm.config.nvim.lua.user.lspconfig")[name].setup({
 					capabilities = default_capabilities,
 					filetypes = config.filetypes,
 					handlers = vim.tbl_deep_extend("force", {}, default_handlers, config.handlers or {}),

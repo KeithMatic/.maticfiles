@@ -58,7 +58,7 @@ local M = {
           },
         },
         footer = function()
-          local stats = require("lazy").stats()
+          local stats = require("nvim.mainm.config.nvim.lua.user.lazy").stats()
           local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
 
           local version = vim.version()
@@ -89,7 +89,7 @@ local M = {
       vim.api.nvim_create_autocmd("User", {
         pattern = "DashboardLoaded",
         callback = function()
-          require("lazy").show()
+          require("nvim.mainm.config.nvim.lua.user.lazy").show()
         end,
       })
     end

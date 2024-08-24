@@ -1,5 +1,5 @@
-local cmp = require "cmp"
-local border = require "util.border"
+local cmp = require "nvim.mainm.config.nvim.lua.user.cmp"
+local border = require "nvim.mainm.config.nvim.lua.user.util.border"
 
 local style_opts = {
   border = border.default[vim.g.border],

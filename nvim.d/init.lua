@@ -18,6 +18,6 @@ end
 vim.g.astro_default_theme = "catppuccino"
 
 require "lazy_setup"
-require "options"
+require "nvim.mainm.config.nvim.lua.user.config.options"
 require "mappings"
 require "polish"

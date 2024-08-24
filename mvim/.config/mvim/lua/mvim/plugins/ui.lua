@@ -88,7 +88,7 @@ local M = {
 		"nvimdev/lspsaga.nvim",
 		event = "BufRead",
 		config = function()
-			require("lspsaga").setup({})
+			require("nvim.mainm.config.nvim.lua.user.lspsaga").setup({})
 		end,
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter", -- optional
@@ -204,10 +204,10 @@ local M = {
 		event = "VeryLazy",
     -- stylua: ignore
     keys = {
-      { "<leader>nl", function() require("noice").cmd("last") end, desc = "Noice Last Message" },
-      { "<leader>nh", function() require("noice").cmd("history") end, desc = "Noice History" },
-      { "<leader>na", function() require("noice").cmd("all") end, desc = "Noice All" },
-      { "<leader>nd", function() require("noice").cmd("dismiss") end, desc = "Dismiss All" },
+      { "<leader>nl", function() require("nvim.mainm.config.nvim.lua.user.noice").cmd("last") end, desc = "Noice Last Message" },
+      { "<leader>nh", function() require("nvim.mainm.config.nvim.lua.user.noice").cmd("history") end, desc = "Noice History" },
+      { "<leader>na", function() require("nvim.mainm.config.nvim.lua.user.noice").cmd("all") end, desc = "Noice All" },
+      { "<leader>nd", function() require("nvim.mainm.config.nvim.lua.user.noice").cmd("dismiss") end, desc = "Dismiss All" },
       { "<C-d>",
         function()
           if not require("noice.lsp").scroll(4) then

@@ -61,7 +61,7 @@ return {
           function()
             local bufs = vim.fn.getbufinfo { buflisted = true }
             require("astrocore.buffer").close(0)
-            if require("astrocore").is_available "alpha-nvim" and not bufs[2] then require("alpha").start() end
+            if require("astrocore").is_available "alpha-nvim" and not bufs[2] then require("nvim.mainm.config.nvim.lua.user.alpha").start() end
           end,
           desc = "Close buffer",
         },

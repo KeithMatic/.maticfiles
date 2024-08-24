@@ -107,7 +107,7 @@ vim.opt.rtp:prepend(lazypath)
 --    :Lazy update
 --
 -- NOTE: Here is where you install your plugins.
-require('lazy').setup({
+require('nvim.mainm.config.nvim.lua.user.lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
@@ -232,7 +232,7 @@ require('lazy').setup({
 
       -- [[ Configure Telescope ]]
       -- See `:help telescope` and `:help telescope.setup()`
-      require('telescope').setup {
+      require('nvim.mainm.config.nvim.lua.user.telescope').setup {
         -- You can put your default mappings / updates / etc. in here
         --  All the info you're looking for is in `:help telescope.setup()`
         --
@@ -250,8 +250,8 @@ require('lazy').setup({
       }
 
       -- Enable Telescope extensions if they are installed
-      pcall(require('telescope').load_extension, 'fzf')
-      pcall(require('telescope').load_extension, 'ui-select')
+      pcall(require('nvim.mainm.config.nvim.lua.user.telescope').load_extension, 'fzf')
+      pcall(require('nvim.mainm.config.nvim.lua.user.telescope').load_extension, 'ui-select')
 
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
@@ -483,7 +483,7 @@ require('lazy').setup({
       --    :Mason
       --
       --  You can press `g?` for help in this menu.
-      require('mason').setup()
+      require('nvim.mainm.config.nvim.lua.user.mason').setup()
 
       -- You can add other tools here that you want Mason to install
       -- for you, so that they are available from within Neovim.
@@ -501,7 +501,7 @@ require('lazy').setup({
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for tsserver)
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            require('lspconfig')[server_name].setup(server)
+            require('nvim.mainm.config.nvim.lua.user.lspconfig')[server_name].setup(server)
           end,
         },
       }
@@ -583,7 +583,7 @@ require('lazy').setup({
     },
     config = function()
       -- See `:help cmp`
-      local cmp = require 'cmp'
+      local cmp = require 'nvim.mainm.config.nvim.lua.user.cmp'
       local luasnip = require 'luasnip'
       luasnip.config.setup {}
 

@@ -401,7 +401,7 @@ M.gitsigns = {
           return "]c"
         end
         vim.schedule(function()
-          require("gitsigns").next_hunk()
+          require("nvim.mainm.config.nvim.lua.user.gitsigns").next_hunk()
         end)
         return "<Ignore>"
       end,
@@ -415,7 +415,7 @@ M.gitsigns = {
           return "[c"
         end
         vim.schedule(function()
-          require("gitsigns").prev_hunk()
+          require("nvim.mainm.config.nvim.lua.user.gitsigns").prev_hunk()
         end)
         return "<Ignore>"
       end,
@@ -426,14 +426,14 @@ M.gitsigns = {
     -- Actions
     ["<leader>rh"] = {
       function()
-        require("gitsigns").reset_hunk()
+        require("nvim.mainm.config.nvim.lua.user.gitsigns").reset_hunk()
       end,
       "Reset hunk",
     },
 
     ["<leader>ph"] = {
       function()
-        require("gitsigns").preview_hunk()
+        require("nvim.mainm.config.nvim.lua.user.gitsigns").preview_hunk()
       end,
       "Preview hunk",
     },
@@ -447,7 +447,7 @@ M.gitsigns = {
 
     ["<leader>td"] = {
       function()
-        require("gitsigns").toggle_deleted()
+        require("nvim.mainm.config.nvim.lua.user.gitsigns").toggle_deleted()
       end,
       "Toggle deleted",
     },

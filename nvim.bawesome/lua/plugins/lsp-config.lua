@@ -9,7 +9,7 @@ return {
     { "hrsh7th/cmp-nvim-lsp" },
   },
   config = function()
-    require("mason").setup({
+    require("nvim.mainm.config.nvim.lua.user.mason").setup({
       ui = {
         border = "rounded",
         icons = {
@@ -33,7 +33,7 @@ return {
 
     mason_lspconfig.setup_handlers({
       function(server_name)
-        require("lspconfig")[server_name].setup({
+        require("nvim.mainm.config.nvim.lua.user.lspconfig")[server_name].setup({
           capabilities = capabilities,
           on_attach = require("plugins.lsp.on_attach").on_attach,
           settings = require("plugins.lsp.servers")[server_name],

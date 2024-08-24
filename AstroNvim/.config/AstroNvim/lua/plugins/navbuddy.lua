@@ -18,7 +18,7 @@ function M.config()
 		window = {
 			border = "rounded",
 		},
-		icons = require("util.icons").kind,
+		icons = require("nvim.mainm.config.nvim.lua.user.util.icons").kind,
 		lsp = { auto_attach = true },
 	})
 

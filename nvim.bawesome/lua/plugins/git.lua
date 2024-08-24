@@ -4,7 +4,7 @@ return {
 		lazy = false,
 		config = function()
 			local icons = require("config.icons")
-			require("gitsigns").setup({
+			require("nvim.mainm.config.nvim.lua.user.gitsigns").setup({
 				signs = {
 					add = {
 						hl = "GitSignsAdd",
@@ -71,31 +71,31 @@ return {
 					vim.keymap.set(
 						"n",
 						"<leader>H",
-						require("gitsigns").preview_hunk,
+						require("nvim.mainm.config.nvim.lua.user.gitsigns").preview_hunk,
 						{ buffer = bufnr, desc = "Preview git hunk" }
 					)
 
-					vim.keymap.set("n", "<leader>hs", require("gitsigns").stage_hunk)
-					vim.keymap.set("n", "<leader>hr", require("gitsigns").reset_hunk)
+					vim.keymap.set("n", "<leader>hs", require("nvim.mainm.config.nvim.lua.user.gitsigns").stage_hunk)
+					vim.keymap.set("n", "<leader>hr", require("nvim.mainm.config.nvim.lua.user.gitsigns").reset_hunk)
 					vim.keymap.set("v", "<leader>hs", function()
-						require("gitsigns").stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
+						require("nvim.mainm.config.nvim.lua.user.gitsigns").stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
 					end)
 					vim.keymap.set("v", "<leader>hr", function()
-						require("gitsigns").reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
+						require("nvim.mainm.config.nvim.lua.user.gitsigns").reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
 					end)
-					vim.keymap.set("n", "<leader>hS", require("gitsigns").stage_buffer)
-					vim.keymap.set("n", "<leader>hu", require("gitsigns").undo_stage_hunk)
-					vim.keymap.set("n", "<leader>hR", require("gitsigns").reset_buffer)
-					vim.keymap.set("n", "<leader>hp", require("gitsigns").preview_hunk)
+					vim.keymap.set("n", "<leader>hS", require("nvim.mainm.config.nvim.lua.user.gitsigns").stage_buffer)
+					vim.keymap.set("n", "<leader>hu", require("nvim.mainm.config.nvim.lua.user.gitsigns").undo_stage_hunk)
+					vim.keymap.set("n", "<leader>hR", require("nvim.mainm.config.nvim.lua.user.gitsigns").reset_buffer)
+					vim.keymap.set("n", "<leader>hp", require("nvim.mainm.config.nvim.lua.user.gitsigns").preview_hunk)
 					vim.keymap.set("n", "<leader>hb", function()
-						require("gitsigns").blame_line({ full = true })
+						require("nvim.mainm.config.nvim.lua.user.gitsigns").blame_line({ full = true })
 					end)
-					vim.keymap.set("n", "<leader>tb", require("gitsigns").toggle_current_line_blame)
-					vim.keymap.set("n", "<leader>hd", require("gitsigns").diffthis)
+					vim.keymap.set("n", "<leader>tb", require("nvim.mainm.config.nvim.lua.user.gitsigns").toggle_current_line_blame)
+					vim.keymap.set("n", "<leader>hd", require("nvim.mainm.config.nvim.lua.user.gitsigns").diffthis)
 					vim.keymap.set("n", "<leader>hD", function()
-						require("gitsigns").diffthis("~")
+						require("nvim.mainm.config.nvim.lua.user.gitsigns").diffthis("~")
 					end)
-					vim.keymap.set("n", "<leader>td", require("gitsigns").toggle_deleted)
+					vim.keymap.set("n", "<leader>td", require("nvim.mainm.config.nvim.lua.user.gitsigns").toggle_deleted)
 				end,
 			})
 		end,

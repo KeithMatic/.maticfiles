@@ -4,7 +4,7 @@ local M = {
 }
 
 function M.config()
-  require("neotab").setup
+  require("nvim.mainm.config.nvim.lua.user.neotab").setup
  {
     tabkey = "<Tab>",
     act_as_tab = true, -- fallback to tab, if `tabout` action is not available

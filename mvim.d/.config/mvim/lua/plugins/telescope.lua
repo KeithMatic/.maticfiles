@@ -13,7 +13,7 @@ return {
 		config = function()
 			local actions = require("telescope.actions")
 
-			require("telescope").setup({
+			require("nvim.mainm.config.nvim.lua.user.telescope").setup({
 				defaults = {
 					mappings = {
 						i = {
@@ -36,7 +36,7 @@ return {
 			})
 
 			-- Enable telescope fzf native, if installed
-			pcall(require("telescope").load_extension, "fzf")
+			pcall(require("nvim.mainm.config.nvim.lua.user.telescope").load_extension, "fzf")
 		end,
 	},
 }

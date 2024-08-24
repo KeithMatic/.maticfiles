@@ -101,14 +101,14 @@ M.lazy_load = function(plugin)
         -- This deferring only happens only when we do "nvim filename"
         if plugin ~= "nvim-treesitter" then
           vim.schedule(function()
-            require("lazy").load { plugins = plugin }
+            require("nvim.mainm.config.nvim.lua.user.lazy").load { plugins = plugin }
 
             if plugin == "nvim-lspconfig" then
               vim.cmd "silent! do FileType"
             end
           end, 0)
         else
-          require("lazy").load { plugins = plugin }
+          require("nvim.mainm.config.nvim.lua.user.lazy").load { plugins = plugin }
         end
       end
     end,

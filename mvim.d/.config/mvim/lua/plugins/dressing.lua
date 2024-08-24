@@ -2,7 +2,7 @@ return {
 	{
 		"stevearc/dressing.nvim",
 		config = function()
-			require("dressing").setup()
+			require("nvim.mainm.config.nvim.lua.user.dressing").setup()
 		end,
 	},
 }

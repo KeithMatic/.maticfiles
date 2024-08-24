@@ -19,4 +19,3 @@ map("i", "<C-h>", "<Left>", { desc = "Move left", remap = true })
 map("i", "<C-l>", "<Right>", { desc = "Move right", remap = true })
 map("i", "<C-j>", "<Down>", { desc = "Move down", remap = true })
 map("i", "<C-k>", "<Up>", { desc = "Move up", remap = true })
-
