@@ -1381,7 +1381,7 @@
   "animations.Install-Method": "Apc Customize UI++",
   "apc.imports": [
     "file:///Users/matic/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.1/dist/updateHandler.js",
-    "file:///Users/matic/.maticfiles/customvscode.css"
+    "file:///Users/matic/.maticfiles/vscode/customvscode.css"
   ],
   "animations.Auto-Install": true,
   "animations.Smooth-Mode": true,

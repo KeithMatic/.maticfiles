@@ -186,7 +186,7 @@
     // Focus the active editor group (text editor) when the terminal is focused
     "key": "ctrl+k",
     "command": "workbench.action.focusActiveEditorGroup",
-    "when": "terminalFocus"
+    "when": "terminalFocus || explorerViewVisible || filesExplorerFocus && !inputFocus"
   },
   {
     // Maximize/minimize terminal panel and focus on terminal when terminal is not focused

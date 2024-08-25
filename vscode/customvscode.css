@@ -242,3 +242,10 @@ body {
     display: none !important;
 
 }
+/* -------------------------------------------------------------------------- */
+/*                   Remove padding left on the breadcrumbs                   */
+/* -------------------------------------------------------------------------- */
+
+.horizontal-activitybar:not(.statusbar-editor-top):not(.statusbar-top) .monaco-workbench.mac.sidebar-right.noauxiliarybar:not(.fullscreen) .part.editor>.content .editor-group-container>.title:not(.tabs) {
+    padding-left: 0;
+}
