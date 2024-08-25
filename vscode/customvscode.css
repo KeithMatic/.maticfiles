@@ -230,7 +230,7 @@ body {
 /* -------------------------------------------------------------------------- */
 /*                        Force Brackets not to italic                        */
 /* -------------------------------------------------------------------------- */
-.mtk1.bracket-highlighting {
+.mtk1.bracket-highlighting, .mtk5.mtki.bracket-highlighting-0, .mtk6.mtki.bracket-highlighting-0 {
     font-style: normal;
 }
 
