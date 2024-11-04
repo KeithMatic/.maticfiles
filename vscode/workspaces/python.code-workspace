@@ -1,0 +1,11 @@
+{
+  "folders": [
+	{
+		"name": "natours-astro",
+		"path": "../../../Developer/astro/natours-astro"
+	}
+],
+  "settings": {
+    "editor.suggest.showSnippets": false
+  }
+}

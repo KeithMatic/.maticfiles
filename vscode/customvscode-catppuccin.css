@@ -1,0 +1,369 @@
+/**
+ * ---------------------------------- Title ---------------------------------
+ *
+ * @format
+ */
+
+/* .title.show-file-icons .label-container .monaco-icon-label.file-icon {
+    padding-bottom: 6px !important;
+} */
+
+.title-label .title {
+  display: none !important;
+}
+
+.title-label {
+  display: none !important;
+}
+
+.title-actions {
+  display: none !important;
+}
+
+.tabs-and-actions-container > .editor-actions {
+  display: none !important;
+}
+
+/* Toolbars when tabs are enabled. */
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .editor-actions {
+  display: none !important;
+}
+
+.titlebar-center {
+  display: none !important;
+}
+
+.titlebar-right {
+  display: none !important;
+}
+
+.titlebar {
+  display: none !important;
+}
+
+.command-center-center {
+  width: auto !important;
+}
+
+/* Project title's style at the top. */
+.monaco-workbench
+  .part.titlebar
+  > .titlebar-container
+  > .titlebar-center
+  > window-title
+  > .command-center
+  .action-item.command-center-center {
+  border: none !important;
+  background: transparent !important;
+}
+
+/* Project Title */
+.titlebar-left {
+  justify-content: flex-start !important;
+  flex-grow: 0 !important;
+  width: auto !important;
+}
+
+/* ------------------------------- Breadcrumbs ------------------------------ */
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .breadcrumbs-below-tabs
+  .breadcrumbs-control
+  .monaco-icon-label {
+  /* font-size: 15px; */
+  color: #46d1e3d8;
+  /* color: #ff7e79; */
+  font-weight: 600;
+  font-family: 'Ellograph CF';
+  font-style: italic;
+}
+
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .breadcrumbs-below-tabs
+  .breadcrumbs-control
+  .monaco-icon-label
+  .monaco-highlighted-label {
+  /* font-size: 10px; */
+  color: #a89d9dd7;
+  font-weight: 400;
+  font-family: 'Dank Mono';
+  /* 'Cascadia Code PL','OperatorMonoSSmLig Nerd Font', Lotion, 'Ellograph CF', MonoLisa, 'Latin Modern Mono', 'GeistMono Nerd Font', 'Comic Code Ligatures', ; */
+  font-style: normal;
+}
+
+.filematch .monaco-count-badge {
+  padding: 5px 6px 0 6px !important;
+}
+
+.quick-input-list-row div {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.monaco-editor .scroll-decoration {
+  display: none !important;
+}
+
+.monaco-scrollable-element > .shadow.top {
+  display: none !important;
+}
+
+.inline-tabs-placeholder {
+  display: none !important;
+}
+
+.split-view-view .visible {
+  /* background-color: #110f17 !important; */
+  /* background-color: #6b6482b9 !important; */
+  /* background-color: rgba(0, 0, 0, 0.1) !important; */
+  /* background-color: initial !important; */
+}
+
+/* ---------------------------------- Body ---------------------------------- */
+
+body {
+  font-family: 'Dank Mono' !important;
+}
+
+/* --------------------------------- Cursor --------------------------------- */
+
+.monaco-editor .cursor {
+  background: #ffffffaa !important;
+  box-shadow: 0 0 70px 5px #ffffff #ffffff 0px 0px 34px 1px;
+  color: #161616 !important;
+}
+
+/* ------------------------ Command Palette Position ------------------------ */
+.quick-input-widget {
+  transform: translateY(-50%) !important;
+  top: 50% !important;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.45) !important;
+  padding: 10px 10px 18px 10px !important;
+  /* background-image: linear-gradient(#3c3c50 0%, #4f5174 100%) !important; */
+  backdrop-filter: blur(0.1px) !important;
+  border-radius: 20px !important;
+}
+
+/* Command palette's input box placeholder. */
+.monaco-inputbox input::placeholder {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* ---------------------------- Tooltip box style --------------------------- */
+
+.monaco-editor-hover,
+.monaco-hover {
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.45) !important;
+  padding: 10px !important;
+  /* background-image: linear-gradient(
+    rgba(12, 53, 73, 0.309) 0%,
+    rgba(0, 0, 0, 0.248) 100%
+  ) !important; */
+  /* background-image: linear-gradient(
+    rgba(12, 53, 73, 0.486) 0%,
+    rgba(58, 87, 145, 0.368) 50%, rgba(0, 0, 0, 0.1) 100%
+  ) !important; */
+  /* background-image: linear-gradient(
+    rgba(94, 64, 128, 0.369) 0%,
+    rgba(58, 87, 145, 0.368) 50%,
+    rgba(0, 0, 0, 0.1) 100%
+  ) !important; */
+  backdrop-filter: blur(0.1px) !important;
+  border-radius: 10px !important;
+  border: none !important;
+  color: #b2a6e8dc !important;
+  /* font-weight: bold !important; */
+  line-height: 1.5 !important;
+  font-weight: 400;
+}
+
+/* ----------------------- Remove background for lists ---------------------- */
+.monaco-list-rows {
+  background: transparent !important;
+}
+
+.notifications-toasts .monaco-list-row:hover {
+  background: none !important;
+}
+
+/* ------------------------------- Scroll Bar ------------------------------- */
+.slider {
+  position: absolute !important;
+  right: 1px !important;
+  width: 1px !important;
+  background: #bc9abc !important;
+  left: auto !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   Sidebar                                  */
+/* -------------------------------------------------------------------------- */
+
+.sidebar2-item-icon-anysphere {
+  display: none !important;
+}
+
+.pane-header.expanded {
+  letter-spacing: 1px;
+}
+
+.sidebar .title-label h2 {
+  line-height: 2.8 !important;
+}
+
+.sidebar {
+  font-family: 'Dank Mono' !important;
+}
+
+.sidebar > .composite {
+  height: 12px !important;
+}
+
+.composite.title {
+  display: none !important;
+}
+
+.panel .composite.title {
+  visibility: hidden !important;
+}
+
+/* List hover */
+.monaco-list-row:hover {
+  background: rgba(0, 0, 0, 0.2) !important;
+}
+
+.monaco-sash .mac .vertical {
+  display: none;
+}
+
+/* Remove sidebar border line  */
+.decorationsOverviewRuler {
+  display: none !important;
+}
+
+.invisible.scrollbar.horizontal {
+  display: none !important;
+}
+
+.monaco-list {
+  font-family: 'Dank Mono' !important;
+}
+
+/* .monaco-workbench label {
+    color: #fff !important;
+    font-size: 14px !important;
+} */
+
+/* -------------------------------------------------------------------------- */
+/*                        Force Brackets not to italic                        */
+/* -------------------------------------------------------------------------- */
+.mtk1.bracket-highlighting,
+.mtk5.mtki.bracket-highlighting-0,
+.mtk6.mtki.bracket-highlighting-0,
+.mtk4.bracket-highlighting-0,
+.mtk4.bracket-highlighting-1 {
+  font-style: normal;
+}
+
+.mtk6.bracket-highlighting-0 {
+  font-style: normal;
+}
+.monaco-editor .scroll-decoration {
+  display: none !important;
+}
+
+.monaco-sash.mac.vertical {
+  /* display: none !important; */
+}
+/* -------------------------------------------------------------------------- */
+/*                   Remove padding left on the breadcrumbs                   */
+/* -------------------------------------------------------------------------- */
+
+.horizontal-activitybar:not(.statusbar-editor-top):not(.statusbar-top)
+  .monaco-workbench.mac.sidebar-right.noauxiliarybar:not(.fullscreen)
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title:not(.tabs) {
+  padding-left: 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                   italic font                                              */
+/* -------------------------------------------------------------------------- */
+/* .mtk18, .mtk4, .mtk5, .mtk7, .mtk8 {
+    font-family: "Cascadia Code PL","OperatorMonoSSmLig Nerd Font";
+    font-style: italic !important;
+    font-size: 12.9px;
+    font-weight: 300;
+}*/
+.mtk6 {
+  /* color: #94afe3 !important; */
+  /* color: #fab6fd; */
+}
+
+/* -------------------------------------------------------------------------- */
+/*                   italic font Catppuccin Theme                             */
+/* -------------------------------------------------------------------------- */
+.mtk18,
+.mtk8,
+.mtk9 {
+  font-family: 'Cascadia Code PL', 'OperatorMonoSSmLig Nerd Font';
+  font-style: italic;
+  font-size: 12.9px;
+  font-weight: 350;
+}
+
+.mtk5 {
+  font-family: 'Comic Code Ligatures', 'OperatorMonoSSmLig Nerd Font';
+  font-size: 12px;
+}
+.mtk6 {
+  font-family: 'Cascadia Code PL', 'OperatorMonoSSmLig Nerd Font';
+  font-style: italic;
+  font-size: 12.9px;
+  /* color: #94afe3 !important; */
+}
+
+.mtk7 {
+  font-family: 'Cascadia Code PL', 'OperatorMonoSSmLig Nerd Font';
+  font-style: italic;
+  font-size: 12.9px;
+  font-weight: 300;
+}
+
+.mtk10.mtki {
+  font-style: normal;
+}
+
+.mtk11 {
+  font-family: 'Cascadia Code PL', 'OperatorMonoSSmLig Nerd Font';
+  font-style: italic;
+  font-size: 12.9px;
+  font-weight: 300;
+}
+.pane.expanded.vertical,
+.monaco-scrollable-element.mac {
+  border: none !important;
+}
+.mtk8.unexpected-closing-bracket {
+  /* color: #c6a0f6; */
+}
+
+.pane-header.expanded {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
