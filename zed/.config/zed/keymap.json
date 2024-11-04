@@ -61,5 +61,16 @@
       "space /": "editor::ToggleComments",
       "space c": "editor::ToggleComments"
     }
+  },
+  {
+    "context": "Editor && menu",
+    "bindings": {
+      "ctrl-h": "editor::MoveLeft",
+      "ctrl-l": "editor::MoveRight",
+      "ctrl-j": "editor::MoveDown",
+      "ctrl-k": "editor::MoveUp",
+      "ctrl-a": "editor::MoveToBeginningOfLine",
+      "ctrl-e": "editor::MoveToEndOfLine"
+    }
   }
 ]

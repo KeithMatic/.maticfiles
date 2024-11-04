@@ -30,7 +30,7 @@
   /*                                 NAVIGATION   ctrl + hjkl                              */
   /* -------------------------------------------------------------------------- */
   /* --------------------------------- System --------------------------------- */
-  // autosuggestion navigation button to ctrl + hjkl 
+  // autosuggestion navigation button to ctrl + hjkl
   {
     "key": "ctrl+j",
     "command": "selectNextSuggestion",
@@ -108,7 +108,7 @@
   // ====== EXPLORER NAVIGATIN
   {
     "key": "ctrl+e",
-    "command": "workbench.action.toggleSidebarVisibility",
+    "command": "workbench.action.toggleSidebarVisibility"
   },
   {
     "key": "ctrl+e",
@@ -131,7 +131,7 @@
     "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
   },
   /* ---------------------------- VIM  INSERT MODE ---------------------------- */
-  //   // ====== Search Navigation 
+  //   // ====== Search Navigation
   {
     "command": "editor.action.addSelectionToNextFindMatch",
     "key": "ctrl+n",
@@ -166,7 +166,39 @@
   //     "command": "-codeium.openCodeiumCommand",
   //     "when": "codeium.commandEnabled && editorTextFocus && !inlineSuggestionsVisible"
   //   },
-  // TERMINAL FOCUS
+  //  TERMINAL
+  //
+  // === Terminal ===
+  //
+  {
+    "key": "ctrl+t",
+    "command": "workbench.action.togglePanel"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+m",
+    "command": "workbench.action.toggleMaximizedPanel",
+    "when": "terminalFocus"
+  },
   {
     "command": "workbench.action.terminal.toggleTerminal",
     "key": "ctrl+\\",
@@ -182,12 +214,18 @@
     "command": "workbench.action.terminal.focus",
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
-  {
-    // Focus the active editor group (text editor) when the terminal is focused
-    "key": "ctrl+k",
-    "command": "workbench.action.focusActiveEditorGroup",
-    "when": "terminalFocus || explorerViewVisible || filesExplorerFocus && !inputFocus"
-  },
+  // {
+  //   // Focus the active editor group (text editor) when the terminal is focused
+  //   "key": "ctrl+k",
+  //   "command": "workbench.action.focusActiveEditorGroup",
+  //   "when": "terminalFocus || explorerViewletVisible || filesExplorerFocus && !inputFocus && !suggestWidgetVisible && !textInputFocus && !inQuickOpen"
+  // },
+  //   // {
+  //   // Focus the active editor group (text editor) when the terminal is focused
+  //   "key": "ctrl+k",
+  //   "command": "workbench.action.focusActiveEditorGroup",
+  //   "when": "terminalFocus || explorerViewletVisible || filesExplorerFocus && !inputFocus && !suggestWidgetVisible && !textInputFocus && !inQuickOpen"
+  // },
   {
     // Maximize/minimize terminal panel and focus on terminal when terminal is not focused
     // (requires "multi-command" extension and "multiCommand.toggleMaximizedPanelAndFocusTerminal" command defined in settings.json)
@@ -449,7 +487,7 @@
     "key": "enter",
     "command": "list.toggleExpand",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && explorerResourceIsFolder && !inputFocus"
-  },
+  }
   // PANES / WINDOWS
   // {
   //   "key": "space h",
