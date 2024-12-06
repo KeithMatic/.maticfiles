@@ -1,4 +1,3 @@
-local Util = require("mvim.util")
 local levels = vim.log.levels
 
 ---@class mvim.util.format
@@ -30,17 +29,24 @@ function M.enabled(buf)
   return gaf == nil or gaf
 end
 
+---@param enable? boolean
 ---@param buf? boolean
-function M.toggle(buf)
+function M.enable(enable, buf)
+  if enable == nil then
+    enable = true
+  end
   if buf then
-    ---@diagnostic disable-next-line: inject-field
-    vim.b.autoformat = not M.enabled()
+    vim.b.autoformat = enable
   else
-    vim.g.autoformat = not M.enabled()
-    ---@diagnostic disable-next-line: inject-field
+    vim.g.autoformat = enable
     vim.b.autoformat = nil
   end
   M.info()
+end
+
+---@param buf? boolean
+function M.toggle(buf)
+  M.enable(not M.enabled(), buf)
 end
 
 ---@param buf? number
@@ -80,7 +86,7 @@ function M.format(opts)
 end
 
 function M.setup()
-  Util.augroup("CodeFormat", {
+  Mo.U.augroup("CodeFormat", {
     event = "BufWritePre",
     pattern = "*",
     command = function(args)

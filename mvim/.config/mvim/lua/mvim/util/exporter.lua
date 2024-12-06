@@ -1,5 +1,3 @@
-local Util = require("mvim.util")
-
 ---@class mvim.util.exporter
 local M = {}
 
@@ -7,7 +5,7 @@ local M = {}
 -- Or in the directory where the file under the cursor is located
 ---@param action "find" | "grep"
 function M.find_or_grep(action, state)
-  if Util.has("telescope.nvim") then
+  if Mo.U.has("telescope.nvim") then
     local node = state.tree:get_node()
     local path = node.type == "file" and node:get_parent_id() or node:get_id()
 
@@ -40,30 +38,14 @@ function M.find_or_grep(action, state)
   end
 end
 
----@param from string
----@param to string
-function M.on_renamed(from, to)
-  local changes = {
-    files = {
-      {
-        oldUri = vim.uri_from_fname(from),
-        newUri = vim.uri_from_fname(to),
-      },
-    },
-  }
-
-  local clients = vim.lsp.get_clients()
-  for _, client in ipairs(clients) do
-    if client.supports_method("workspace/willRenameFiles") then
-      local resp = client.request_sync("workspace/willRenameFiles", changes, 1000, 0)
-      if resp and resp.result ~= nil then
-        vim.lsp.util.apply_workspace_edit(resp.result, client.offset_encoding)
-      end
-    end
-    if client.supports_method("workspace/didRenameFiles") then
-      client.notify("workspace/didRenameFiles", changes)
-    end
+---@param type "filename" | "path"
+function M.copy(type, state)
+  local node = state.tree:get_node()
+  local target = node:get_id()
+  if type == "filename" then
+    target = vim.fn.fnamemodify(target, ":t")
   end
+  vim.fn.setreg("+", target, "c")
+  vim.notify(type .. " copied", vim.log.levels.INFO)
 end
-
 return M

@@ -43,9 +43,7 @@ local M = {
             position = "bottom",
           },
         },
-        floating = {
-          border = require("mvim.config").get_border(),
-        },
+        floating = { border = Mo.C.border },
       },
       config = function(_, opts)
         -- setup listener
@@ -88,7 +86,9 @@ local M = {
   end,
   config = function()
     -- load launch.json file
-    require("dap.ext.vscode").load_launchjs(vim.fn.getcwd() .. "/.vscode/launch.json")
+    if vim.fn.filereadable(".vscode/launch.json") then
+      require("dap.ext.vscode").load_launchjs()
+    end
 
     local dap = require("dap")
     -- setup adapter
@@ -114,7 +114,7 @@ local M = {
     }
 
     -- https://github.com/rcarriga/nvim-dap-ui/issues/248
-    require("mvim.util").augroup("DapReplOptions", {
+    Mo.U.augroup("DapReplOptions", {
       event = "BufWinEnter",
       pattern = { "\\[dap-repl\\]", "DAP *" },
       command = vim.schedule_wrap(function(args)

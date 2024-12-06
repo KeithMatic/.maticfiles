@@ -1,17 +1,16 @@
-local Util = require("mvim.util")
-
 ---@class mvim.util.lsp
 local M = {}
 
 ---Setup lsp autocmds
 ---@param func fun(client: vim.lsp.Client, buffer: number)
-function M.on_attach(func)
-  Util.augroup("LspOnAttach", {
+---@param name? string
+function M.on_attach(func, name)
+  Mo.U.augroup("LspOnAttach", {
     event = "LspAttach",
     command = function(args)
       local buffer = args.buf
       local client = vim.lsp.get_client_by_id(args.data.client_id)
-      if client then
+      if client and (not name or client.name == name) then
         func(client, buffer)
       end
     end,
@@ -70,8 +69,8 @@ function M.common_capabilities()
       },
     },
     vim.lsp.protocol.make_client_capabilities(),
-    Util.has("cmp-nvim-lsp") and require("cmp_nvim_lsp").default_capabilities() or {},
-    Util.has("nvim-ufo")
+    Mo.U.has("cmp-nvim-lsp") and require("cmp_nvim_lsp").default_capabilities() or {},
+    Mo.U.has("nvim-ufo")
         and {
           textDocument = {
             foldingRange = {

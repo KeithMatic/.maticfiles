@@ -29,6 +29,7 @@ opt.splitkeep = "screen" -- new
 
 -- display
 opt.wrap = false
+opt.ruler = false
 opt.termguicolors = true
 opt.signcolumn = "yes"
 opt.smartcase = true
@@ -58,7 +59,7 @@ opt.showmode = false
 opt.clipboard = "unnamedplus"
 
 opt.cursorline = true
-opt.cursorlineopt = require("mvim.config").transparent and "number" or "number,line"
+opt.cursorlineopt = Mo.C.transparent and "number" or "number,line"
 
 -- indent
 opt.expandtab = true
@@ -72,8 +73,8 @@ opt.number = true
 opt.relativenumber = true
 
 -- time
-opt.timeoutlen = 300 -- 500
-opt.updatetime = 200 -- 500
+opt.timeoutlen = 500 -- 300
+opt.updatetime = 300 -- 200
 
 -- undo
 opt.undofile = true

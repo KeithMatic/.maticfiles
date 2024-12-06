@@ -1,0 +1,51 @@
+abseil                  freetds                 libassuan               libxau                  openssh                 srt
+ack                     freetype                libavif                 libxcb                  openssl@1.1             ssh-copy-id
+aom                     frei0r                  libb2                   libxdmcp                openssl@3               stow
+apr                     fribidi                 libbluray               libxext                 opus                    stylua
+apr-util                fzf                     libcbor                 libxmu                  p11-kit                 svt-av1
+argon2                  gcc                     libdeflate              libxrender              p7zip                   taskell
+aribb24                 gd                      libevent                libxt                   pango                   tesseract
+ascii-image-converter   gettext                 libfido2                libzip                  pcre                    theora
+aspell                  gh                      libgcrypt               little-cms2             pcre2                   tidy-html5
+autoconf                ghostscript             libgit2                 llvm                    php                     tldr
+autojump                giflib                  libgit2@1.7             llvm@15                 pigz                    tmux
+bash                    git                     libgpg-error            lolcat                  pinentry                trash-cli
+bat                     git-lfs                 libice                  lpeg                    pixi                    tree
+bdw-gc                  gitmux                  libidn                  lsd                     pixman                  tree-sitter
+brotli                  glib                    libidn2                 lua                     pkgconf                 unbound
+btop                    glow                    libksba                 lua-language-server     pnpm                    unibilium
+bun                     gmp                     libmicrohttpd           luajit                  postgresql@15           unixodbc
+c-ares                  gnu-sed                 libmpc                  luarocks                postgresql@16           utf8proc
+ca-certificates         gnupg                   libnghttp2              luv                     protobuf                uv
+cairo                   gnutls                  libogg                  lynx                    pv                      vbindiff
+ccls                    go                      libpng                  lz4                     pycparser               webp
+certifi                 go@1.22                 libpq                   lzo                     pygments                wget
+cffi                    gpatch                  librist                 m4                      python-certifi          wimlib
+cjson                   graphite2               libsamplerate           macchina                python-packaging        woff2
+clipboard               grep                    libsm                   mailsy                  python@3.12             x264
+cmake                   harfbuzz                libsndfile              mas                     python@3.13             x265
+coreutils               hatch                   libsodium               mbedtls                 rav1e                   xclip
+cryptography            highway                 libsoxr                 moreutils               readline                xh
+curl                    htmlq                   libspiro                mpdecimal               rename                  xorgproto
+dav1d                   httpie                  libssh                  mpfr                    rich-cli                xsel
+deno                    icu4c@76                libssh2                 mpg123                  ripgrep                 xvid
+docutils                imath                   libtasn1                msgpack                 rlwrap                  xz
+exa                     isl                     libtermkey              mysql                   rnr                     yazi
+exercism                jbig2dec                libtiff                 ncurses                 rtmpdump                z3
+eza                     jless                   libtool                 neovim                  rubberband              zellij
+fd                      jpeg-turbo              libunibreak             neovim-remote           rustup                  zeromq
+ffmpeg                  jpeg-xl                 libuninameslist         nettle                  rustup-init             zimg
+ffmpegthumbnailer       jq                      libunistring            node                    screen                  zlib
+figlet                  kondo                   libusb                  node@20                 sdl2                    zopfli
+findutils               krb5                    libuv                   npth                    sfnt2woff               zoxide
+fish                    lame                    libvidstab              oh-my-posh              sfnt2woff-zopfli        zsh
+flac                    lazygit                 libvmaf                 oniguruma               six                     zstd
+fmt                     ldns                    libvorbis               opencore-amr            sketchybar
+fnm                     leptonica               libvpx                  openexr                 snappy
+fontconfig              libarchive              libvterm                openjpeg                speex
+fontforge               libass                  libx11                  openldap                sqlite
+
+==> Casks
+aerospace               fig                     maccy                   openinterminal          tabby                   warp
+alt-tab                 font-sf-pro             mos                     restfox                 visual-studio-code
+amethyst                keyclu                  open-in-code            sf-symbols              vscodium

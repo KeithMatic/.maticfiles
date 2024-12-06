@@ -1,23 +1,33 @@
 local M = {
   {
     "dhruvasagar/vim-table-mode",
+    enabled = false,
     cmd = "TableModeToggle",
     ft = { "markdown" },
     keys = {
-      { "<leader>mt", "<Cmd>TableModeToggle<CR>", desc = "MarkDown table mode toggle" },
+      { "<leader>mt", "<Cmd>TableModeToggle<CR>", desc = "Toggle table mode" },
     },
   },
 
-  -- markdown preview
   {
-    "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    ft = { "markdown" },
-    build = function()
-      vim.fn["mkdp#util#install"]()
-    end,
+    "MeanderingProgrammer/render-markdown.nvim",
+    ft = "markdown",
     keys = {
-      { "<leader>mp", "<Cmd>MarkdownPreviewToggle<CR>", desc = "Markdown Preview" },
+      { "<leader>mr", "<Cmd>RenderMarkdown toggle<CR>", desc = "Toggle render markdown" },
+    },
+    opts = {
+      heading = { enabled = false },
+      code = {
+        sign = false,
+        width = "block",
+        position = "right",
+        min_width = 60,
+        left_pad = 2,
+        right_pad = 2,
+      },
+      pipe_table = {
+        preset = "round",
+      },
     },
   },
 }
