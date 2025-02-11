@@ -3,6 +3,9 @@
   "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[css]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
   //   // ================================================================================== General Settings
   //   "go.addTags": {
   //     "tags": "json",
@@ -20,6 +23,19 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
     // "editor.defaultFormatter": "vscode.json-language-features"
   },
+  // ================================================================================== Python
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "always",
+      "source.organizeImports": "always"
+    },
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 120,
+    "files.autoSave": "afterDelay"
+  },
   "animations.Active": "Indent",
   "animations.Auto-Install": true,
   "animations.CursorAnimationOptions": {
@@ -29,7 +45,7 @@
   },
   // ================================================================================== VSCode Animations
   "animations.Enabled": true,
-  "animations.Install-Method": "Apc Customize UI++",
+  "animations.Install-Method": "Custom UI Style",
   "animations.Smooth-Mode": true,
   "animations.Tabs": "Slide",
   "apc.activityBar": {
@@ -84,7 +100,9 @@
   "catppuccin.accentColor": "mauve",
   "catppuccin.boldKeywords": true,
   "catppuccin.bracketMode": "rainbow",
-  "catppuccin.colorOverrides": {},
+  "catppuccin.colorOverrides": {
+    "macchiato": {}
+  },
   "catppuccin.customUIColors": {
     "macchiato": {
       "editor.hoverHighlightBackground": "#1e2336",
@@ -92,7 +110,6 @@
       "editor.selectionHighlightBackground": "#1e2336",
       "input.background": "#1e2336",
       "list.activeSelectionBackground": "#1e2336",
-      "list.dropBackground": "#1e2336",
       "list.focusBackground": "#1e2336",
       "list.hoverBackground": "#1e2336",
       "list.inactiveFocusBackground": "#1e2336",
@@ -111,16 +128,18 @@
   "code-runner.enableAppInsights": true,
   "code-runner.executorMap": {
     "go": "go run",
-    "javascript": "node",
+    "javascript": "deno",
     "lua": "lua",
     "mojo": "mojo run",
     "php": "C:\\php\\php.exe",
     // "python": "python3 -u",
-    "python": "py -u", // using a python3 alias
+    // "python": "py -u", // using a python3 alias
+    "python": "uv run", // using a python3 alias
     // "rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
     "rust": "cd $dir && cargo run -q $fileName",
     "sass": "sass --style expanded",
-    "scss": "scss --style expanded"
+    "scss": "scss --style expanded",
+    "typescript": "deno"
   },
   "code-runner.preserveFocus": true,
   "code-runner.runInTerminal": true,
@@ -170,7 +189,80 @@
     "astro",
     "toml"
   ],
+  "css.format.spaceAroundSelectorSeparator": true,
   "cursor.chat.smoothStreaming": true,
+  "custom-ui-style.electron": {
+    // "frame": false,
+    "opacity": 0.95,
+    // "transparent": true
+    // "backgroundColor": "rgba(0,0,0,.5)"
+    // "vibrancy": "ultra-dark"
+    // "visualEffectState": "active"
+    // apc.electron
+    "titleBarStyle": "customButtonsOnHover",
+    "trafficLightPosition": {
+      "x": 7,
+      "y": 3
+    },
+    "window.titleBarStyle": "hiddenInset"
+  },
+  "custom-ui-style.external.imports": [
+    "file:///Users/matic/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.1/dist/updateHandler.js",
+    "file:///Users/matic/.maticfiles/vscode/customvscode-catppuccin.css"
+  ],
+  "custom-ui-style.font.monospace": "'Dank Mono','OperatorMonoSSmLig Nerd Font','Comic Code Ligatures'",
+  "custom-ui-style.font.sansSerif": "'Dank Mono','OperatorMonoSSmLig Nerd Font','Comic Code Ligatures'",
+  "custom-ui-style.stylesheet": {
+    /*                                   Cursor                                   */
+    /* -------------------------------------------------------------------------- */
+    ".monaco-editor .cursor": "background: #ffffffaa !important; box-shadow: 0 0 70px 5px #ffffff, #ffffff 0px 0px 34px 1px; color: #161616 !important",
+    ".monaco-workbench": {
+      // "--activitybar-width": "78px"
+      // "--titlebar-height": "37px",
+      // // Titlebar
+      // ".part.sidebar.left .composite.title": {
+      //   "&, .title-actions, .global-actions, .monaco-toolbar": {
+      //     "height": "var(--titlebar-height)"
+      //   },
+      //   ".title-label": {
+      //     "line-height": "var(--titlebar-height)"
+      //   }
+      // }
+    }
+  },
+  // this this  extentison for custom css hot reload
+  "custom_css_hot_reload.hotReloadMode": "onChange",
+  "custom_css_hot_reload.imports": [
+    // "file:///Users/matic/.maticfiles/vscode/customvscode-catppuccin.css"
+  ],
+  // ================================================================================== JavaScript
+  //   "javascript.updateImportsOnFileMove.enabled": "always",
+  //   "[javascript]": {
+  //     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  //   },
+  //   "[javascriptreact]": {
+  //     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  //   },
+  //   "javascript.suggest.completeFunctionCalls": true,
+  //   // ================================================================================== TypeScript
+  //   "typescript.enablePromptUseWorkspaceTsdk": true,
+  //   "typescript.updateImportsOnFileMove.enabled": "always",
+  //   "typescript.suggest.completeFunctionCalls": true,
+  //   // "typescript.inlayHints.parameterNames.enabled": "all",
+  //   "[typescript]": {
+  //     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  //   },
+  //   "[typescriptreact]": {
+  //     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  //   },
+  // ================================================================================== Deno
+  "deno.enable": true,
+  "deno.future": true,
+  "deno.lint": true,
+  "deno.suggest.imports.autoDiscover": true,
+  "deno.suggest.imports.hosts": {
+    "https://deno.land": true
+  },
   "diffEditor.experimental.useVersion2": true,
   "editor.acceptSuggestionOnEnter": "off",
   "editor.autoClosingBrackets": "always",
@@ -198,8 +290,6 @@
   "editor.fontSize": 15,
   "editor.fontWeight": "400",
   "editor.formatOnPaste": true,
-  //   // "editor.minimap.autohide": true,
-  //   //   "editor.minimap.enabled": false,
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
   "editor.guides.bracketPairs": true,
@@ -228,6 +318,8 @@
   "editor.linkedEditing": true,
   "editor.matchBrackets": "near",
   "editor.maxTokenizationLineLength": 20000,
+  "editor.minimap.autohide": true,
+  "editor.minimap.enabled": false,
   "editor.occurrencesHighlight": "off",
   "editor.overviewRulerBorder": false,
   "editor.parameterHints.cycle": true,
@@ -327,7 +419,12 @@
           "entity.name.function.rust",
           "string",
           "entity.name.function.go",
-          "constant.numeric"
+          "constant.numeric",
+          "entity.name.type.class",
+          "meta.type",
+          "meta.type-alias",
+          "support.type",
+          "entity.name.type"
         ],
         "settings": {
           "fontStyle": ""
@@ -444,28 +541,6 @@
   "gopls": {
     "ui.semanticTokens": true
   },
-  // ================================================================================== Python
-  //   "[python]": {
-  //     "editor.formatOnSave": true,
-  //     "editor.codeActionsOnSave": {
-  //       "source.fixAll": "explicit",
-  //       "source.organizeImports": "explicit"
-  //     },
-  //     "editor.tabSize": 4,
-  //     "editor.wordWrap": "wordWrapColumn",
-  //     "editor.wordWrapColumn": 120,
-  //     "editor.defaultFormatter": "charliermarsh.ruff"
-  //   },
-  //   // "sourcery.token": "user_c8kFjr1lyQMUcWUnjPJ2DAvlpTg0GJarrsYcbKF1YPw2aHl7CjHim_3FUl0",
-  //   "python.autoComplete.extraPaths": [],
-  //   "python.experiments.enabled": true,
-  //   "python.analysis.addImport.exactMatchOnly": true,
-  //   "python.analysis.autoFormatStrings": true,
-  //   "python.analysis.completeFunctionParens": true,
-  //   "python.analysis.autoSearchPaths": true,
-  //   "python.analysis.typeCheckingMode": "strict",
-  //   "python.analysis.inlayHints.functionReturnTypes": true,
-  //   "python.languageServer": "Pylance",
   //   "python.defaultInterpreterPath": "/opt/homebrew/bin/python3.12",
   // ================================================================================== JsonColorToken
   "jsonColorToken.colorTokenCasing": "Lowercase",
@@ -587,31 +662,11 @@
   "prettier.bracketSpacing": true,
   "prettier.documentSelectors": ["**/*.astro"],
   "prettier.embeddedLanguageFormatting": "auto",
-  // ================================================================================== JavaScript
-  //   "javascript.updateImportsOnFileMove.enabled": "always",
-  //   "[javascript]": {
-  //     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  //   },
-  //   "[javascriptreact]": {
-  //     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  //   },
-  //   "javascript.suggest.completeFunctionCalls": true,
-  //   // ================================================================================== TypeScript
-  //   "typescript.enablePromptUseWorkspaceTsdk": true,
-  //   "typescript.updateImportsOnFileMove.enabled": "always",
-  //   "typescript.suggest.completeFunctionCalls": true,
-  //   // "typescript.inlayHints.parameterNames.enabled": "all",
-  //   "[typescript]": {
-  //     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  //   },
-  //   "[typescriptreact]": {
-  //     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  //   },
   // ================================================================================== Prettier
   "prettier.enable": true,
   "prettier.endOfLine": "auto",
   "prettier.htmlWhitespaceSensitivity": "strict",
-  "prettier.insertPragma": true,
+  "prettier.insertPragma": false,
   "prettier.jsxSingleQuote": false,
   "prettier.printWidth": 80,
   "prettier.proseWrap": "always",
@@ -623,6 +678,17 @@
   "prettier.trailingComma": "es5",
   "prettier.useTabs": false,
   "prettier.vueIndentScriptAndStyle": true,
+  "python.analysis.addImport.exactMatchOnly": true,
+  "python.analysis.autoFormatStrings": true,
+  "python.analysis.autoSearchPaths": true,
+  "python.analysis.completeFunctionParens": true,
+  "python.analysis.extraPaths": [],
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.typeCheckingMode": "strict",
+  // "sourcery.token": "user_c8kFjr1lyQMUcWUnjPJ2DAvlpTg0GJarrsYcbKF1YPw2aHl7CjHim_3FUl0",
+  "python.autoComplete.extraPaths": [],
+  "python.experiments.enabled": true,
+  "python.languageServer": "Pylance",
   //   "Lua.codeLens.enable": true,
   //   "Lua.completion.callSnippet": "Both",
   //   "Lua.hint.enable": true,
@@ -847,7 +913,7 @@
   //   "[lua]": {
   //     "editor.defaultFormatter": "JohnnyMorganz.stylua"
   //   },
-  //   "window.titleBarStyle": "native",
+  // "window.titleBarStyle": "native",
   //   "window.systemColorTheme": "dark",
   "update.mode": "manual",
   "versionlens.suggestions.showOnStartup": true,
@@ -1165,7 +1231,11 @@
       "before": ["p"]
     }
   ],
+  "vscode-neovim.neovimExecutablePaths.darwin": "/Users/matic/.vscode/extensions/yeferyv.retronvim-0.1.0/bin/nvim-macos-x86_64/bin/nvim",
+  "vscode-neovim.neovimExecutablePaths.linux": "/Users/matic/.vscode/extensions/yeferyv.retronvim-0.1.0/bin/nvim",
+  "vscode-neovim.neovimExecutablePaths.win32": "/Users/matic/.vscode/extensions/yeferyv.retronvim-0.1.0/bin/nvim-win64/bin/nvim.exe",
   "window.customTitleBarVisibility": "never",
+  "window.newWindowProfile": null,
   "window.titleBarStyle": "native",
   //   "workbench.colorCustomizations": {
   //     "editorBracketHighlight.foreground1": "#e466d9",
@@ -1180,7 +1250,7 @@
   "workbench.activityBar.iconClickBehavior": "focus",
   "workbench.activityBar.location": "hidden",
   // ================================================================================== Workbench
-  "workbench.colorTheme": "Catppuccin Macchiato",
+  "workbench.colorTheme": "Ayu Monokai",
   "workbench.commandPalette.experimental.suggestCommands": true,
   "workbench.editor.customLabels.patterns": {
     "**/{layout,page}.tsx": "${dirname} ${filename}"
@@ -1190,7 +1260,7 @@
   "workbench.editor.tabSizing": "shrink",
   "workbench.experimental.share.enabled": true,
   "workbench.fontAliasing": "auto",
-  "workbench.iconTheme": "catppuccin-perfect-sequoia",
+  "workbench.iconTheme": "catppuccin-macchiato",
   "workbench.layoutControl.enabled": false,
   "workbench.list.fastScrollSensitivity": 100,
   "workbench.list.smoothScrolling": true,
