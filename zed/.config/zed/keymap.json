@@ -67,8 +67,8 @@
     "bindings": {
       "ctrl-h": "editor::MoveLeft",
       "ctrl-l": "editor::MoveRight",
-      "ctrl-j": "editor::MoveDown",
-      "ctrl-k": "editor::MoveUp",
+      "ctrl-j": "menu::SelectNext",
+      "ctrl-k": "menu::SelectPrev",
       "ctrl-a": "editor::MoveToBeginningOfLine",
       "ctrl-e": "editor::MoveToEndOfLine"
     }

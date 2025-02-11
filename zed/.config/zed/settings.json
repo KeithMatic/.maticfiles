@@ -16,7 +16,7 @@
     "diagnostics": false,
     "metrics": false
   },
-  "theme": "Catppuccin Macchiato",
+  "theme": "One Dark Pro Extended",
   "buffer_font_family": "OperatorMonoSSmLig Nerd Font",
   "buffer_font_size": 12,
   "buffer_font_weight": 350,

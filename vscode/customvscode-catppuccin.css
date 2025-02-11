@@ -1,270 +1,312 @@
 /**
- * ---------------------------------- Title ---------------------------------
+ * Hide the title bar but keep window dragging
  *
  * @format
  */
 
-/* .title.show-file-icons .label-container .monaco-icon-label.file-icon {
-    padding-bottom: 6px !important;
-} */
+.titlebar {
+	height: 0px !important;
+	overflow: hidden !important;
+}
+
+.monaco-workbench {
+	-webkit-app-region: drag; /* Allows dragging the window */
+}
+
+/* Make sidebars, activity bars, and panels non-draggable */
+.activitybar,
+.sidebar,
+.editor-container,
+.panel {
+	-webkit-app-region: no-drag;
+}
+
+.title.show-file-icons .label-container .monaco-icon-label.file-icon {
+	padding-bottom: 6px !important;
+}
 
 .title-label .title {
-  display: none !important;
+	display: none !important;
 }
 
 .title-label {
-  display: none !important;
+	display: none !important;
 }
 
 .title-actions {
-  display: none !important;
+	display: none !important;
 }
 
 .tabs-and-actions-container > .editor-actions {
-  display: none !important;
+	display: none !important;
 }
 
 /* Toolbars when tabs are enabled. */
-.monaco-workbench
-  .part.editor
-  > .content
-  .editor-group-container
-  > .title
-  .editor-actions {
-  display: none !important;
+/* .monaco-workbench
+	.part.editor
+	> .content
+	.editor-group-container
+	> .title
+	.editor-actions {
+	display: none !important;
+} */
+
+/* Input box / textarea */
+.ibwrapper {
+	background-color: rgba(42, 42, 42, 0.104) !important;
 }
 
 .titlebar-center {
-  display: none !important;
+	display: none !important;
 }
 
 .titlebar-right {
-  display: none !important;
+	display: none !important;
 }
 
 .titlebar {
-  display: none !important;
+	display: none !important;
 }
 
 .command-center-center {
-  width: auto !important;
+	width: auto !important;
 }
 
 /* Project title's style at the top. */
-.monaco-workbench
-  .part.titlebar
-  > .titlebar-container
-  > .titlebar-center
-  > window-title
-  > .command-center
-  .action-item.command-center-center {
-  border: none !important;
-  background: transparent !important;
-}
+/* .monaco-workbench
+	.part.titlebar
+	> .titlebar-container
+	> .titlebar-center
+	> window-title
+	> .command-center
+	.action-item.command-center-center {
+	border: none !important;
+	background: transparent !important;
+} */
 
 /* Project Title */
 .titlebar-left {
-  justify-content: flex-start !important;
-  flex-grow: 0 !important;
-  width: auto !important;
+	justify-content: flex-start !important;
+	flex-grow: 0 !important;
+	width: auto !important;
 }
 
 /* ------------------------------- Breadcrumbs ------------------------------ */
 .monaco-workbench
-  .part.editor
-  > .content
-  .editor-group-container
-  > .title
-  .breadcrumbs-below-tabs
-  .breadcrumbs-control
-  .monaco-icon-label {
-  /* font-size: 15px; */
-  color: #46d1e3d8;
-  /* color: #ff7e79; */
-  font-weight: 600;
-  font-family: 'Ellograph CF';
-  font-style: italic;
+	.part.editor
+	> .content
+	.editor-group-container
+	> .title
+	.breadcrumbs-below-tabs
+	.breadcrumbs-control
+	.monaco-icon-label {
+	/* font-size: 15px; */
+	/* color: #46d1e3d8; */
+	/* color: #ff7e79; */
+	color: #f775c3;
+	font-weight: 600;
+	font-family: "Ellograph CF";
+	font-style: italic;
 }
 
 .monaco-workbench
-  .part.editor
-  > .content
-  .editor-group-container
-  > .title
-  .breadcrumbs-below-tabs
-  .breadcrumbs-control
-  .monaco-icon-label
-  .monaco-highlighted-label {
-  /* font-size: 10px; */
-  color: #a89d9dd7;
-  font-weight: 400;
-  font-family: 'Dank Mono';
-  /* 'Cascadia Code PL','OperatorMonoSSmLig Nerd Font', Lotion, 'Ellograph CF', MonoLisa, 'Latin Modern Mono', 'GeistMono Nerd Font', 'Comic Code Ligatures', ; */
-  font-style: normal;
+	.part.editor
+	> .content
+	.editor-group-container
+	> .title
+	.breadcrumbs-below-tabs
+	.breadcrumbs-control
+	.monaco-icon-label
+	.monaco-highlighted-label {
+	/* font-size: 10px; */
+	color: #a89d9dd7;
+	font-weight: 400;
+	font-family: "Dank Mono";
+	/* 'Cascadia Code PL','OperatorMonoSSmLig Nerd Font', Lotion, 'Ellograph CF', MonoLisa, 'Latin Modern Mono', 'GeistMono Nerd Font', 'Comic Code Ligatures', ; */
+	font-style: normal;
 }
 
 .filematch .monaco-count-badge {
-  padding: 5px 6px 0 6px !important;
+	padding: 5px 6px 0 6px !important;
 }
 
 .quick-input-list-row div {
-  display: flex !important;
-  align-items: center !important;
+	display: flex !important;
+	align-items: center !important;
 }
 
 .monaco-editor .scroll-decoration {
-  display: none !important;
+	display: none !important;
 }
 
 .monaco-scrollable-element > .shadow.top {
-  display: none !important;
+	display: none !important;
 }
 
 .inline-tabs-placeholder {
-  display: none !important;
+	display: none !important;
 }
 
 .split-view-view .visible {
-  /* background-color: #110f17 !important; */
-  /* background-color: #6b6482b9 !important; */
-  /* background-color: rgba(0, 0, 0, 0.1) !important; */
-  /* background-color: initial !important; */
+	/* background-color: #110f17 !important; */
+	/* background-color: #6b6482b9 !important; */
+	/* background-color: rgba(0, 0, 0, 0.1) !important; */
+	/* background-color: initial !important; */
 }
 
 /* ---------------------------------- Body ---------------------------------- */
 
 body {
-  font-family: 'Dank Mono' !important;
+	font-family: "Dank Mono" !important;
 }
 
 /* --------------------------------- Cursor --------------------------------- */
 
 .monaco-editor .cursor {
-  background: #ffffffaa !important;
-  box-shadow: 0 0 70px 5px #ffffff #ffffff 0px 0px 34px 1px;
-  color: #161616 !important;
+	background: #f463ba !important;
+	box-shadow: 0 0 70px 5px #bc9abc #bc9abc 0px 0px 34px 1px;
+	color: #161616 !important;
+}
+.monaco-editor .line-numbers.active-line-number {
+	color: #f775c3 !important;
 }
 
 /* ------------------------ Command Palette Position ------------------------ */
 .quick-input-widget {
-  transform: translateY(-50%) !important;
-  top: 50% !important;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.45) !important;
-  padding: 10px 10px 18px 10px !important;
-  /* background-image: linear-gradient(#3c3c50 0%, #4f5174 100%) !important; */
-  backdrop-filter: blur(0.1px) !important;
-  border-radius: 20px !important;
+	transform: translateY(-50%) !important;
+	top: 50% !important;
+	box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.125) !important;
+	padding: 10px 10px 18px 10px !important;
+	/* background-image: linear-gradient(#3c3c50 0%, #4f5174 100%) !important; */
+	backdrop-filter: blur(0.1px) !important;
+	border-radius: 20px !important;
 }
 
 /* Command palette's input box placeholder. */
 .monaco-inputbox input::placeholder {
-  color: rgba(255, 255, 255, 0.3) !important;
+	color: rgba(255, 255, 255, 0.3) !important;
 }
 
 /* ---------------------------- Tooltip box style --------------------------- */
 
 .monaco-editor-hover,
 .monaco-hover {
-  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.45) !important;
-  padding: 10px !important;
-  /* background-image: linear-gradient(
+	box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.159) !important;
+	padding: 10px !important;
+	/* background-image: linear-gradient(
     rgba(12, 53, 73, 0.309) 0%,
     rgba(0, 0, 0, 0.248) 100%
   ) !important; */
-  /* background-image: linear-gradient(
+	/* background-image: linear-gradient(
     rgba(12, 53, 73, 0.486) 0%,
     rgba(58, 87, 145, 0.368) 50%, rgba(0, 0, 0, 0.1) 100%
   ) !important; */
-  /* background-image: linear-gradient(
+	/* background-image: linear-gradient(
     rgba(94, 64, 128, 0.369) 0%,
     rgba(58, 87, 145, 0.368) 50%,
     rgba(0, 0, 0, 0.1) 100%
   ) !important; */
-  backdrop-filter: blur(0.1px) !important;
-  border-radius: 10px !important;
-  border: none !important;
-  color: #b2a6e8dc !important;
-  /* font-weight: bold !important; */
-  line-height: 1.5 !important;
-  font-weight: 400;
+	backdrop-filter: blur(0.1px) !important;
+	border-radius: 10px !important;
+	border: none !important;
+	color: #b2a6e8dc !important;
+	/* font-weight: bold !important; */
+	line-height: 1.5 !important;
+	font-weight: 400;
 }
 
 /* ----------------------- Remove background for lists ---------------------- */
 .monaco-list-rows {
-  background: transparent !important;
+	background: transparent !important;
 }
 
 .notifications-toasts .monaco-list-row:hover {
-  background: none !important;
+	background: none !important;
+}
+.monaco-list.list_id_1 .monaco-list-row.focused.selected {
+	background: rgba(0, 0, 0, 0.084) !important;
+	/* background: none !important; */
 }
 
 /* ------------------------------- Scroll Bar ------------------------------- */
 .slider {
-  position: absolute !important;
-  right: 1px !important;
-  width: 1px !important;
-  background: #bc9abc !important;
-  left: auto !important;
+	position: absolute !important;
+	right: 1px !important;
+	width: 1px !important;
+	background: #bc9abc !important;
+	left: auto !important;
 }
-
+.monaco-sash.horizontal {
+	display: none !important;
+}
 /* -------------------------------------------------------------------------- */
 /*                                   Sidebar                                  */
 /* -------------------------------------------------------------------------- */
 
 .sidebar2-item-icon-anysphere {
-  display: none !important;
+	display: none !important;
 }
 
 .pane-header.expanded {
-  letter-spacing: 1px;
+	letter-spacing: 1px;
 }
 
 .sidebar .title-label h2 {
-  line-height: 2.8 !important;
+	line-height: 2.8 !important;
 }
 
 .sidebar {
-  font-family: 'Dank Mono' !important;
+	font-family: "Dank Mono" !important;
 }
 
-.sidebar > .composite {
-  height: 12px !important;
+.sidebar > .composite.title {
+	/* height: 12px !important; */
+	/* display: none !important; */
+	background: transparent !important;
 }
 
 .composite.title {
-  display: none !important;
+	/* display: none !important; */
+	/*this messes up the bottom bar*/
 }
 
 .panel .composite.title {
-  visibility: hidden !important;
+	visibility: hidden !important; /*terminal titles hidden*/
 }
 
 /* List hover */
 .monaco-list-row:hover {
-  background: rgba(0, 0, 0, 0.2) !important;
+	background: rgba(0, 0, 0, 0.084) !important;
 }
 
 .monaco-sash .mac .vertical {
-  display: none;
+	display: none;
 }
 
 /* Remove sidebar border line  */
 .decorationsOverviewRuler {
-  display: none !important;
+	display: none !important;
 }
 
 .invisible.scrollbar.horizontal {
-  display: none !important;
+	display: none !important;
 }
 
 .monaco-list {
-  font-family: 'Dank Mono' !important;
+	font-family: "Dank Mono" !important;
 }
 
-/* .monaco-workbench label {
-    color: #fff !important;
-    font-size: 14px !important;
-} */
+.monaco-workbench label {
+	color: #fff !important;
+	font-size: 14px !important;
+}
+/* remove terminal/panel scrollbar */
+.xterm-decoration-overview-ruler,
+.xterm .xterm-scrollable-element > .invisible {
+	opacity: 0;
+	pointer-events: none;
+	display: none !important;
+}
 
 /* -------------------------------------------------------------------------- */
 /*                        Force Brackets not to italic                        */
@@ -274,30 +316,30 @@ body {
 .mtk6.mtki.bracket-highlighting-0,
 .mtk4.bracket-highlighting-0,
 .mtk4.bracket-highlighting-1 {
-  font-style: normal;
+	font-style: normal;
 }
 
 .mtk6.bracket-highlighting-0 {
-  font-style: normal;
+	font-style: normal;
 }
 .monaco-editor .scroll-decoration {
-  display: none !important;
+	display: none !important;
 }
 
 .monaco-sash.mac.vertical {
-  /* display: none !important; */
+	/* display: none !important; */
 }
 /* -------------------------------------------------------------------------- */
 /*                   Remove padding left on the breadcrumbs                   */
 /* -------------------------------------------------------------------------- */
 
 .horizontal-activitybar:not(.statusbar-editor-top):not(.statusbar-top)
-  .monaco-workbench.mac.sidebar-right.noauxiliarybar:not(.fullscreen)
-  .part.editor
-  > .content
-  .editor-group-container
-  > .title:not(.tabs) {
-  padding-left: 0;
+	.monaco-workbench.mac.sidebar-right.noauxiliarybar:not(.fullscreen)
+	.part.editor
+	> .content
+	.editor-group-container
+	> .title:not(.tabs) {
+	padding-left: 0;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -310,8 +352,8 @@ body {
     font-weight: 300;
 }*/
 .mtk6 {
-  /* color: #94afe3 !important; */
-  /* color: #fab6fd; */
+	/* color: #94afe3 !important; */
+	/* color: #fab6fd; */
 }
 
 /* -------------------------------------------------------------------------- */
@@ -320,50 +362,143 @@ body {
 .mtk18,
 .mtk8,
 .mtk9 {
-  font-family: 'Cascadia Code PL', 'OperatorMonoSSmLig Nerd Font';
-  font-style: italic;
-  font-size: 12.9px;
-  font-weight: 350;
+	font-family: "Cascadia Code PL", "OperatorMonoSSmLig Nerd Font";
+	font-style: italic;
+	font-size: 12.9px;
+	font-weight: 350;
 }
 
 .mtk5 {
-  font-family: 'Comic Code Ligatures', 'OperatorMonoSSmLig Nerd Font';
-  font-size: 12px;
+	font-family: "Comic Code Ligatures", "OperatorMonoSSmLig Nerd Font";
+	font-size: 12px;
 }
 .mtk6 {
-  font-family: 'Cascadia Code PL', 'OperatorMonoSSmLig Nerd Font';
-  font-style: italic;
-  font-size: 12.9px;
-  /* color: #94afe3 !important; */
+	font-family: "Cascadia Code PL", "OperatorMonoSSmLig Nerd Font";
+	font-style: italic;
+	font-size: 12.9px;
+	/* color: #94afe3 !important; */
 }
 
 .mtk7 {
-  font-family: 'Cascadia Code PL', 'OperatorMonoSSmLig Nerd Font';
-  font-style: italic;
-  font-size: 12.9px;
-  font-weight: 300;
+	font-family: "Cascadia Code PL", "OperatorMonoSSmLig Nerd Font";
+	font-style: italic;
+	font-size: 12.9px;
+	font-weight: 300;
 }
 
 .mtk10.mtki {
-  font-style: normal;
+	font-style: normal;
 }
 
 .mtk11 {
-  font-family: 'Cascadia Code PL', 'OperatorMonoSSmLig Nerd Font';
-  font-style: italic;
-  font-size: 12.9px;
-  font-weight: 300;
+	font-family: "Cascadia Code PL", "OperatorMonoSSmLig Nerd Font";
+	font-style: italic;
+	font-size: 12.9px;
+	font-weight: 300;
 }
 .pane.expanded.vertical,
 .monaco-scrollable-element.mac {
-  border: none !important;
+	border: none !important;
 }
 .mtk8.unexpected-closing-bracket {
-  /* color: #c6a0f6; */
+	/* color: #c6a0f6; */
 }
 
-.pane-header.expanded {
-  text-align: center;
-  display: flex;
-  justify-content: center;
+.pane-header.expanded,
+h3.title {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	color: #f775c3;
+	font-weight: 700;
+	font-family: "Ellograph CF";
+	font-style: italic;
+}
+
+/* Make the entire workbench transparent */
+.monaco-workbench,
+.monaco-editor,
+.monaco-editor-background,
+.editor-instance,
+.titlebar,
+.sidebar,
+.activitybar,
+.statusbar,
+.panel,
+.editor-container,
+.tabs-container,
+.tab,
+.monaco-list,
+.integrated-terminal,
+.quick-input-widget,
+.monaco-hover,
+.monaco-menu,
+.notifications-toasts,
+.settings-editor,
+.extensions-viewlet {
+	/* background: transparent !important; */
+	/* box-shadow: none !important; */
+	border: none !important;
+}
+
+/* Make the sidebar (Explorer, Git, Extensions, etc.) transparent */
+.sidebar {
+	/* background: transparent !important; */
+}
+
+/* Make the activity bar (icons on the left) transparent */
+.activitybar {
+	/* background: transparent !important; */
+}
+
+/* Make the title bar transparent */
+.titlebar {
+	/* background: transparent !important; */
+}
+
+/* Make the status bar (bottom bar) transparent */
+.statusbar {
+	/* background: transparent !important; */
+}
+
+/* Make the editor itself fully transparent */
+.monaco-editor,
+.editor-instance {
+	/* background: transparent !important; */
+}
+
+/* Make the terminal transparent */
+.integrated-terminal {
+	/* background: transparent !important; */
+}
+
+/* Hide UI shadows and borders */
+.monaco-editor,
+.monaco-editor-background,
+.editor-container,
+.tabs-container,
+.panel,
+.statusbar,
+.sidebar,
+.activitybar,
+.titlebar {
+	/* box-shadow: none !important; */
+	border: none !important;
+}
+
+/* Remove background from quick input (search, command palette) */
+.quick-input-widget {
+	/* background: transparent !important; */
+	/* box-shadow: none !important; */
+}
+
+/* Make context menus and dropdowns transparent */
+.monaco-menu,
+.monaco-hover {
+	/* background: transparent !important; */
+}
+
+/* Make notifications transparent */
+.notifications-toasts {
+	/* background: transparent !important; */
 }

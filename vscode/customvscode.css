@@ -308,3 +308,68 @@ body {
 /* .monaco-editor .ced-2-TextEditorDecorationType36-1 {
     color: rgb(105 189 195) !important;
 }
+
+
+/* Make the entire workbench transparent */
+.monaco-workbench, .monaco-editor, .monaco-editor-background, .editor-instance,
+.titlebar, .sidebar, .activitybar, .statusbar, .panel, .editor-container,
+.tabs-container, .tab, .monaco-list, .integrated-terminal, .quick-input-widget,
+.monaco-hover, .monaco-menu, .notifications-toasts, .settings-editor,
+.extensions-viewlet {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* Make the sidebar (Explorer, Git, Extensions, etc.) transparent */
+.sidebar {
+    background: transparent !important;
+}
+
+/* Make the activity bar (icons on the left) transparent */
+.activitybar {
+    background: transparent !important;
+}
+
+/* Make the title bar transparent */
+.titlebar {
+    background: transparent !important;
+}
+
+/* Make the status bar (bottom bar) transparent */
+.statusbar {
+    background: transparent !important;
+}
+
+/* Make the editor itself fully transparent */
+.monaco-editor, .editor-instance {
+    background: transparent !important;
+}
+
+/* Make the terminal transparent */
+.integrated-terminal {
+    background: transparent !important;
+}
+
+/* Hide UI shadows and borders */
+.monaco-editor, .monaco-editor-background, .editor-container, .tabs-container,
+.panel, .statusbar, .sidebar, .activitybar, .titlebar {
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* Remove background from quick input (search, command palette) */
+.quick-input-widget {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Make context menus and dropdowns transparent */
+.monaco-menu, .monaco-hover {
+    background: transparent !important;
+}
+
+/* Make notifications transparent */
+.notifications-toasts {
+    background: transparent !important;
+}
