@@ -5,8 +5,6 @@
  */
 
 .titlebar {
-	height: 0px !important;
-	overflow: hidden !important;
 }
 
 .monaco-workbench {
@@ -30,26 +28,29 @@
 }
 
 .title-label {
-	display: none !important;
+	color: #f775c3;
+	font-weight: 700;
+	font-family: "Ellograph CF";
+	font-style: italic;
+	display: flex;
+	justify-content: center;
 }
 
-.title-actions {
-	display: none !important;
 }
 
 .tabs-and-actions-container > .editor-actions {
-	display: none !important;
+	/* display: none !important; */
 }
 
 /* Toolbars when tabs are enabled. */
-/* .monaco-workbench
+.monaco-workbench
 	.part.editor
 	> .content
 	.editor-group-container
 	> .title
 	.editor-actions {
 	display: none !important;
-} */
+}
 
 /* Input box / textarea */
 .ibwrapper {
@@ -57,15 +58,17 @@
 }
 
 .titlebar-center {
-	display: none !important;
+	color: rgb(239, 103, 200);
+	font-weight: 700;
+}
+
+:letter {
+	/* display: none !important; */
+	color: blue;
 }
 
 .titlebar-right {
-	display: none !important;
-}
-
-.titlebar {
-	display: none !important;
+	/* display: none !important; */
 }
 
 .command-center-center {
@@ -73,7 +76,7 @@
 }
 
 /* Project title's style at the top. */
-/* .monaco-workbench
+.monaco-workbench
 	.part.titlebar
 	> .titlebar-container
 	> .titlebar-center
@@ -81,14 +84,14 @@
 	> .command-center
 	.action-item.command-center-center {
 	border: none !important;
-	background: transparent !important;
-} */
+	/* background: transparent !important; */
+}
 
 /* Project Title */
 .titlebar-left {
-	justify-content: flex-start !important;
-	flex-grow: 0 !important;
-	width: auto !important;
+	/* justify-content: flex-start !important; */
+	/* flex-grow: 0 !important; */
+	/* width: auto !important; */
 }
 
 /* ------------------------------- Breadcrumbs ------------------------------ */
@@ -107,6 +110,8 @@
 	font-weight: 600;
 	font-family: "Ellograph CF";
 	font-style: italic;
+	display: flex;
+	justify-content: center;
 }
 
 .monaco-workbench
@@ -119,7 +124,7 @@
 	.monaco-icon-label
 	.monaco-highlighted-label {
 	/* font-size: 10px; */
-	color: #a89d9dd7;
+	color: #1ed0f3b9;
 	font-weight: 400;
 	font-family: "Dank Mono";
 	/* 'Cascadia Code PL','OperatorMonoSSmLig Nerd Font', Lotion, 'Ellograph CF', MonoLisa, 'Latin Modern Mono', 'GeistMono Nerd Font', 'Comic Code Ligatures', ; */
@@ -131,6 +136,11 @@
 }
 
 .quick-input-list-row div {
+	display: flex !important;
+	align-items: center !important;
+}
+
+.breadcrumbs {
 	display: flex !important;
 	align-items: center !important;
 }
@@ -415,6 +425,14 @@ h3.title {
 	font-style: italic;
 }
 
+a#c19,
+a#c20,
+codelens-decoration,
+.mtk4.mtki {
+	font-style: italic;
+	font-family: "OperatorMonoSSmLig Nerd Font", serif;
+	font-size: 12px;
+}
 /* Make the entire workbench transparent */
 .monaco-workbench,
 .monaco-editor,
@@ -482,7 +500,7 @@ h3.title {
 .sidebar,
 .activitybar,
 .titlebar {
-	/* box-shadow: none !important; */
+	box-shadow: none !important;
 	border: none !important;
 }
 

@@ -4,6 +4,8 @@
 PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
 export PATH
 
+export PATH="/path/to/aerospace:$PATH"
+
 # History
 HISTSIZE=10000 
 HISTFILE=~/.zsh_history

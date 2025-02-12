@@ -95,6 +95,8 @@
     ".monaco-editor .cursor": "background: #ffffffaa !important; box-shadow: 0 0 70px 5px #ffffff, #ffffff 0px 0px 34px 1px; color: #161616 !important"
   },
   "breadcrumbs.filePath": "last",
+  "breadcrumbs.symbolPath": "last",
+  "breadcrumbs.symbolSortOrder": "type",
   "catppuccin-noctis-icons.hidesExplorerArrows": false,
   // ================================================================================== Cattppuccino
   "catppuccin.accentColor": "mauve",
@@ -192,42 +194,42 @@
   "css.format.spaceAroundSelectorSeparator": true,
   "cursor.chat.smoothStreaming": true,
   "custom-ui-style.electron": {
-    // "frame": false,
+    "backgroundColor": "rgba(0,0,0,.5)",
+    "frame": false,
     "opacity": 0.95,
-    // "transparent": true
-    // "backgroundColor": "rgba(0,0,0,.5)"
-    // "vibrancy": "ultra-dark"
-    // "visualEffectState": "active"
-    // apc.electron
     "titleBarStyle": "customButtonsOnHover",
     "trafficLightPosition": {
       "x": 7,
       "y": 3
     },
+    "transparent": true,
+    "vibrancy": "ultra-dark",
+    "visualEffectState": "active",
+    // apc.electron
     "window.titleBarStyle": "hiddenInset"
   },
   "custom-ui-style.external.imports": [
     "file:///Users/matic/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.1/dist/updateHandler.js",
     "file:///Users/matic/.maticfiles/vscode/customvscode-catppuccin.css"
   ],
-  "custom-ui-style.font.monospace": "'Dank Mono','OperatorMonoSSmLig Nerd Font','Comic Code Ligatures'",
+  "custom-ui-style.font.monospace": "'OperatorMonoSSmLig Nerd Font','Comic Code Ligatures'",
   "custom-ui-style.font.sansSerif": "'Dank Mono','OperatorMonoSSmLig Nerd Font','Comic Code Ligatures'",
   "custom-ui-style.stylesheet": {
     /*                                   Cursor                                   */
     /* -------------------------------------------------------------------------- */
-    ".monaco-editor .cursor": "background: #ffffffaa !important; box-shadow: 0 0 70px 5px #ffffff, #ffffff 0px 0px 34px 1px; color: #161616 !important",
+    ".monaco-editor .cursor": "background: #f463ba !important; box-shadow: 0 0 70px 5px #bc9abc, #bc9abc 0px 0px 34px 1px; color: #161616 !important",
     ".monaco-workbench": {
-      // "--activitybar-width": "78px"
-      // "--titlebar-height": "37px",
-      // // Titlebar
-      // ".part.sidebar.left .composite.title": {
-      //   "&, .title-actions, .global-actions, .monaco-toolbar": {
-      //     "height": "var(--titlebar-height)"
-      //   },
-      //   ".title-label": {
-      //     "line-height": "var(--titlebar-height)"
-      //   }
-      // }
+      "--activitybar-width": "78px",
+      "--titlebar-height": "37px",
+      // Titlebar
+      ".part.sidebar.left .composite.title": {
+        "&, .title-actions, .global-actions, .monaco-toolbar": {
+          "height": "var(--titlebar-height)"
+        },
+        ".title-label": {
+          "line-height": "var(--titlebar-height)"
+        }
+      }
     }
   },
   // this this  extentison for custom css hot reload
@@ -263,6 +265,7 @@
   "deno.suggest.imports.hosts": {
     "https://deno.land": true
   },
+  "diffEditor.codeLens": true,
   "diffEditor.experimental.useVersion2": true,
   "editor.acceptSuggestionOnEnter": "off",
   "editor.autoClosingBrackets": "always",
@@ -277,6 +280,7 @@
     "source.sortImports": "explicit"
   },
   "editor.codeLensFontFamily": "OperatorMonoSSmLig Nerd Font",
+  "editor.codeLensFontSize": 12,
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.definitionLinkOpensInPeek": true,
@@ -301,6 +305,7 @@
   "editor.hover.above": false,
   "editor.inlayHints.enabled": "onUnlessPressed",
   "editor.inlayHints.fontFamily": "OperatorMonoSSmLig Nerd Font",
+  "editor.inlayHints.fontSize": 12,
   "editor.inlayHints.padding": true,
   "editor.inlineSuggest.enabled": true,
   "editor.inlineSuggest.fontFamily": "Dank Mono",
@@ -344,6 +349,7 @@
   "editor.suggest.preview": true,
   "editor.suggest.showDeprecated": false,
   "editor.suggest.showStatusBar": true,
+  "editor.suggestFontSize": 12,
   "editor.suggestSelection": "recentlyUsedByPrefix",
   "editor.tabCompletion": "on",
   "editor.tabSize": 2,
@@ -446,6 +452,7 @@
   "emmet.showExpandedAbbreviation": "always",
   "emmet.triggerExpansionOnTab": true,
   "emmet.useInlineCompletions": true,
+  "errorLens.codeLensEnabled": true,
   //   // ================================================================================== Material Icons
   //   "material-icon-theme.activeIconPack": "react_redux",
   //   // ================================================================================== SCSS Lint
@@ -464,6 +471,7 @@
   // ================================================================================== Error Lens
   "errorLens.followCursor": "activeLine",
   "errorLens.fontFamily": "'OperatorMonoSSmLig Nerd Font'",
+  "errorLens.fontSize": "12px",
   "errorLens.fontStyleItalic": true,
   "errorLens.messageBackgroundMode": "none",
   "errorLens.scrollbarHackEnabled": true,
@@ -535,8 +543,10 @@
   "formatContextMenu.closeAfterSave": true,
   "git.decorations.enabled": false,
   "gitlens.blame.fontFamily": "'OperatorMonoSSmLig Nerd Font'",
+  "gitlens.blame.fontSize": 12,
   //   "breadcrumbs.filePath": "last",
   "gitlens.currentLine.fontFamily": "'OperatorMonoSSmLig Nerd Font'",
+  "gitlens.currentLine.fontSize": 12,
   // applicable if you use Go, this is an opt-in flag!
   "gopls": {
     "ui.semanticTokens": true
@@ -1250,7 +1260,7 @@
   "workbench.activityBar.iconClickBehavior": "focus",
   "workbench.activityBar.location": "hidden",
   // ================================================================================== Workbench
-  "workbench.colorTheme": "Ayu Monokai",
+  "workbench.colorTheme": "Catppuccin Macchiato",
   "workbench.commandPalette.experimental.suggestCommands": true,
   "workbench.editor.customLabels.patterns": {
     "**/{layout,page}.tsx": "${dirname} ${filename}"
